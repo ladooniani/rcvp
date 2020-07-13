@@ -154,6 +154,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
  .bannerTxt{
   background: url(../assets/terbinari_cbm_1.png) no-repeat center center scroll; 
+  background-size:contain;
   padding: 33px;
   padding-top: 100px;
   padding-bottom: 369px;
@@ -165,21 +166,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%;
   height: auto;
 }
-
-/*.box{
-  position: relative;
-  display: inline-block; 
-}
-.box .text{
-  position: absolute;
-  z-index: 999;
-  margin: 0 auto;
-  left: 0%;
-  right: 0%;
-  top: 27%; 
-  text-align: left;
-  width: 60%;
-  }*/
 
 .labTitleStyle {
   text-shadow: 0 1px 1px white;
