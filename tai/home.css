@@ -648,7 +648,7 @@ body{
   border-radius: 15px;
   padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
 
-  font-size: 18px;
+  font-size: 15px;
   column-count: 1;
   column-gap: 40px;
   column-rule-style: solid;
@@ -667,7 +667,7 @@ body{
   border-radius: 15px;
   padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
 
-  font-size: 18px;
+  font-size: 15px;
   column-count: 2;
   column-gap: 40px;
   column-rule-style: solid;
