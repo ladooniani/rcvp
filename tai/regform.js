@@ -160,23 +160,23 @@ window.onbeforeunload = function () {
 /****************************************************************************************************************/
 /***************************************************************************************************  Load text */
 function loadTxt() {
- var softDevTitSize = softDevTit.fontsize(5);
- var converTitSize = converTit.fontsize(5);
- var functTitSize = functTit.fontsize(5);
- var labresSize = labresTit.fontsize(5);
- var proTitSize = proTit.fontsize(5);
+  var softDevTitSize = softDevTit.fontsize(4);
+ var converTitSize = converTit.fontsize(4);
+ var functTitSize = functTit.fontsize(4);
+ var labresSize = labresTit.fontsize(4);
+ var proTitSize = proTit.fontsize(4);
  labTitle.innerHTML = lab_title;
  terbinari_title.innerHTML = terbinari;
  operPro.innerHTML = operating_program;
  cbm_title.innerHTML = cbm; 
  cbmSubtitle.innerHTML = cbm_subtitle;
-  contactTit.innerHTML = contact_title;   
-  segdecript.innerHTML = segdes;
-  softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
-  ste.innerHTML = labresSize + ScTechEngine;
-  funct.innerHTML = proTitSize + proces + functTitSize + functional;
-  videotxt.innerHTML = converTitSize + overview_descript;
-  contactFromBreakSet(); 
+ contactTit.innerHTML = contact_title;   
+ segdecript.innerHTML = segdes;
+ softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
+ ste.innerHTML = labresSize + ScTechEngine;
+ funct.innerHTML = proTitSize + proces + functTitSize + functional;
+ videotxt.innerHTML = converTitSize + overview_descript;
+ contactFromBreakSet(); 
 }
 
 
@@ -549,4 +549,3 @@ function checkInputs(){
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
-
