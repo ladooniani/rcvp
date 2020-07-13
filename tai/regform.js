@@ -181,10 +181,10 @@ function loadTxt() {
 
 
 function verticalLine(){
-  if(browser == 0) { 
+  if(browser == 0) { // Mobile
     document.getElementById("segdecript").style.columnCount = "1";
     document.getElementById("ste").style.columnCount = "1";
-  } else if(browser == 1) {
+  } else if(browser == 1) { // PC
     document.getElementById("segdecript").style.columnCount = "2";
     document.getElementById("ste").style.columnCount = "2";
   }  
@@ -549,3 +549,4 @@ function checkInputs(){
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
+
