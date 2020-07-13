@@ -97,9 +97,9 @@ h3.sectionTitle {
 	font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
 	color: #333333;
 	display: block;
-	font-size: 20px;
-	font-weight: 400;
-	padding: 30px 15px;
+	font-size: 18px;
+	font-weight: 200;
+	padding: 12px 9px;
 	text-shadow: none;
 }
 .navbar .nav > li > a:hover,
@@ -117,68 +117,6 @@ h3.sectionTitle {
 }
 .navbar-inverse .navbar-toggle .icon-bar {
 	background: #333;
-}
-
-/**********************************************************************/
-/************************** JUMBOTRON ********************************/
-/********************************************************************/
-
-.jumbotron {
-	/*background: url(../assets/cbm_ban.png) no-repeat center center scroll; */
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	padding-bottom: 9;
-	padding-top: 96px;
-	color: #fff;
-	margin-bottom: 0;
-	border:none;
-	outline: none;
-	display: none !important; 
-
-}
-.jumbotron .mobile {
-	background-repeat: no-repeat;
-	height: 499px;
-	margin-left: -20px;
-	margin-top: 0;
-	overflow: hidden;
-	width: auto;
-	border:none;
-	outline: none;
-}
-.jumbotron h1 {
-	color: #fff;
-	font-size: 72px;
-	font-weight: 700;
-	text-shadow: 0 1px 5px #222222;
-	border:none;
-	outline: none;
-}
-.jumbotron h2 {
-	color: #fff;
-	font-weight: 300;
-	text-shadow: 0 1px 5px #222222;
-	margin-bottom: 0px;
-	border:none;
-	outline: none;
-}
-.jumbotron .actionBtn .line1 {
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 400;
-	width: 140px;
-	margin-top: 10px;
-	border:none;
-	outline: none;
-}
-.jumbotron .actionBtn .line2 {
-	font-size: 28px;
-	font-weight: 700;
-	line-height: 1;
-	border:none;
-	outline: none;
 }
 
 /**********************************************************************/
