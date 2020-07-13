@@ -161,12 +161,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
   height: auto;
 }
 
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 .labTitleStyle {
   text-shadow: 0 1px 1px white;
   color:#7f949f;
   font-weight: bold;
   font-size:14px;
-   padding-top: 16px;
+  padding-top: 16px;
   /*display: inline-block;*/
 }
 
@@ -702,6 +707,9 @@ hr.contactFormLine {
   width: 100%;
   height: auto;
   padding: 0px;
+  border-style: solid transparent; 
+  border-width: thin;
+  border-radius: 15px;
 } 
 
 /**************************************/
