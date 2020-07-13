@@ -93,10 +93,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     height: 69px;
   }
 
-  .labLogoTxt{
-    display: inline-block;
-  }
-
   @-webkit-keyframes colorchange {
     from 
     {
@@ -142,7 +138,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     border: 0px none;
     color:white;
     font-weight: bold;
-    font-size:139%;
+    font-size:109%;
     -webkit-animation:compression 6s forwards;
   }
 
@@ -161,15 +157,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 33px;
   padding-top: 100px;
   padding-bottom: 369px;
-  
+  width: 100%;
+  height: auto;
 }
 
 .labTitleStyle {
   text-shadow: 0 1px 1px white;
   color:#7f949f;
   font-weight: bold;
-  font-size:16px;
+  font-size:14px;
+   padding-top: 16px;
+  /*display: inline-block;*/
 }
+
+.taiLogo {
+  /*width: 12%;
+  height: 12%;*/
+}
+
+.labLogoTxt{
+  display: inline-block;
+}
+
+
 
 .labTitleStyle2 {
   text-shadow: 0 1px 1px white;
