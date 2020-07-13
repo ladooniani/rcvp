@@ -668,7 +668,7 @@ body{
   padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
 
   font-size: 15px;
-  column-count: 2;
+  column-count: 1; /*2;*/
   column-gap: 40px;
   column-rule-style: solid;
   padding: 18px;
