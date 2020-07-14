@@ -183,11 +183,11 @@ function verticalLine(){
   if(browser == 0) {
     document.getElementById("segdecript").style.columnCount = "1";
     document.getElementById("ste").style.columnCount = "1";
-    document.getElementById("headTxt").style.top = "90px"; 
+    document.getElementById("headTxt").style.top = "96px"; 
   } else if(browser == 1) { 
     document.getElementById("segdecript").style.columnCount = "2";
     document.getElementById("ste").style.columnCount = "2";
-    document.getElementById("headTxt").style.top = "103px"; 
+    document.getElementById("headTxt").style.top = "109px"; 
   }  
 }
 
@@ -338,10 +338,10 @@ function showDefault(){
 
 function CheckPhoneOrMobileBrowser(){
  if($(window).width()<=1199) { 
-    browser = 0; // Mobile
-  } else {
-    browser = 1; // PC 
-  } 
+  browser = 0;
+} else {
+  browser = 1;
+} 
 }
 
 var isChrome; var isFirefox;
@@ -384,7 +384,6 @@ function HBnSVd() {
 
 function HPgSBn() {
   document.getElementById("topWrap").style.display = "block";
-  //scrollOnTop(); 
 }
 
 function WebAssist(){ 
@@ -393,7 +392,6 @@ function WebAssist(){
 
 function ContactForm(){
   document.getElementById("topWrap").style.display = "none";                                        
-  //scrollOnTop();
 }
 
 function scrollOnTop() {
