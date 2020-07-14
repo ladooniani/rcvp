@@ -131,7 +131,7 @@ img{
   border: 0px none;
   color:white;
   font-weight: bold;
-  font-size:69%;
+  font-size:110%;
   -webkit-animation:compression 6s forwards;
 }
 
@@ -141,7 +141,7 @@ img{
  text-shadow: 0 1px 5px #222222;
  color:white;
  font-weight: bold;
- font-size:139%;
+ font-size:109%;
  -webkit-animation:compression 6s forwards;
 }
 
@@ -164,7 +164,9 @@ img{
   padding-top: 73px;
   padding-bottom: 27px;
   width:100%;
+
   position: relative;
+  
 }
 .banImg .headerTxt{
  position: absolute;
@@ -188,14 +190,15 @@ img{
 
 .labTitleStyle {
  text-shadow: 0 1px 1px white;
- color:#7f949f;
+ color:#bac5cb;
  font-weight: bold;
- font-size:12px;
+ font-size:10px;
  white-space: nowrap;
  padding-left: 12px; 
 }
 
-.taiLogo {}
+.taiLogo {
+}
 
 .labLogoTxt{
   display: inline-block;
@@ -213,7 +216,8 @@ img{
   font-size:16px !important;
 }
 
-hr.lowerLine {}
+hr.lowerLine {
+}
 
 label {
   padding: 12px 12px 12px 0;
@@ -373,16 +377,13 @@ h3 span {
 
 body{
   margin:0px;
-  /*overflow: hidden;*/ /* Hide scrollbars */
 }
 .container{
   margin-top:0px;
   margin-bottom:0px;
-   /* margin-left:10%;
-   margin-right:10%;*/
- }
+}
 
- h1, h2, p{
+h1, h2, p{
   margin: 0;
   white-space:0;
 }
@@ -717,11 +718,13 @@ hr.contactFormLine {
 .service-content-two{
   margin-top: 42px;
   margin-bottom: 60px;
+
 }
 
 .service-content-three{
   margin-top: 42px;
   margin-bottom: 60px;
+
 }
 
 .service-img img{
