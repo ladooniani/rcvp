@@ -161,32 +161,33 @@ window.onbeforeunload = function () {
 /***************************************************************************************************  Load text */
 function loadTxt() {
   var softDevTitSize = softDevTit.fontsize(4);
- var converTitSize = converTit.fontsize(4);
- var functTitSize = functTit.fontsize(4);
- var labresSize = labresTit.fontsize(4);
- var proTitSize = proTit.fontsize(4);
- labTitle.innerHTML = lab_title;
- terbinari_title.innerHTML = terbinari;
- operPro.innerHTML = operating_program;
- cbm_title.innerHTML = cbm; 
- cbmSubtitle.innerHTML = cbm_subtitle;
- contactTit.innerHTML = contact_title;   
- segdecript.innerHTML = segdes;
- softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
- ste.innerHTML = labresSize + ScTechEngine;
- funct.innerHTML = proTitSize + proces + functTitSize + functional;
- videotxt.innerHTML = converTitSize + overview_descript;
- contactFromBreakSet(); 
+  var converTitSize = converTit.fontsize(4);
+  var functTitSize = functTit.fontsize(4);
+  var labresSize = labresTit.fontsize(4);
+  var proTitSize = proTit.fontsize(4);
+  labTitle.innerHTML = lab_title;
+  terbinari_title.innerHTML = terbinari;
+  operPro.innerHTML = operating_program;
+  cbm_title.innerHTML = cbm; 
+  cbmSubtitle.innerHTML = cbm_subtitle;
+  contactTit.innerHTML = contact_title;   
+  segdecript.innerHTML = segdes;
+  softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
+  ste.innerHTML = labresSize + ScTechEngine;
+  funct.innerHTML = proTitSize + proces + functTitSize + functional;
+  videotxt.innerHTML = converTitSize + overview_descript;
+  contactFromBreakSet(); 
 }
 
-
 function verticalLine(){
-  if(browser == 0) { // Mobile
+  if(browser == 0) {
     document.getElementById("segdecript").style.columnCount = "1";
     document.getElementById("ste").style.columnCount = "1";
-  } else if(browser == 1) { // PC
+    document.getElementById("headTxt").style.top = "90px"; 
+  } else if(browser == 1) { 
     document.getElementById("segdecript").style.columnCount = "2";
     document.getElementById("ste").style.columnCount = "2";
+    document.getElementById("headTxt").style.top = "103px"; 
   }  
 }
 
@@ -549,4 +550,3 @@ function checkInputs(){
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
-
