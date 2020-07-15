@@ -179,12 +179,13 @@ function loadTxt() {
   contactFromBreakSet(); 
 }
 
+
 function verticalLine(){
   if(browser == 0) {
     document.getElementById("segdecript").style.columnCount = "1";
     document.getElementById("ste").style.columnCount = "1";
     document.getElementById("headTxt").style.top = "96px"; 
-  } else if(browser == 1) { 
+  } else if(browser == 1) {
     document.getElementById("segdecript").style.columnCount = "2";
     document.getElementById("ste").style.columnCount = "2";
     document.getElementById("headTxt").style.top = "109px"; 
@@ -376,8 +377,6 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-/*************************************************************************************************** Hide */
-
 function HBnSVd() {
   document.getElementById("topWrap").style.display = "none";
 }
@@ -522,29 +521,29 @@ function checkInputs(){
   checkVal = 1;   
   MessSendNote('Please enter message');
 } else {
-        /// MessSendNote(contact_txt);  
-        var mvi = validate();
-        if (mvi == false) {
-          MessSendNote('Invalid email address'); 
-          checkVal = 1; 
-        } else if (mvi == true){
-         checkVal = 0; 
-       }       
-     }
-   }
+  var mvi = validate();
+  if (mvi == false) {
+    MessSendNote('Invalid email address'); 
+    checkVal = 1; 
+  } else if (mvi == true){
+   checkVal = 0; 
+ }       
+}
+}
 
-   /*************************************************************************************************** Validate email */
+/*************************************************************************************************** Validate email */
 
-   function validate() {
-    var email = $("#mlname").val();
-    if (validateEmail(email)) { 
-     return true;
-   } else {
-     return false;
-   }
+function validate() {
+  var email = $("#mlname").val();
+  if (validateEmail(email)) { 
+   return true;
+ } else {
+   return false;
  }
+}
 
- function validateEmail(email) {
+function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
+
