@@ -139,7 +139,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     color:white;
     font-weight: bold;
     font-size:96%;
-    font-size:6vw;
+    font-size:4vw;
     -webkit-animation:compression 6s forwards;
   }
 
@@ -150,7 +150,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
    color:white;
    font-weight: bold;
    font-size:93%;
-   font-size:3vw;
+   font-size:2vw;
    -webkit-animation:compression 6s forwards;
  }
 
@@ -158,11 +158,26 @@ body {font-family: Arial, Helvetica, sans-serif;}
    text-shadow: 0 1px 1px white;
    color:#7f949f;  
    font-weight: bold;
-   font-size:10px;
-   font-size:1vw;
+   font-size:12px;
+   font-size:0.8vw; 
    white-space: nowrap;
    padding-left: 12px; 
+   text-align: left;
  }
+
+ .tabSize{
+  /*text-align: left;*/
+  /*table-layout: fixed; width: 80px:*/
+ }
+
+
+.taiLogo {
+  /*height: relative;
+  width: 100%;  */
+  max-width: 3.5vw;
+  max-height: 3.5vw;
+}
+
 
  .bannerTxt{
   background: url(../assets/terbinari_cbm_1.png) no-repeat center center scroll; 
@@ -183,10 +198,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding-top: 73px;
   padding-bottom: 27px;
   width:100%;
-
   position: relative;
-
 }
+
 .banImg .headerTxt{
  position: absolute;
  z-index: 999;
@@ -207,11 +221,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border-width: thin;
   border-radius: 15px;
 } 
-
-.taiLogo {
-  /*width: 12%;
-  height: 12%;*/
-}
 
 .labLogoTxt{
   display: inline-block;
