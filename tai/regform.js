@@ -182,26 +182,23 @@ function loadTxt() {
 
 function verticalLine(){
   if(browser == 0) { // Mobile
-    document.getElementById("segdecript").style.columnCount = "1";
-    document.getElementById("ste").style.columnCount = "1";
-    document.getElementById("headTxt").style.top = "96px"; 
+   // document.getElementById("segdecript").style.columnCount = "1";
+   // document.getElementById("ste").style.columnCount = "1";
+   // document.getElementById("headTxt").style.top = "96px"; 
   /* document.getElementById("hideNamesElement").style.backgroundSize = "contain";
    document.getElementById("hideNamesElement").style.padding = "0px"; 
    document.getElementById("hideNamesElement").style.paddingTop = "99px"; 
    document.getElementById("hideNamesElement").style.paddingBottom = "0px"; */
    /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_0.png') no-repeat center center scroll"; */
-
   } else if(browser == 1) { // PC
-    document.getElementById("segdecript").style.columnCount = "2";
-    document.getElementById("ste").style.columnCount = "2";
-    document.getElementById("headTxt").style.top = "109px"; 
-
-    /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_1.png') no-repeat center center scroll"; */
+   // document.getElementById("segdecript").style.columnCount = "2";
+   // document.getElementById("ste").style.columnCount = "2";
+   // document.getElementById("headTxt").style.top = "109px"; 
+   /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_1.png') no-repeat center center scroll"; */
   /* document.getElementById("hideNamesElement").style.backgroundSize = "none";
    document.getElementById("hideNamesElement").style.padding = "33px"; 
    document.getElementById("hideNamesElement").style.paddingTop = "100px"; 
    document.getElementById("hideNamesElement").style.paddingBottom = "369px"; */
-
  }  
 }
 
