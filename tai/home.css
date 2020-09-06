@@ -7,159 +7,174 @@ Copyright (C) 2020 Lado Oniani, TAI Lab. All Rights Reserved
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
-.form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
+    /*html{
+    scroll-behavior: smooth;
+    }*/
 
-.form-inline label {
-  margin: 5px 10px 5px 0;
-}
+    .form-inline {  
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
 
-.form-inline input {
-  vertical-align: middle;
-  margin: 5px 10px 5px 0;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
+    .form-inline label {
+      margin: 5px 10px 5px 0;
+    }
 
-.form-inline button {
-  padding: 10px 20px;
-  background-color: dodgerblue;
-  border: 1px solid #ddd;
-  color: white;
-  cursor: pointer;
-}
+    .form-inline input {
+      vertical-align: middle;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
 
-.form-inline button:hover {
-  background-color: royalblue;
-}
+    .form-inline button {
+      padding: 10px 20px;
+      background-color: dodgerblue;
+      border: 1px solid #ddd;
+      color: white;
+      cursor: pointer;
+    }
 
-@media (max-width: 800px) {
-  .form-inline input {
-    margin: 10px 0;
+    .form-inline button:hover {
+      background-color: royalblue;
+    }
+
+    @media (max-width: 800px) {
+      .form-inline input {
+        margin: 10px 0;
+      }
+
+      .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    #yuser, #ypass, #fname, #lname, #uname, #mail, #reg_pass, #reg_confirm_pass, #mlname, #mname, #subj, #mess {
+     border-radius: 30px;
+     border: 2px solid #609;
+     padding: 15px; 
+     border-color: #6dc6be;
+     box-sizing: border-box;
+     resize: vertical;
+     border-width: 3px;
+     font-size: 16px;
+     font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+     box-shadow: 3px 3px 12px -3px #b4dbd7; 
+   }
+
+   ::-webkit-input-placeholder { 
+    color: grey;
   }
 
-  .form-inline {
-    flex-direction: column;
-    align-items: stretch;
+  :-ms-input-placeholder { 
+    color: grey;
   }
-}
 
-#yuser, #ypass, #fname, #lname, #uname, #mail, #reg_pass, #reg_confirm_pass, #mlname, #mname, #subj, #mess {
- border-radius: 30px;
- border: 2px solid #609;
- padding: 15px; 
- border-color: #6dc6be;
- box-sizing: border-box;
- resize: vertical;
- border-width: 3px;
- font-size: 16px;
- font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
- box-shadow: 3px 3px 12px -3px #b4dbd7; 
-}
+  ::placeholder {
+    color: grey;
+  }
 
-::-webkit-input-placeholder { 
-  color: grey;
-}
+  input:required {
+    box-shadow:none;
+  }
+  input:invalid {
+    box-shadow:0 0 0px #ffffff;
+  }
 
-:-ms-input-placeholder { 
-  color: grey;
-}
+  body {
+    background: #98D6CB;
+  } 
 
-::placeholder {
-  color: grey;
-}
+  img{
+    width: 69px;
+    height: 69px;
+  }
 
-input:required {
-  box-shadow:none;
-}
-input:invalid {
-  box-shadow:0 0 0px #ffffff;
-}
-
-body {
-  background: #98D6CB;
-} 
-
-img{
-  width: 69px;
-  height: 69px;
-}
-
-@-webkit-keyframes colorchange {
-  from 
-  {
-   background-color: white; 
-   letter-spacing: 15px;  
-   } to 
-   {   
-     background-color: transparent;  
-     letter-spacing: 6px;
+  @-webkit-keyframes colorchange {
+    from 
+    {
+     background-color: white; 
+     letter-spacing: 15px;  
+     } to 
+     {   
+       background-color: transparent;  
+       letter-spacing: 6px;
+     }
    }
+
+   .logoname {
+    display: inline-block; 
+    color:#98d6cb; 
+    font-family: 'Nunito', sans-serif;
+    text-shadow: 0 1px 6px black;
+    border-radius: 63px; 
+    -webkit-animation:colorchange 9s forwards;
+  }
+
+  @-webkit-keyframes compression {
+    from 
+    {
+     text-shadow: 0 1px 5px transparent;
+     /*text-decoration: underline transparent;*/
+     background-color: transparent; 
+     letter-spacing: 1px;  
+     } to 
+     {  
+       text-shadow: 0 1px 5px #222222;
+       /*text-decoration: underline white;*/
+       background-color: transparent;  
+       letter-spacing: 0px;
+     }
+   }
+   
+   .titleName {
+    font-family: 'Nunito', sans-serif;
+    background: transparent;
+    text-decoration: underline white; 
+    text-shadow: 0 1px 5px #222222;
+    border: 0px none;
+    color:white;
+    font-weight: bold;
+    font-size:96%;
+    font-size:4vw;
+    -webkit-animation:compression 6s forwards;
+  }
+
+  .titSubName{
+   font-family: 'Nunito', sans-serif;
+   background: transparent;
+   text-shadow: 0 1px 5px #222222;
+   color:white;
+   font-weight: bold;
+   font-size:93%;
+   font-size:2vw;
+   -webkit-animation:compression 6s forwards;
  }
 
- .logoname {
-  display: inline-block; 
-  color:#98d6cb; 
-  font-family: 'Nunito', sans-serif;
-  text-shadow: 0 1px 6px black;
-  border-radius: 63px; 
-  -webkit-animation:colorchange 9s forwards;
-}
-
-@-webkit-keyframes compression {
-  from 
-  {
-   text-shadow: 0 1px 5px transparent;
-   background-color: transparent; 
-   letter-spacing: 1px;  
-   } to 
-   {  
-     text-shadow: 0 1px 5px #222222;
-     background-color: transparent;  
-     letter-spacing: 0px;
-   }
+ .labTitleStyle {
+   text-shadow: 0 1px 1px white;
+   color:#7f949f;  
+   font-weight: bold;
+   font-size:12px;
+   font-size:0.9vw; 
+   white-space: nowrap;
+   padding-left: 9px; 
+   text-align: left;
  }
- 
- .titleName {
-  font-family: 'Nunito', sans-serif;
-  background: transparent;
-  text-decoration: underline white; 
-  text-shadow: 0 1px 5px #222222;
-  border: 0px none;
-  color:white;
-  font-weight: bold;
-  font-size:96%;
-  font-size:4vw;
-  -webkit-animation:compression 6s forwards;
+
+ .tabSize{
+  /*text-align: left;*/
+  /*table-layout: fixed; width: 80px:*/
+  /* padding-bottom: 5px;*/
 }
 
-.titSubName{
- font-family: 'Nunito', sans-serif;
- background: transparent;
- text-shadow: 0 1px 5px #222222;
- color:white;
- font-weight: bold;
- font-size:93%;
- font-size:2vw;
- -webkit-animation:compression 6s forwards;
-}
-
-.labTitleStyle {
- text-shadow: 0 1px 1px white;
- color:#7f949f;  
- font-weight: bold;
- font-size:12px;
- font-size:0.9vw; 
- white-space: nowrap;
- padding-left: 9px; 
- text-align: left;
-}
 
 .taiLogo {
+  /*height: relative;
+  width: 100%;  */
   max-width: 5.5vw;
   max-height: 5.5vw;
 }
@@ -193,6 +208,7 @@ img{
  margin: 0 auto;
  left: -32%;
  right: 0%;
+ /*top: 16%; 27%;*/ 
  text-align: left;
  width: 60%;
 }
@@ -242,6 +258,9 @@ input[type=text], select, textarea{
   background-color: #b0e3da !important;
   -webkit-appearance: none; 
   outline: none;
+  /*resize: none !important;
+  max-width: 100% !important; 
+  max-height: 300px !important;*/
 }
 
 input[type=submit] {
@@ -385,13 +404,16 @@ h3 span {
 
 body{
   margin:0px;
+  /*overflow: hidden;*/ /* Hide scrollbars */
 }
 .container{
   margin-top:0px;
   margin-bottom:0px;
-}
+   /* margin-left:10%;
+   margin-right:10%;*/
+ }
 
-h1, h2, p{
+ h1, h2, p{
   margin: 0;
   white-space:0;
 }
@@ -559,6 +581,10 @@ h1, h2, p{
   box-shadow:none;
 }
 
+/*.titleName:hover {cursor: pointer;}
+.videoSessionTxt:hover {cursor: pointer;}
+.titSubName:hover {cursor: pointer;}*/
+
 {box-sizing: border-box;}
 
 .open-button {
@@ -695,6 +721,7 @@ h1, h2, p{
   border-radius: 15px;
   padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
   font-size: 15px;
+  /*column-count: 2;*/
   column-gap: 40px;
   column-rule-style: solid;
   padding: 18px;
@@ -772,9 +799,47 @@ a:focus.service-btn{
   text-transform: capitalize;
   margin-top:12px;
   margin-bottom: 15px;
+  }/*.service-txt*/
+
+  .service-single:hover{
+    box-shadow:0 5px 20px rgba(112,134,230,.2);
+    opacity: 1;
+  }
+
+  /************************************/
+
+  @media screen and (min-width: 601px) {
+    h2.newspaper2 {
+      column-count: 2;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    h2.newspaper2 {
+     column-count: 1;
+   }
+ }
+
+ @media screen and (min-width: 601px) {
+  div.newspaper2 {
+    column-count: 2;
+  }
 }
 
-.service-single:hover{
-  box-shadow:0 5px 20px rgba(112,134,230,.2);
-  opacity: 1;
+@media screen and (max-width: 600px) {
+  div.newspaper2 {
+   column-count: 1;
+ }
+}
+
+@media screen and (min-width: 601px) {
+  div.headerTxt {
+   top: 109px;
+ }
+}
+
+@media screen and (max-width: 600px) {
+  div.headerTxt {
+    top: 96px;
+  }
 }
