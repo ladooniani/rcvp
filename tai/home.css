@@ -116,10 +116,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
   .labTitleStyle {
-   text-shadow: 0 1px 1px white;
-   color:#7f949f;  
+   /*text-shadow: 0 1px 1px white;*/
+   font-family: 'Nunito', sans-serif;
+   color:white;/*color:#7f949f;*/
    font-weight: bold;
-   /*font-size:12px;*/
    font-size:0.9vw; 
    white-space: nowrap;
    padding-left: 9px; 
@@ -138,6 +138,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%;  */
  /* max-width: 5.5vw;
  max-height: 5.5vw;*/
+}
+
+hr.contactFormLine {
+ border-top: 1px solid white;
+ border-radius: 0px;
+ /*padding: -23px; 
+ font-size: 4px;*/
 }
 
 @-webkit-keyframes compression {
@@ -188,7 +195,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
  }
 
  .labTitleStyle{
-  font-size:12px;
+  font-size:13px;
 }
 
 .titleName{
@@ -200,16 +207,20 @@ body {font-family: Arial, Helvetica, sans-serif;}
  font-size:93%;
  font-size:2vw;
 }
+
+.headerTxt{
+ top: 0px;
+}
 }
 
 @media screen and (max-width: 600px) {
   img.taiLogo {
-    max-width: 13.5vw;
-    max-height: 13.5vw;
+    max-width: 9.5vw;
+    max-height: 9.5vw;
   }
 
   .labTitleStyle{
-    font-size:11px;
+    font-size:9.5px;
   }
 
   .titleName{
@@ -221,6 +232,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
     font-size:110%;
     font-size:4vw;
   }
+
+  .headerTxt{
+   top: 0px;
+ }
 }
 
 .bannerTxt{
@@ -773,11 +788,6 @@ body{
 
 .tit{
  padding: 18px;
-}
-
-hr.contactFormLine {
- border-top: 1px solid black;
- border-radius: 3px; 
 }
 
 /**************************************/
