@@ -114,51 +114,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
     -webkit-animation:colorchange 9s forwards;
   }
 
-  @-webkit-keyframes compression {
-    from 
-    {
-     text-shadow: 0 1px 5px transparent;
-     /*text-decoration: underline transparent;*/
-     background-color: transparent; 
-     letter-spacing: 1px;  
-     } to 
-     {  
-       text-shadow: 0 1px 5px #222222;
-       /*text-decoration: underline white;*/
-       background-color: transparent;  
-       letter-spacing: 0px;
-     }
-   }
-   
-   .titleName {
-    font-family: 'Nunito', sans-serif;
-    background: transparent;
-    text-decoration: underline white; 
-    text-shadow: 0 1px 5px #222222;
-    border: 0px none;
-    color:white;
-    font-weight: bold;
-    font-size:96%;
-    font-size:4vw;
-    -webkit-animation:compression 6s forwards;
-  }
 
-  .titSubName{
-   font-family: 'Nunito', sans-serif;
-   background: transparent;
-   text-shadow: 0 1px 5px #222222;
-   color:white;
-   font-weight: bold;
-   font-size:93%;
-   font-size:2vw;
-   -webkit-animation:compression 6s forwards;
- }
-
- .labTitleStyle {
+  .labTitleStyle {
    text-shadow: 0 1px 1px white;
    color:#7f949f;  
    font-weight: bold;
-   font-size:12px;
+   /*font-size:12px;*/
    font-size:0.9vw; 
    white-space: nowrap;
    padding-left: 9px; 
@@ -175,10 +136,92 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .taiLogo {
   /*height: relative;
   width: 100%;  */
-  max-width: 5.5vw;
-  max-height: 5.5vw;
+ /* max-width: 5.5vw;
+ max-height: 5.5vw;*/
 }
 
+@-webkit-keyframes compression {
+  from 
+  {
+   text-shadow: 0 1px 5px transparent;
+   /*text-decoration: underline transparent;*/
+   background-color: transparent; 
+   letter-spacing: 1px;  
+   } to 
+   {  
+     text-shadow: 0 1px 5px #222222;
+     /*text-decoration: underline white;*/
+     background-color: transparent;  
+     letter-spacing: 0px;
+   }
+ }
+
+ .titleName {
+  font-family: 'Nunito', sans-serif;
+  background: transparent;
+  text-decoration: underline white; 
+  text-shadow: 0 1px 5px #222222;
+  border: 0px none;
+  color:white;
+  font-weight: bold;
+    /*font-size:96%;
+    font-size:4vw;*/
+    -webkit-animation:compression 6s forwards;
+  }
+
+  .titSubName{
+   font-family: 'Nunito', sans-serif;
+   background: transparent;
+   text-shadow: 0 1px 5px #222222;
+   color:white;
+   font-weight: bold;
+   /*font-size:93%;
+   font-size:2vw;*/
+   -webkit-animation:compression 6s forwards;
+ }
+
+
+ @media screen and (min-width: 601px) {
+  img.taiLogo {
+   max-width: 5.5vw;
+   max-height: 5.5vw;
+ }
+
+ .labTitleStyle{
+  font-size:12px;
+}
+
+.titleName{
+ font-size:96%;
+ font-size:4vw;
+}
+
+.titSubName{
+ font-size:93%;
+ font-size:2vw;
+}
+}
+
+@media screen and (max-width: 600px) {
+  img.taiLogo {
+    max-width: 13.5vw;
+    max-height: 13.5vw;
+  }
+
+  .labTitleStyle{
+   font-size:14px;
+ }
+
+ .titleName{
+  font-size:110%;
+  font-size:6vw;
+}
+
+.titSubName{
+  font-size:110%;
+  font-size:4vw;
+}
+}
 
 .bannerTxt{
   background: url(../assets/terbinari_cbm_1.png) no-repeat center center scroll; 
