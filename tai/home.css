@@ -300,11 +300,12 @@ hr.formLine { display: block; }
 }
 
 .cps {
-  text-shadow: 0 1px 1px white;
+ /* text-shadow: 0 1px 1px white;
   font-weight: bold !important;
   color:#7f949f;
   font-weight: 300%; 
-  font-size:16px !important;
+  font-size:16px !important;*/
+  color:grey;
 }
 
 hr.lowerLine {
