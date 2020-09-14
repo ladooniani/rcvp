@@ -142,12 +142,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 hr.contactFormLine {
   border-top: 1px solid black;
- border-radius: 0px;
+  border-radius: 0px;
 }
 
 hr.formLine {
   border-top: 1px solid white;
- border-radius: 0px;
+  border-radius: 0px;
 }
 
 @-webkit-keyframes compression {
@@ -212,8 +212,10 @@ hr.formLine {
 }
 
 .headerTxt{
- top: 0px;
+ /*top: 0px;*/
 }
+
+hr.formLine { display: block; }
 }
 
 @media screen and (max-width: 600px) {
@@ -237,9 +239,14 @@ hr.formLine {
   }
 
   .headerTxt{
-   top: 0px;
+   /*top: 0px;*/
  }
+
+ hr.formLine { display: none; } 
 }
+
+
+
 
 .bannerTxt{
   background: url(../assets/terbinari_cbm_1.png) no-repeat center center scroll; 
