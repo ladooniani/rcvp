@@ -1,232 +1,566 @@
-<!--
-Project: terbinari.tech website code 
+/*
+Project:  terbinari.tech website code 
 Written by Lado Oniani github.com/ladooniani
 Copyright (C) 2020 Lado Oniani, TAI Lab. All Rights Reserved    
--->
+*/
+/*************************************************************************************************** Text */
+var notereq, browser; 
+var hello = 'Hello, ';
+var confMess = '<br/><br/> Thank you for visit terbnari.tech <br/><br/> This automatic notification confirms that your message has been received and will be examined according to context, after that you will get answer within a few working days. <br/><br/> Best regards <br/><br/> Toy Artificial Intelligence <br/> Research, innovation and technology development <br/> Intelligent systems and robotics laboratory'; 
+var a0 = 'RESEARCH AND TECHNOLOGY DEVELOPMENT<br><br>';
+var research_title = '● Research';
+var b0 = '<br><br><u>Overview</u><br><br>';
+var b1 = '&nbsp; Operating program interface interacts with training and conversation system response output personified in artificial entity endowed with individual memory slot, represents dialog processing models in text-to-text, text-to-voice or voice-to-voice modes and robot control methods, which mechanical recall provides tracking orientation and eye contact with user/interlocutor, as well as mouth device synchronization with speech motility events.<br><br>'; 
+var b2 = '<u>Prototype application compatibility and usage</u><br><br>&nbsp;  Particular Terbinari software implementation developed on Microsoft Windows OS platform with using of system speech synthesis/recognition references and external CV library output.';
+var descriptproto = b0 + b1 + b2;
+var descript_proto_title = '● Overview';
+var c0 = 'APPLICATION SOFTWARE AND ROBOT DEVICE<br><br>';
+var c1 = '&nbsp; Terbinari operating program represents interactive training and conversation model, natural language processing semantic analysis/matching logic algorithms and controller operating methods.';
+var c2 = '<br><br>&nbsp; Artificial conversational entity performs input/output question-answering, learning, spoken dialog system with multi-function chat-bot interface and anthropomorphic humanoid robot Control Bot Mechanism animatronics operator. Cervical motility device implements mouth speech events motion and eyes/head tracking contact and response under facial detection/recognition process of computer vision.';                
+var c3 = '<br><br>&nbsp; Bot operates individual unique memory content updated by Interlocutor input in frames of the system legal code. Answer defines output for dialogue as a tool of reflective analysis by returning efferent recall from human-like machine cognitive function. Embodies autonomous companion simulator as trainable virtual teach assistant and agent of compensatory intercourse for various interactive communication tasks.';  
+var appsoft_robotdevice = c0 + c1 + c2 + c3;
+var appsoft_robotdevice_title = '● Software and device';
+var video_session_txt = "&nbsp;Following video session represents interaction with Terbinari operating program artificial conversational entity training and dialogue model I/O QA system semantic processing algorithms with chat-bot interface and prototype humanoid robot CBM (Control Bot Mechanism) device.";
+var overview_descript = video_session_txt + descriptproto;
+var videoSession_title = 'Terbinari CBM conversations';
+var lab_title = 'Toy Artificial Intelligence <br>Research, innovation and technology development <br>Intelligent systems and robotics laboratory <br>'; 
+var ritd = 'Research, innovation and technology development'; 
+var isrb = 'Intelligent systems and robotics laboratory'; 
+var terbinari = 'T e r b i n a r i';
+var cbm = 'C B M';
+var operating_program = 'Operating program';
+var cbm_subtitle = 'Control Bot Mechanism';
+var terb_cbm = 'Terbinari CBM';
+var web_assist = 'Web Assistant';
+var contact_link = 'Contact';
+var contact_title = 'Contact';
+var logo_name = 'T A I';
+var scTechEngiTit = '<u>Research and development</u>';
+var ScTechEngine = '&nbsp;"Toy Artificial Intelligence"  science, technology and engineering laboratory operates on an independent creative platform of experimental development research in the field of intelligent system and mechanics, based on computational linguistics, automatic natural language processing and mechatronics concepts by inventor Lado Oniani.<br><br>&nbsp;Implementation startup based on theory of logic was started in 2016 in home laboratory environment with multidisciplinary engineering approach, designing an operating program of robot training and conversation model semantic analysis and motility operator methods. <br><br> <hr class="contactFormLine"> <br> &nbsp;Research in the lab focuses on the development of operating system and robotics, inspired and based on idea of experiment create information processing algorithms and control methods to design artificial conversational entity cognitive/associative learning/dialogue system  integrated with anthropomorphic and bio-inspired robotics architecture.<br><br>&nbsp;Development is focused on forming intercommunication habitat network environment and assistive technology, adaptable for specialized use such as education, entertainment or therapy with modeling and simulation conversational setup via human-machine interface, behavior observation, study, development, optimization and accumulation potentially derivative experiment.<br><br>&nbsp;Work fuses development of computing techniques in computational linguistics, natural language processing/generation, machine/robot learning, computer vision scene understanding and mechanical engineering.<br> <br><img src="assets/terbinari-4.jpg" class="images"/><br><br>  <br>&nbsp;Research and conceptual experiment in design of artificial environment and synthetic entity processes creation references to search of the clues in fundamental science of consciousness and universe interdependence.<br><br>&nbsp;The subject determines behavior, depending on its environment and rule conditions, defines action, creates or looks for the method, makes logical conclusion or abstract choice, selecting and using available information or search for alternatives.<br><br>&nbsp;Imagine that in current stage of the human evolution we should pass through the change in our development process, in this case with imperative use and intervention of mind to deal with such global task. To achieve this result, it is enough consider obvious constants of condition, such as mercy and health against cruelty and disease, to accelerate process for benefit, just by rejection of organic food, make significant step in act of biological revolution, and what is even more important "conscious choice". Accessibility of such reasoned and seemingly simple choice largely depends on rules of our learning, where evaluating the meaning of values plays a key role in decision making, directly related to associative context and personal experience, which determine a lot in the mechanism of subjective attitude and interpretation of objective state.<br><br>&nbsp;This model is applicable to derivative systems endowed with weak, but similar ability of behavior and analytically simpler to understand and control. Convenient to use figurative comparison where using of tool does not defines tool, as content of a vessel does not defines a vessel, but correct relation determines value for both.<br><br>&nbsp;This idea provokes an experiment that should observe how cognitive abstraction would develop with reflective experience, capable differentiate content based meaning and use logic to find relationship between the value and object.<br><br> <hr class="contactFormLine"> <br>&nbsp;Prototype custom technology production includes information processing algorithms, control methods and implementing terminal application software desktop and web platform of Unit Network environment, as well as inventing mechanics aimed on modeling and designing humanoid anthropomorphic robot architecture.<br><br>&nbsp;Technology development and experiment focuses on creation of invention prototype design solution based on cognitive abstraction original concepts and research.<br><br><hr class="contactFormLine"> <br>&nbsp;Principal course is aimed to expansion semantic processing core as a main system layer. Vision focused on evolution of training and conversation model operation control with number of directions on conceptual basis, which Implies a deepening of abstraction to reach understanding by inherent characteristics and create system able to learn and interact using unique content of personal memory as key to the abstract path in process of creation building blocks of contextual association system. Inclusion of an experimental toy-brain into a toy-body with user access, technologically oriented on simplicity and softness of behavior and usage in interaction feedback of cognitive recall impression. <br><br>&nbsp;Functionally surrounded void of artificial entity, that does not knows anything by default, able endlessly learn from you, understand meaning of growing information and use it to build own synthetic personality, become perceptive carrier to reflect and inference received informational knowledge in natural way of dynamic conversation.<br><br><hr class="contactFormLine"> <br>&nbsp;Conversational interaction environment prescribable for such tasks as assistance of topical training, autism educational/therapy exercise, as well psycho-linguistics and synthetic psychology human-computer interaction experiment, or any other specific usage with requirement of creating contextual memory content and dialog model scenario performance within building semantically personified cognition and output structure.<br><br>&nbsp;Training and conversation processing provides grow of personal memory as useful overlay and output display communication access to key controls and operation data for experimental usage as test tool incarnation. Considers creation of surrogate platform based on original system, such as library of functions and adaptive control module device. <br><br><hr class="contactFormLine"> <br>&nbsp;To develop and expand independent research workflow the laboratory is looking for support funds from practical investment and intellectual collaboration to promote project, improve development environment and speed up conceptual strategy process, which leads to more involved research in frames of related technology and search for other references.<br><br>  <i class="fa fa-file-pdf-o" aria-hidden="true" style="font-size:24px;color:blue"></i> &nbsp; <a target="_blank" class="tlink" href="https://github.com/ladooniani/tailab/blob/master/docs/tai.pdf">TAI Lab. Terbinari CBM Project description</a><br><br><br>';
+var functional = '&nbsp;Neutral language processing/generation semantic analysis/matching algorithms brain core and operation control methods I/O system with multi-function chat-bot terminal desktop software application interface and head/eyes/mouth control bot mechanism robot device with position/coordinate step receiver controller.<br><br>&nbsp; • Learn from communication and talk to interlocutor, answer and ask with memory adding/editing option, providing functions control built-in conversation interface in frames of system legal code filter, receive and react to action commands by attached request.<br><br>&nbsp; • Operate as topic teacher e.g. with "astronomy" appeal, question contexts and answer output.<br> <br><img src="assets/terbinari-0.jpg" class="images"/><br><br>  <br>&nbsp; • Support conversation in text-to-text, text-to-voice, speech-to-voice with input pronunciation type chats and voice-to-voice speech recognition mode, operate in open training and close testing memory state with answer not found condition search method and speak with mouth lips viseme motility event.<br><br>&nbsp; • See – detect, recognize introduced person, track with eye contact and head orientation following interlocutor position, blink eyelids. <br><br>&nbsp; Desktop application software installation provides access to system terminal chat-bot interface and 6V CBM robot controller device with USB serial port connection, going through registration in Unit Network user profile access to local and server based memory storage with using of Microsoft OS speech references and available system display language.';  
+var proces = '&nbsp;Training and conversation model are close to the natural way of receiving information, when we ask question and answering, looking or requesting for answer. This way training turn into the way of writing a book by creating contextual scenario of personality able to process, evaluate and use this data for internal construction of semantic association and dialogue generation.<br><br>&nbsp;Training and conversation starts from empty memory content, during dialog, void starts fill up and grow by individual user/teacher interlocutor input, giving and requesting for questions/answers, thereby building artificial entity personified memory content to reflect and manipulate with direct return, search or generating answer through the processing and understanding of existing content, create and dynamically follow context nodes, find meaning of the subject by relations from entire content without direct link between word and its meaning at the time of determination, output hypothetical conclusion and request for new key of value.<br><br>&nbsp;Return of direct answers to given questions prescribing by user/interlocutor through the processing core directly reflects or operates to understand content of conversation, defining answer, and building personality structure to output cognitive recall on computational semantics level.'; 
+var amina = '<div id="container" class="inline" ></div>';
+var segdes = amina + '<u><a href="#w3" class="tlink"> Terbinari (Operating program)</a></u> <br><br>&nbsp;&nbsp;&nbsp;&nbsp; • Training and conversation model<br>&nbsp;&nbsp;&nbsp;&nbsp; • Semantic processing algorithms<br>&nbsp;&nbsp;&nbsp;&nbsp; • Controller operating methods <br><br>' + amina + ' <u>&nbsp;<a href="#w1" class="tlink">Tet (Artificial conversational entity)</a></u> <br><br>' + amina + ' <u>&nbsp;<a href="#w3" class="tlink">CBM (Control bot mechanism)</a></u> <br><br>&nbsp;&nbsp;&nbsp;&nbsp; • Robot device';
+var diagImg = '<img src="assets/terbinari-pro-1.png" class="images"/><br><br>  <br>&nbsp;';
+var labBanImg = '<img src="assets/tai-lab.png" class="images"/><br><br> &nbsp;';
+var functTit = '<br><br><u>Functionality</u><br><br>';
+var converTit = '<u>Conversations</u><br><br>';
+var softDevTit = '<u>Software and device</u><br><br>';
+var labresTit = '<u>Research and technology development</u><br><br>';
+var proTit = '<u>Processing</u><br><br>';
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="msvalidate.01" content="90AE628C13278852DCC8FDE8FEB65CA7" />
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-	<meta name="description" content="Toy Artificial Intelligence, 
-	Research, innovation and technology development,
-	Intelligent systems and robotics laboratory">
-	<meta name="author" content="Lado Oniani">
-	<meta name="keywords" content="terbinari, cbm, robot, tet, android, ai, toy artificial intelligence, lado oniani"/>
-	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
-	<meta name="og:image" content="https://terbinari.tech/assets/terbinari-1.jpg"/>
-	<meta property="og:title" content="Terbinari">
-	<meta property="og:description" content="Toy Artificial Intelligence, 
-	Research, innovation and technology development,
-	Intelligent systems and robotics laboratory">
-	<meta property="og:url" content="https://terbinari.tech/">
-	<meta name="subject" content="Science, technology and engineering laboratory">
-	<meta name="copyright"content="Toy Artificial Intelligence">
-	<meta name="abstract" content="Terbinari CBM">
-	<meta name="topic" content="Software and device">
-	<meta name="summary" content="Research, innovation and technology development">
-	<meta name="Classification" content="Science">
-	<meta name="designer" content="Lado Oniani">
-	<meta name="copyright" content="Lado Oniani">
-	<meta name="reply-to" content="terbinari@gmail.com">
-	<meta name="owner" content="Lado Oniani">
-	<meta name="url" content="https://terbinari.tech/">
-	<meta name="identifier-URL" content="https://terbinari.tech/">
-	<meta name="directory" content="submission">
-	<meta name="category" content="AI and robotics">
-	<meta name="coverage" content="Worldwide">
-	<meta name="distribution" content="Global">
-	<meta name="rating" content="General">
-	<meta name="revisit-after" content="7 days">
-  <!-- <meta http-equiv="Expires" content="0">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Cache-Control" content="no-cache"> -->
-  <link rel="shortcut icon" href="assets/favicon.ico">
-  <title>T A I</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
-  <link href="css/flexslider.css" rel="stylesheet">
-  <link href="tai/home.css" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet"> 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  	@keyframes rotateImages {
-  		0%   { background: url("assets/1.svg"); }
-  		32%   { background: url("assets/1.svg"); }
-  		33%  { background: url("assets/2.svg"); }
-  		65%  { background: url("assets/2.svg"); }
-  		66% { background: url("assets/3.svg"); }
-  		100% { background: url("assets/3.svg"); }
-  	}
-  	@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
-  </style>
-</head>
-<body>
-	<a id="topWarp"></a>
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="myDiv">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>        
-			</div>
-			<div class="collapse navbar-collapse appiNav">
-				<ul class="nav navbar-nav">  
-					<li><a class="nav-link" href="#" onclick="hnb()">TAI Lab</a></li>      
-					<li><a class="nav-link" href="#w1" onclick="hnb()">Soft and device</a></li>    
-					<li><a class="nav-link" href="#w2" onclick="hnb()">Conversation</a></li>   
-					<li><a class="nav-link" href="#w3" onclick="hnb()">Process</a></li>            
-					<li><a class="nav-link" href="#w5" onclick="hnb()">Research</a></li>   
-					<li><a class="nav-link" href="#contact" onclick="hnb()">Contact</a></li> 
-					<!--<li><a class="nav-link" href="https://ladooniani.github.io/tai/" target="_blank">LabLink</a></li> -->                  
-				</ul> 
-			</div> 
-		</div>
-	</div>
-	<section><!-- Content  -->
-		<div  class="container">
-			<div class="service-details">
-				<div class="section-header text-left">
-					<div class="banImg">
-						<img src="assets/terbinari-1.jpg" class="images"/>   
-						<div><!--<div id="hideNamesElement" class="bannerTxt"> --><!-- Title background banner -->
-							<div class="headerTxt" id="headTxt">
-<!--          <h1 class="labLogoTxt"><img src="assets/tai.png" alt=""/ class="taiLogo">
-                <div class="labTitleStyle" id="labTitle">--><!--lab title--><!--</div>
-            </h1>   -->
-            <table class="tabSize"><tr><td><img src="assets/terbinari.png" class="taiLogo"></td><td id="labTitle" class="labTitleStyle"> </td></tr></table>  
-            <hr class="formLine"> 
-            <h1><div id="terbinari_title" class="titleName" ><!--T e r b i n a r i--></div></h1>
-            <h2 id="operPro" class="titSubName"><!-- Operating program--></h2> 
-            <h1><div id="cbm_title" class="titleName" ><!-- C B M--></h1>
-            	<h2 id="cbmSubtitle" class="titSubName"><!--Control Bot Mechanism--></h2>   
-            </div>     
-        </div> <!-- </div> -->
-    </div>
-</div>  
-<h2 id="segdecript" class="newspaper2"><!-- Software and device title --></h2> <!--Title links -->
-<h2 class="tit" id="w1"></h2> <!-- Software and device   -->
-<img src="assets/terbinari-3.jpg" class="images"/>   
-<br id="break"></br>   
-<div class="newspaper2" id="softdev"><!-- Software and device text --></div>
-<h2 class="tit" id="w2"></h2> <!-- Conversation -->
-<div class="embed-responsive embed-responsive-16by9">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLz-uAJOvLjs0D5dGJIcGOwpURkVAGzvHU&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>        
-<br>              
-<div class="newspaper2" id="videotxt"><!--Conversation text --></div>
-<h2 class="tit" id="w3"></h2> <!--Functionality -->
-<img src="assets/terbinari-pro-1.png" class="images"/> 
-<br id="break"></br>   
-<div class="newspaper2" id="funct"><!--Functionality text--></div>       
-<h2 class="tit" id="w5"></h2>   <!-- Research and development -->
-<img src="assets/terbinari-2.jpg" class="images"/>
-<br id="break"></br>   
-<div class="newspaper2" id="ste"><!--Research and development text text--></div> 
-<br id="break"></br>   
-</div>
-</div>
-</div>
-<div  class="container" id="contact"> <!-- Contact  -->
-	<div class="contactForm"> 
-		<br id="break"></br>      
-		<div class="section-header contact-head  text-center">
-			<h2 id="contactTit"><!--contact title--></h2>
-		</div>          
-		<center>   
-			<form id="my-form"action="https://formspree.io/xoqkdoeg"method="POST">                
-				<br id="break"></br>  
-				<div class="row">
-					<div class="col-25"></div>
-					<div class="col-75" data-validate = "Valid email is required: ex@abc.xyz">
-						<input type="email" name="email" id="mlname" class="input1" placeholder="Email..">
-						<span class="shadow-input1"></span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-25"></div>
-					<div class="col-75" data-validate = "Message is required">
-						<br/> 
-						<textarea rows="7" type="text" name="message" id="mess" placeholder="Message.."></textarea>
-						<span class="shadow-input1"></span>
-						<br id="break"></br>   
-						<input class="dialogOut" type="submit" value="Send" id="messBtn">
-					</div>
-				</div>
-			</form> 
-			<center>   
-			</div> 
-		</div> 
-		<br id="break"></br>   
-	</section> 
-	<footer id="footer"> <!-- Footer  -->
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<p class="social">           
-						<a target="_blank" href="https://www.youtube.com/channel/UC0Z161RgR5KpwPLvEDzkk9Q?view_as=subscriber">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
-							</span> 
-						</a> 
-						<a target="_blank" href="https://github.com/ladooniani">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>    
-						<a target="_blank" href="https://www.facebook.com/terbinari">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-						<a target="_blank" href="https://twitter.com/ArtificialToy">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-						<a target="_blank" href="https://www.instagram.com/terbinari_cbm">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-					</p>
-					<div id="hideCR">
-						<h3>
-							<div class="labTitleStyle2" id="labTitle2">
-								<p id="cr" class="cps"><!-- Copyright --></p>
-							</div>
-						</h3>
-					</div>
-				</div>
-			</div>
-		</div> 
-	</footer>                      
-	<!---------------------------------------------------------------------------------------->
-    <!-- Bootstrap core JavaScript
-    	================================================== -->
-    	<!-- Placed at the end of the document so the pages load faster -->
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    	<script src="js/bootstrap.min.js"></script>
-    	<script src="js/flexslider.js"></script>
-    	<!--------------------------------- External JS ------------------------------------------>
-    	<script type="text/javascript" src="tai/regform.js"></script>
-    	<!-- <script type="text/javascript" src="terbinari/js/terbinari_assistent.js"></script>  -->
-    	<script src="https://www.youtube.com/iframe_api"></script>   
-    	<script src="https://www.youtube.com/player_api"></script> 
-    	<!---------------------------------------------------------------------------------------->
-    </body>
-    </html>
+/*************************************************************************************************** Load */
+loadFnc();
+function loadFnc(){
+  scrollOnTop();
+  CheckPhoneOrMobileBrowser();
+  loadTxt();
+  CheckBrowser();
+  verticalLine();
+  //scrollOnTop();
+}
+/*************************************************************************************************** Slider */
+$(document).ready(function() {
+
+  $('.mobileSlider').flexslider({
+    animation: "slide",
+    slideshowSpeed: 3000,
+    controlNav: false,
+    directionNav: true,
+    prevText: "&#171;",
+    nextText: "&#187;"
+  });
+  $('.flexslider').flexslider({
+    animation: "slide",
+    directionNav: false
+  });
+
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if ($(window).width() < 768) {
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top - $('.navbar-header').outerHeight(true) + 1
+          }, 369);
+          return false;
+        }
+      }
+      else {
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top - $('.navbar').outerHeight(true) + 1
+          }, 369);
+          return false;
+        }
+      }
+
+    }
+  });
+  
+  $('#toTop').click(function() {
+    $('html,body').animate({
+      scrollTop: 0
+    }, 1000);
+  });
+  
+  var timer;
+  $(window).bind('scroll',function () {
+    clearTimeout(timer);
+    timer = setTimeout( refresh , 50 );
+  });
+  var refresh = function () {
+    if ($(window).scrollTop()>100) {
+      $(".tagline").fadeTo( "slow", 0 );
+    }
+    else {
+      $(".tagline").fadeTo( "slow", 1 );
+    }
+  }; 
+});
+/*************************************************************************************************** Desible submit if txtBox not filled */
+const inputSelector = ':input[required]:visible';
+function checkForm() { 
+  var isValidForm = true;
+  $(this.form).find(inputSelector).each(function() {
+    if (!this.value.trim()) {
+      isValidForm = false;
+    }
+  });
+  $(this.form).find('.monitored-btn').prop('disabled', !isValidForm);
+  return isValidForm;
+}
+$('.monitored-btn').closest('form')
+.submit(function() {
+  return checkForm.apply($(this).find(':input')[0]);
+})
+.find(inputSelector).keyup(checkForm).keyup();
+/*************************************************************************************************** Hide nav bar after click */
+/*$('.nav-link').on('click',function() { $('.navbar-collapse').collapse('hide'); });*/
+function hnb() {
+  $('.navbar-collapse').collapse('hide');
+}
+/*************************************************************************************************** Tool tip for password note */
+$(document).ready(function(){ $('[data-toggle="tooltip"]').tooltip(); });
+/***************************************************************************************************  Year */
+getDate();
+function getDate(){
+  var d = new Date();
+  var n = d.getFullYear();
+  var cpr = 'Copyright &copy; 2016-'+ n +' TAI Lab. All Rights Reserved';
+  document.getElementById("cr").innerHTML = cpr;
+}
+/***************************************************************************************************  Scroll on top */
+$(document).ready(function(){
+  $(this).scrollTop(0);
+});
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+/***************************************************************************************************  Page func */
+/****************************************************************************************************************/
+/***************************************************************************************************  Load text */
+function loadTxt() {
+  var softDevTitSize = softDevTit.fontsize(4);
+  var converTitSize = converTit.fontsize(4);
+  var functTitSize = functTit.fontsize(4);
+  var labresSize = labresTit.fontsize(4);
+  var proTitSize = proTit.fontsize(4);
+  labTitle.innerHTML = lab_title;
+  terbinari_title.innerHTML = terbinari;
+  operPro.innerHTML = operating_program;
+  cbm_title.innerHTML = cbm; 
+  cbmSubtitle.innerHTML = cbm_subtitle;
+  contactTit.innerHTML = contact_title;   
+  segdecript.innerHTML = segdes;
+  softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
+  ste.innerHTML = labBanImg + labresSize + ScTechEngine;
+  funct.innerHTML = proTitSize + proces + functTitSize + diagImg + functional;
+  videotxt.innerHTML = converTitSize + overview_descript;
+  contactFromBreakSet(); 
+}
+
+
+function verticalLine(){
+  if(browser == 0) { // Mobile
+   // document.getElementById("segdecript").style.columnCount = "1";
+   // document.getElementById("ste").style.columnCount = "1";
+   // document.getElementById("headTxt").style.top = "96px"; 
+  /* document.getElementById("hideNamesElement").style.backgroundSize = "contain";
+   document.getElementById("hideNamesElement").style.padding = "0px"; 
+   document.getElementById("hideNamesElement").style.paddingTop = "99px"; 
+   document.getElementById("hideNamesElement").style.paddingBottom = "0px"; */
+   /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_0.png') no-repeat center center scroll"; */
+  } else if(browser == 1) { // PC
+   // document.getElementById("segdecript").style.columnCount = "2";
+   // document.getElementById("ste").style.columnCount = "2";
+   // document.getElementById("headTxt").style.top = "109px"; 
+   /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_1.png') no-repeat center center scroll"; */
+  /* document.getElementById("hideNamesElement").style.backgroundSize = "none";
+   document.getElementById("hideNamesElement").style.padding = "33px"; 
+   document.getElementById("hideNamesElement").style.paddingTop = "100px"; 
+   document.getElementById("hideNamesElement").style.paddingBottom = "369px"; */
+ }  
+}
+
+function contactFromBreakSet(){ 
+ document.getElementById("break").style = 'line-height:3'; 
+}
+
+var count = 0;
+function linkOpenClose(){
+ count++;
+ if (count % 2 == 0){
+  contact_title = '● Contact';
+  research_title = '● Research';
+  appsoft_robotdevice_title = '● Software and device';
+  descript_proto_title = '● Overview';
+} else {
+  contact_title = '';
+  research_title = '';
+  appsoft_robotdevice_title = '';
+  descript_proto_title = '';    
+}
+contactTitle.innerHTML = contact_title;  
+softDevTitle.innerHTML = appsoft_robotdevice_title;
+descriptProtoTitle.innerHTML = descript_proto_title;
+researchTitle.innerHTML = research_title; 
+}
+
+/***************************************************************************************************  Title link */
+
+function hideTxt(x) {
+  linkOpenClose();
+  if (x == 1){
+    TitleName(); 
+    HideElement2(); 
+    HideElement3(); 
+    HideElement4(); 
+    HideElement5(); 
+    TitleCoptright();
+  } else if (x == 2) {
+    TitleName(); 
+    HideElement1(); 
+    HideElement3(); 
+    HideElement4(); 
+    HideElement5(); 
+    TitleCoptright();
+  } else if (x == 3) {
+    TitleName(); 
+    HideElement1(); 
+    HideElement2(); 
+    HideElement4(); 
+    HideElement5(); 
+    TitleCoptright();
+  } else if (x == 4) {
+    TitleName(); 
+    HideElement1(); 
+    HideElement2(); 
+    HideElement3(); 
+    HideElement5(); 
+    TitleCoptright();
+  } else if (x == 5) {
+    TitleName(); 
+    HideElement1();  
+    HideElement2(); 
+    HideElement3(); 
+    HideElement4(); 
+    TitleCoptright();
+  } 
+} 
+
+function HideElement1(){
+  var x = document.getElementById("hideElement1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function HideElement2(){
+ var x = document.getElementById("hideElement2");
+ if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}
+}
+
+function HideElement3(){
+ var x = document.getElementById("hideElement3");
+ if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}
+}
+
+function HideElement4(){
+ var x = document.getElementById("hideElement4");
+ if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}
+}
+
+function HideElement5(){
+ var x = document.getElementById("hideElement5");
+ if (x.style.display === "none") {
+  x.style.display = "block";
+} else {
+  x.style.display = "none";
+}
+}
+
+function HideVideo(){
+ var x = document.getElementById("hideElement4");
+ x.style.display = "none";
+}
+
+function ShowVideo(){
+ var x = document.getElementById("hideElement4");
+ x.style.display = "block";
+}
+
+function TitleName(){
+  var x = document.getElementById("hideNamesElement");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function TitleCoptright(){
+  var x = document.getElementById("hideCR");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function showDefault(){
+  location.reload();
+}
+
+/*************************************************************************************************** Contact dialog setup*/
+
+function CheckPhoneOrMobileBrowser(){
+ if($(window).width()<=1199) { 
+    browser = 0; // Mobile
+  } else {
+    browser = 1; // PC 
+  } 
+}
+
+var isChrome; var isFirefox;
+function CheckBrowser(){
+  isFirefox = typeof InstallTrigger !== 'undefined';
+  isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+}
+
+function MessSendNote(var1){
+  document.getElementById("messBtn").value = var1;  
+  notereq = 'Send';  
+  setTimeout(delayedQuestion, 2000);  
+}
+
+function delayedQuestion() {
+ document.getElementById("messBtn").value = notereq;  
+}
+
+function Clean(){
+  document.getElementById("mname").value = ""; 
+  document.getElementById("mlname").value = ""; 
+  document.getElementById("mess").value = ""; 
+}
+
+/*************************************************************************************************** Popup login*/
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+/*************************************************************************************************** Hide */
+
+function HBnSVd() {
+  document.getElementById("topWrap").style.display = "none";
+}
+
+function HPgSBn() {
+  document.getElementById("topWrap").style.display = "block";
+  //scrollOnTop(); 
+}
+
+function WebAssist(){ 
+  document.getElementById("topWrap").style.display = "none";
+}
+
+function ContactForm(){
+  document.getElementById("topWrap").style.display = "none";                                        
+  //scrollOnTop();
+}
+
+function scrollOnTop() {
+
+  window.scrollTo(0, 0);
+
+  var videoBlock = document.getElementById("topWarp");   
+  videoBlock.scrollIntoView({
+    behavior: "smooth", 
+    block: 'start',
+  });
+} 
+
+$("#contactLink").click(function() {   
+  ContactForm();                                               
+}); 
+$("#terbCbm").click(function() {   
+///...
+}); 
+$("#cbm_title").click(function() {   
+///...
+}); 
+$("#videoSession").click(function() {   
+///...                                
+}); 
+$("#terbinari_title").click(function() {   
+///...                                                
+}); 
+$("#container").click(function() {   
+  HPgSBn();                                                
+}); 
+$("#logoName").click(function() {   
+  HPgSBn();                                                
+}); 
+$("#webAssist").click(function() {   
+  WebAssist();                                                
+}); 
+
+/*************************************************************************************************** YouTube video */
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('video-placeholder', {
+    width: 600,
+    height: 400,
+    vq: 'hd1080', 
+    videoId: 'uAJOvLjs0D5dGJIcGOwpURkVAGzvHU',
+    host: 'https://www.youtube.com',
+    playerVars: {
+      color: 'white',
+      playlist: 'm1xcjhqGcHw,f801_bk9htc,xZZ-RWoMQD4,oKQQEKq7pdc,UsEniQiI9Xk',
+      rel: 0, 
+      showinfo: 0,             
+      ecver: 2
+    },
+    events: {
+      onReady: initialize
+    }
+  });
+}
+
+function initialize(){
+  try {
+    updateTimerDisplay();     
+    updateProgressBar();
+    clearInterval(time_update_interval);   
+    time_update_interval = setInterval(function () {   
+      updateTimerDisplay();
+      updateProgressBar();
+    }, 1000)
+  }
+  catch(err) {
+  }
+}
+
+$('#videoSession').on('click', function () {
+  player.pauseVideo();
+  player.setPlaybackQuality('hd1080');
+});
+
+/*************************************************************************************************** Visitor message */
+
+window.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById("my-form"); 
+  function success() {
+    form.reset();
+    MessSendNote('Message sent'); 
+  }
+  function error() {
+    MessSendNote('Message not sent'); 
+  }
+  form.addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});
+
+function ajax(method, url, data, success, error) {
+  checkInputs();
+  if (checkVal == 0){
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  } 
+}  
+
+/*************************************************************************************************** Visitor input check */
+
+var checkVal = 0;
+function checkInputs(){
+ var mlname = $("#mlname").val();
+ var mess = $("#mess").val();
+ if (mlname == '') {  
+  checkVal = 1; 
+  MessSendNote('Please enter email');      
+} else if (mess == '') {  
+  checkVal = 1;   
+  MessSendNote('Please enter message');
+} else {
+        /// MessSendNote(contact_txt);  
+        var mvi = validate();
+        if (mvi == false) {
+          MessSendNote('Invalid email address'); 
+          checkVal = 1; 
+        } else if (mvi == true){
+         checkVal = 0; 
+       }       
+     }
+   }
+
+   /*************************************************************************************************** Validate email */
+
+   function validate() {
+    var email = $("#mlname").val();
+    if (validateEmail(email)) { 
+     return true;
+   } else {
+     return false;
+   }
+ }
+
+ function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
