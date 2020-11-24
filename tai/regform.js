@@ -41,6 +41,8 @@ var functional = '&nbsp;Neutral language processing/generation semantic analysis
 var proces = '&nbsp;Training and conversation model are close to the natural way of receiving information, when we ask question and answering, looking or requesting for answer. This way training turn into the way of writing a book by creating contextual scenario of personality able to process, evaluate and use this data for internal construction of semantic association and dialogue generation.<br><br>&nbsp;Training and conversation starts from empty memory content, during dialog, void starts fill up and grow by individual user/teacher interlocutor input, giving and requesting for questions/answers, thereby building artificial entity personified memory content to reflect and manipulate with direct return, search or generating answer through the processing and understanding of existing content, create and dynamically follow context nodes, find meaning of the subject by relations from entire content without direct link between word and its meaning at the time of determination, output hypothetical conclusion and request for new key of value.<br><br>&nbsp;Return of direct answers to given questions prescribing by user/interlocutor through the processing core directly reflects or operates to understand content of conversation, defining answer, and building personality structure to output cognitive recall on computational semantics level.'; 
 var amina = '<div id="container" class="inline" ></div>';
 var segdes = amina + '<u><a href="#w3" class="tlink"> Terbinari (Operating program)</a></u> <br><br>&nbsp;&nbsp;&nbsp;&nbsp; • Training and conversation model<br>&nbsp;&nbsp;&nbsp;&nbsp; • Semantic processing algorithms<br>&nbsp;&nbsp;&nbsp;&nbsp; • Controller operating methods <br><br>' + amina + ' <u>&nbsp;<a href="#w1" class="tlink">Tet (Artificial conversational entity)</a></u> <br><br>' + amina + ' <u>&nbsp;<a href="#w3" class="tlink">CBM (Control bot mechanism)</a></u> <br><br>&nbsp;&nbsp;&nbsp;&nbsp; • Robot device';
+var diagImg = '<img src="assets/terbinari-pro-1.png" class="images"/><br><br>  <br>&nbsp;';
+var labBanImg = '<img src="assets/tai-lab.png" class="images"/><br><br> &nbsp;';
 var functTit = '<br><br><u>Functionality</u><br><br>';
 var converTit = '<u>Conversations</u><br><br>';
 var softDevTit = '<u>Software and device</u><br><br>';
@@ -174,8 +176,8 @@ function loadTxt() {
   contactTit.innerHTML = contact_title;   
   segdecript.innerHTML = segdes;
   softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
-  ste.innerHTML = labresSize + ScTechEngine;
-  funct.innerHTML = proTitSize + proces + functTitSize + functional;
+  ste.innerHTML = labBanImg + labresSize + ScTechEngine;
+  funct.innerHTML = proTitSize + proces + functTitSize + diagImg + functional;
   videotxt.innerHTML = converTitSize + overview_descript;
   contactFromBreakSet(); 
 }
