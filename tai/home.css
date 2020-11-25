@@ -771,11 +771,42 @@ body{
 /**************************************/
 
 .contactForm{
-  border-style: solid; 
-  border-width: thin;
-  border-radius: 15px;
   background: transparent;
   padding: 18px;
+}
+
+@media screen and (min-width: 601px) {
+  div.contactForm {
+    border-style: none!important; 
+    float: right !important;
+    width: 50% !important;
+  }
+
+  h2.leftContTxt{
+    text-align: left !important; 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.contactForm {
+   border-style: solid !important;  
+   border-width: thin !important; 
+   border-radius: 15px !important; 
+   float: none !important;  
+   width: 100% !important; 
+ }
+
+ h2.leftContTxt{
+  text-align: center !important; 
+}
+}
+
+
+.contGuest {
+  padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
+  font-size: 15px;
+  padding: 18px;
+  text-align: left;
 }
 
 .newspaper {
@@ -790,6 +821,8 @@ body{
   padding: 18px;
   column-rule-width: 1px; 
 }
+
+
 
 .tlink{
   color:blue;  
