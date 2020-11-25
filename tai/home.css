@@ -291,6 +291,17 @@ hr.formLine { display: block; }
   border-radius: 15px;
 } 
 
+.images_sq {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  border-style: solid transparent; 
+  border-width: thin;
+  border-radius: 0px;
+} 
+
+
 .labLogoTxt{
   display: inline-block;
 }
