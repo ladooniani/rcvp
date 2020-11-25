@@ -778,7 +778,7 @@ body{
 @media screen and (min-width: 601px) {
   div.contactForm {
     border-style: none!important; 
-    float: right !important;
+    float: left !important;
     width: 50% !important;
   }
 
@@ -799,10 +799,30 @@ body{
  h2.leftContTxt{
   text-align: center !important; 
 }
+} 
+
+/*@media screen and (min-width: 601px) {
+  div.contactFormImg {
+     padding: 18px !important;
+    border-style: none!important; 
+    float: right !important;
+    width: 50% !important;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  div.contactFormImg {
+     padding: 18px !important;
+   border-style: solid !important;  
+   border-width: thin !important; 
+   border-radius: 15px !important; 
+   float: none !important;  
+   width: 100% !important; 
+ }
+ }*/
 
-.contGuest {
+
+ .contGuest {
   padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
   font-size: 15px;
   padding: 18px;
