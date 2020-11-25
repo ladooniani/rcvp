@@ -15,7 +15,7 @@ var b2 = '<u>Prototype application compatibility and usage</u><br><br>&nbsp;  Pa
 var descriptproto = b0 + b1 + b2;
 var descript_proto_title = '● Overview';
 var c0 = 'APPLICATION SOFTWARE AND ROBOT DEVICE<br><br>';
-var c1 = '&nbsp; Terbinari operating program represents interactive training and conversation model, natural language processing semantic analysis/matching logic algorithms and controller operating methods.<br><br><img src="assets/terbinari-soft.jpg" class="images_sq"/><br> &nbsp;';
+var c1 = '&nbsp; Terbinari operating program represents interactive training and conversation model, natural language processing semantic analysis/matching logic algorithms and controller operating methods.<br><br><img src="assets/terbinari-application.jpg" class="images_sq"/><br> &nbsp;';
 var c2 = '<br><br>&nbsp; Artificial conversational entity performs input/output question-answering, learning, spoken dialog system with multi-function chat-bot interface and anthropomorphic humanoid robot Control Bot Mechanism animatronics operator. Cervical motility device implements mouth speech events motion and eyes/head tracking contact and response under facial detection/recognition process of computer vision.';                
 var c3 = '<br><br>&nbsp; Bot operates individual unique memory content updated by Interlocutor input in frames of the system legal code. Answer defines output for dialogue as a tool of reflective analysis by returning efferent recall from human-like machine cognitive function. Embodies autonomous companion simulator as trainable virtual teach assistant and agent of compensatory intercourse for various interactive communication tasks.';  
 var appsoft_robotdevice = c0 + c1 + c2 + c3;
