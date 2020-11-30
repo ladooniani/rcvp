@@ -841,9 +841,41 @@ body{
   column-rule-width: 1px; 
 }
 
+.donBox {
+  /*border-style: solid; 
+  border-width: thin;
+  border-radius: 15px;*/
+  padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
+  font-size: 15px;
+  column-count: 1;
+  column-gap: 40px;
+  column-rule-style: solid;
+  padding: 18px;
+  column-rule-width: 1px; 
+}
+
+/*@media screen and (min-width: 601px) {
+  div.donBox {
+    border-style: none!important; 
+    float: right !important;
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.donBox {
+   border-style: solid !important;  
+   border-width: thin !important; 
+   border-radius: 15px !important; 
+   float: none !important;  
+   width: 100% !important; 
+ }
+ } */
 
 
-.tlink{
+
+
+ .tlink{
   color:blue;  
 }
 
@@ -862,6 +894,7 @@ body{
 
 .tit{
  padding: 18px;
+ font-size: 25px;
 }
 
 /**************************************/
