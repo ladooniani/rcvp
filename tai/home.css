@@ -991,6 +991,9 @@ a:focus.service-btn{
     width: 17px;
     height: 17px;
   }
+  textarea {
+    height: 21em;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1025,5 +1028,8 @@ a:focus.service-btn{
   div.inline {
     width: 15px;
     height: 15px;
+  }
+  textarea {
+    height: 12em;
   }
 }
