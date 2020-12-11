@@ -101,7 +101,7 @@ h3.sectionTitle {
 	font-weight: 400;
 	padding: 12px 9px;
 	text-shadow: none;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
