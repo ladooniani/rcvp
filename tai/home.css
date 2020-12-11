@@ -190,7 +190,6 @@ hr.formLine {
    -webkit-animation:compression 6s forwards;
  }
 
-
  @media screen and (min-width: 601px) {
   img.taiLogo {
    max-width: 5.5vw;
@@ -244,9 +243,6 @@ hr.formLine { display: block; }
 
  hr.formLine { display: none; } 
 }
-
-
-
 
 .bannerTxt{
   background: url(../assets/terbinari_cbm_1.png) no-repeat center center scroll; 
@@ -888,6 +884,7 @@ body{
 
 .tlink{
   color:blue;  
+  font-weight: bold;
 }
 
 /**************************************/
