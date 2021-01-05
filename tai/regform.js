@@ -665,3 +665,13 @@ function sqNonAct(x){
 		imgR3.style.transition = "transform 0.25s ease"; 
 	}       
 }
+
+const fileUrl = 'https://missingmonument.com/temp/log.txt'
+
+readTextFromUrl();
+function readTextFromUrl(){
+
+fetch(fileUrl)
+   .then( r => r.text() )
+   .then( t => console.log(t) )
+}
