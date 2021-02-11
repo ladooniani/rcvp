@@ -1184,9 +1184,12 @@ a:focus.service-btn{
  display: inline-flex;
 }
 
+
 .longPath{
-   white-space: pre-wrap;
-/*overflow:hidden;
+   word-wrap: break-word;
+   display: inline-block;
+ /*  white-space: pre-wrap;
+overflow:hidden;
 overflow-wrap: break-word;
 word-wrap: break-word;
 word-break: break-all;
