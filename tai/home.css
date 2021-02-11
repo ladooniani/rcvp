@@ -297,6 +297,15 @@ hr.formLine { display: block; }
   border-radius: 0px;
 } 
 
+.screenshots {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  border-style: solid transparent; 
+  border-width: thin;
+} 
+
 .labLogoTxt{
   display: inline-block;
 }
@@ -827,25 +836,40 @@ body{
   column-rule-width: 1px; 
 }
 
-/*@media screen and (min-width: 601px) {
-  div.donBox {
-    border-style: none!important; 
-    float: right !important;
-    width: 50% !important;
-  }
+.yellowBox {
+  background-color:white;
+  display:inline-block;
+  box-shadow:white;
+  /*display: inline;*/
+  padding: 6px 0; 
+  border-left: 20px solid white;
+  border-right: 20px solid white;
+  border-radius: 4px;
+  /* width: 400px;
+  margin: 20px auto;*/
+  font-size:14px !important;
 }
 
-@media screen and (max-width: 600px) {
-  div.donBox {
-   border-style: solid !important;  
-   border-width: thin !important; 
-   border-radius: 15px !important; 
-   float: none !important;  
-   width: 100% !important; 
- }
- } */
+.codeSnip {
+  background-color:blue;
+  color:white;
+  white-space: pre-wrap;
+/*overflow:hidden;
+overflow-wrap: break-word;
+word-wrap: break-word;
+word-break: break-all;
+display:block;*/
+}
 
- .newspaper2 {
+.blueTxt{
+  font-family: 'Nunito', sans-serif !important;
+  color: blue;
+}
+.titBold{
+  font-size:27px !important;
+}
+
+.newspaper2 {
   border-style: solid; 
   border-width: thin;
   border-radius: 15px;
@@ -958,8 +982,14 @@ a:focus.service-btn{
 
   /************************************/
 
-@media screen and (min-width: 601px) {
-  h2.newspaper2 {
+  @media screen and (min-width: 601px) {
+    h2.newspaper2 {
+      column-count: 2;
+    } 
+    h2.appSelection{
+     column-count: 2;
+   }
+   div.appSelection {
     column-count: 2;
   } 
   div.newspaper2 {
@@ -969,6 +999,9 @@ a:focus.service-btn{
     top: 109px;
   }
   div.newspaper2 {
+    font-size: 18px;
+  }
+  div.appSelection {
     font-size: 18px;
   }
   div.contGuest {
@@ -1000,13 +1033,22 @@ a:focus.service-btn{
   h2.newspaper2 {
     column-count: 1;
   } 
+  h2.appSelection {
+    column-count: 1;
+  } 
   div.newspaper2 {
+    column-count: 1;
+  } 
+  div.appSelection {
     column-count: 1;
   } 
   div.headerTxt {
     top: 96px;
   } 
   div.newspaper2 {
+    font-size: 16px;
+  }
+  div.appSelection {
     font-size: 16px;
   }
   div.contGuest {
@@ -1032,4 +1074,112 @@ a:focus.service-btn{
   textarea {
     height: 12em;
   }
+}
+
+.btn {
+  background-color: blue !important;
+  color: white !important;
+  /*border: none;*/
+  border-radius: 30px;
+  
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn:active {
+  background-color: white !important;
+  color: blue !important;
+}
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: white !important;
+  color: blue !important;
+}
+
+.btn:link {
+ background-color: blue !important;
+ color: white !important;
+}
+
+/* visited link */
+.btn:visited {
+  background-color: blue !important;
+  color: white !important; 
+}
+
+/****************************************************************/
+
+.selectForm {
+  color: blue;
+  border-radius: 30px;
+  font-size: 27px;
+}
+
+.optSelect{
+  background-color: #98d6cb !important;
+  color: blue;
+  font-size: 32px;
+  border: none!important;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+.selectOpt{
+  border-radius: 30px !important;
+  background-color: #98d6cb !important;
+}
+
+.chooseApp {
+  border-radius: 30px !important;
+}
+
+.appSelection{
+  border-style: solid; 
+  border-width: thin;
+  border-radius: 15px;
+  padding:20px;font-size:25px;background-color:#98d6cb;color:blue;
+  column-gap: 40px;
+  column-rule-style: solid;
+  padding: 27px;
+  column-rule-width: 1px; 
+}
+
+.colStr{
+ border-style: none; 
+ border-radius: 15px;
+ background-color:blue;
+ color:white;
+ padding: 3px;
+ white-space: nowrap;
+}
+
+.yellowCircle{
+ width: 22px; 
+ height: 22px;
+ line-height: 0px;
+ border-radius: 50%; 
+ color: black;
+ text-align: center;
+ background: yellow;
+ color:black !important;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ display: inline-flex;
+}
+
+.blueCircle{
+ width: 22px; 
+ height: 22px;
+ line-height: 0px;
+ border-radius: 50%; 
+ color: white !important;
+ background: blue;
+ color:black;
+ display: flex;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ display: inline-flex;
 }
