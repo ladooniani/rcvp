@@ -55,14 +55,23 @@ var softDevTit = '<u>Software and device</u><br><br>';
 var labresTit = '<u>Research and technology development</u><br><br>';
 var proTit = '<u>Processing</u><br><br>';
 
-/*************************************************************************************************** Load */
+var freeToolsTxt = '<i class="blueTxt"> <b>Free tools is desktop application software subset of small, quick and handy tools with minimal and useful setup of control and functionality, created and used in TAI lab workflow environment.</b> </i><br><br>';
+var freeToolsSelector = '<form class="selectForm"> <label class="chooseApp" for="apps"> Choose app:</label> <select class="optSelect" name="apps" id="apps"><option class="selectOpt" value="cilist">⬤ Cilist </option> <option class="selectOpt" value="observer"> ⬤ Observer </option> </select> </form>';
+var selectBox =  freeToolsTxt + freeToolsSelector;
+
+var cilistTxt = ' <u><b class="titBold">Cilist</b></u><br><br> "Cilist" desktop application provides processing or raw input text to duplicate-free alphabetical order list and basic element initializers collection types, like List and Dictionary with set of structure configuration options and property preferences setting. <br><br><b>Windows Installer:</b> <br><br> <a id="downloadBtn" target="_self"> <button class="btn" ><i class="fa fa-download"></i> Download</button></a> <br><br> <b>Registration:</b> <br><br><b>1.</b> Download and install "Cilist" <br> &nbsp;&nbsp;<br><b>2.</b> Verify email and accept confirmation to register account auto login <br><br>&nbsp;&nbsp;<i> Note: To keep account access, do not change <b>tailab_userx.txt</b>. Or you can remove account record with load of new registration, previously delinting file from <b>Tailab</b> project folder. <br>&nbsp;&nbsp;To uninstall program from default installation path <b>C:/Program Files (x86)/TAI_Lab/Cilist</b> go to <b>Control Panel/Programs/Programs and Features</b> and uninstall application.</i> </i><br><br><b>How to use:</b> <br>&nbsp;&nbsp;<br><b>1.</b> Copy your input text, then in the left <b>Set</b> section click <b>Paste Copy</b> button. To update with a new content, copy and click again. </i><br><br><img src="assets/cilist-1.jpg" class="screenshots" id="img5" /> <br><br>&nbsp;&nbsp;<i> Note: This action provides following processing of input text and at the same time, if text is break by newlines, additionally returns copy of <b>concatenate string</b>. To save, paste until your next copy/paste action. </i> <br> &nbsp;&nbsp;<br><b>2.</b> In the right <b>Get</b> section click <b>Copy Words</b> for vertical list:<br> <br> <b class="yellowBox"> word1<br> word2...<br> </b><br><br> <b>3.</b> Click <b>Copy List</b> button to get string of <b>List</b> values array:<br> <br> <code class="codeSnip">"word1", "word2", ...</code> <br>&nbsp;&nbsp;<br><b>4.</b> Click <b>Copy Dict</b> button to get string of <b>Dictionary</b> key and value pairs:<br> <br> <code class="codeSnip">{1,word1}, {2,word2}, ...</code> <br>&nbsp;&nbsp; <br><b>5.</b> In the left <b>Set</b> section check <b>Txt doc YES/no</b> setting to <i>On</i> or <i>Off</i> record and access to text documents with the same results <b>Open Words</b>, <b>Open List</b>, <b>Open Dict</b>, <b>Open Dict newlines</b> and <b>Open raw input concatenate string</b> stored to file in the <b>Project folder</b> directory by path <b>C:/Users/User/AppData/Roaming/Tailab/Cilist</b> <br><br><img src="assets/cilist-2.jpg" class="screenshots" id="img5" /> &nbsp;&nbsp; <br><b>6.</b> Counter indicates duplicate-free result number of processed words <b class="colStr">W: 10403</b>, word count of raw input <b class="colStr">R: 85292</b>, processing time <b class="colStr">PT: 00:00:02:6</b> and sentence count <b class="colStr">S: 7687</b> with <b>Sentence/Word</b> checked option. <br><br>&nbsp;&nbsp;<i>Note: Click counter indicator to switch processing time with extended format <b class="blueCircle">S</b> seconds, <b class="blueCircle">M</b> milliseconds, <b class="blueCircle">N</b> nanoseconds.</i> <br>&nbsp;&nbsp; <br><b>7.</b> Set number of words you want break by newlines in <b>Dictionary</b> list and click <b>Open Dict newline</b> document with result. <br>&nbsp;&nbsp; <br><b>8.</b> In the left <b>Set</b> section check <b>Index/Value</b> to change key location form left to right:<br> <br> <code class="codeSnip">{word1,1}, {word2,2}, ...</code> <br>&nbsp;&nbsp; <br><b>9.</b> Check <b>Quotes YES/no</b> to put <b>Dictionary</b> values in quotes:<br> <br> <code class="codeSnip">{"word1",1}, {"word2",2}, ...</code> <br>&nbsp;&nbsp; <br><b>10.</b> Check <b>List/List ID</b> to enumerate unique words by count:<br> <br> <b class="yellowBox"> 1. word1<br> 2. word2...<br> </b><br><br> <b>11.</b> Check <b>Sentence/Word</b> to separate content for all types of list by phrases:<br> <br> <code class="codeSnip">"sentence words1", "sentence words2", ...</code> <br>&nbsp;&nbsp; <br><b>12.</b> Check <b>Number YES/no</b> to avoid passing of numbers in lists.<br> <br> &nbsp;&nbsp;<i>Note: Available only with <b>Word/Sentence</b> option. </i><br><br> ';
+
+var observerTxt = ' <u><b class="titBold">Observer</b></u><br><br> "Observer" desktop application provides simple wired basic video monitoring (e.g. device process), saving the frame and motion/stillness detection indication. <br><br><b>Windows Installer:</b> <br><br> <a id="downloadBtn" target="_self"> <button class="btn" ><i class="fa fa-download"></i> Download</button></a> <br><br> <b>Registration:</b> <br><br><b>1.</b> Download and install "Observer" <br> &nbsp;&nbsp;<br><b>2.</b> Verify email and accept confirmation to register account auto login <br><br>&nbsp;&nbsp;<i> Note: To keep account access, do not change <b>tailab_userx.txt</b>. Or you can remove account record with load of new registration, previously delinting file from <b>Tailab</b> project folder. <br>&nbsp;&nbsp;To uninstall program from default installation path <b>C:/Program Files (x86)/TAI_Lab/Observer</b> go to <b>Control Panel/Programs/Programs and Features</b> and uninstall application.</i> <br><br><b>How to use:</b><br><br> <b>1.</b> Select your USB video camera device from drop-down list <br><img src="assets/observer-2.jpg" class="screenshots" id="img5" /> <br><br> <b>2.</b> To start monitoring click <b>"On/Off Monitoring"</b> button (To expand screen, maximize window) <br><br><b>3.</b> To save frame, click <b>"Save frame"</b> and <b>"Open Folder"</b> to open images folder directory by path <b>C:/Users/User/AppData/Roaming/Tailab/Observer</b> <br><br><img src="assets/observer-1.jpg" class="screenshots" id="img5" /> <br><br> <b>4.</b> To start motion control, click <b>"On/Off Motion"</b> button: <br><br> <b>5.</b> To use tone signals of audio indication, check <b>Beep ON/off</b> <br><br> <b>6.</b> <b class="blueCircle">S</b> Static blue indicates stillness. <b class="yellowCircle">M</b> Motion yellow indicates motion. To switch with tone audio signal for <b class="blueCircle">S</b> and <b class="yellowCircle">M</b> states, turn on <b>Motion </b>and click indicator. <br><br>&nbsp;<i> Note: Video monitoring and motion detection audio indication control of this version are separate processes. </i><br><br> <hr class="contactFormLine"> <br> <i>&nbsp;Program uses <a target="_blank" class="tlink" style="color:blue" href="http://www.aforgenet.com/">AForge.NET</a> library according <a target="_blank" class="tlink" style="color:blue" href="https://www.gnu.org/licenses/gpl-3.0.html">AForge.NET Framework GPL license</a> referring the framework libraries without including of source code into the project or changing of framework sources.<br><br></i> ';
+
 loadFnc();
 function loadFnc(){
 	scrollOnTop();
 	CheckPhoneOrMobileBrowser();
 	loadTxt();
 	CheckBrowser();
-	verticalLine();
+	//verticalLine();
+	showHide(1);
+	selectBoxBlock();
   //scrollOnTop();
 }
 /*************************************************************************************************** Slider */
@@ -191,29 +200,6 @@ function loadTxt() {
 	contactFromBreakSet(); 
 }
 
-
-function verticalLine(){
-  if(browser == 0) { // Mobile
-   // document.getElementById("segdecript").style.columnCount = "1";
-   // document.getElementById("ste").style.columnCount = "1";
-   // document.getElementById("headTxt").style.top = "96px"; 
-  /* document.getElementById("hideNamesElement").style.backgroundSize = "contain";
-   document.getElementById("hideNamesElement").style.padding = "0px"; 
-   document.getElementById("hideNamesElement").style.paddingTop = "99px"; 
-   document.getElementById("hideNamesElement").style.paddingBottom = "0px"; */
-   /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_0.png') no-repeat center center scroll"; */
-  } else if(browser == 1) { // PC
-   // document.getElementById("segdecript").style.columnCount = "2";
-   // document.getElementById("ste").style.columnCount = "2";
-   // document.getElementById("headTxt").style.top = "109px"; 
-   /* document.getElementById("hideNamesElement").style.backgroundImage = "url('assets/terbinari_cbm_1.png') no-repeat center center scroll"; */
-  /* document.getElementById("hideNamesElement").style.backgroundSize = "none";
-   document.getElementById("hideNamesElement").style.padding = "33px"; 
-   document.getElementById("hideNamesElement").style.paddingTop = "100px"; 
-   document.getElementById("hideNamesElement").style.paddingBottom = "369px"; */
-}  
-}
-
 function contactFromBreakSet(){ 
 	document.getElementById("break").style = 'line-height:3'; 
 }
@@ -236,125 +222,6 @@ function linkOpenClose(){
 	softDevTitle.innerHTML = appsoft_robotdevice_title;
 	descriptProtoTitle.innerHTML = descript_proto_title;
 	researchTitle.innerHTML = research_title; 
-}
-
-/***************************************************************************************************  Title link */
-
-function hideTxt(x) {
-	linkOpenClose();
-	if (x == 1){
-		TitleName(); 
-		HideElement2(); 
-		HideElement3(); 
-		HideElement4(); 
-		HideElement5(); 
-		TitleCoptright();
-	} else if (x == 2) {
-		TitleName(); 
-		HideElement1(); 
-		HideElement3(); 
-		HideElement4(); 
-		HideElement5(); 
-		TitleCoptright();
-	} else if (x == 3) {
-		TitleName(); 
-		HideElement1(); 
-		HideElement2(); 
-		HideElement4(); 
-		HideElement5(); 
-		TitleCoptright();
-	} else if (x == 4) {
-		TitleName(); 
-		HideElement1(); 
-		HideElement2(); 
-		HideElement3(); 
-		HideElement5(); 
-		TitleCoptright();
-	} else if (x == 5) {
-		TitleName(); 
-		HideElement1();  
-		HideElement2(); 
-		HideElement3(); 
-		HideElement4(); 
-		TitleCoptright();
-	} 
-} 
-
-function HideElement1(){
-	var x = document.getElementById("hideElement1");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function HideElement2(){
-	var x = document.getElementById("hideElement2");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function HideElement3(){
-	var x = document.getElementById("hideElement3");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function HideElement4(){
-	var x = document.getElementById("hideElement4");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function HideElement5(){
-	var x = document.getElementById("hideElement5");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function HideVideo(){
-	var x = document.getElementById("hideElement4");
-	x.style.display = "none";
-}
-
-function ShowVideo(){
-	var x = document.getElementById("hideElement4");
-	x.style.display = "block";
-}
-
-function TitleName(){
-	var x = document.getElementById("hideNamesElement");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function TitleCoptright(){
-	var x = document.getElementById("hideCR");
-	if (x.style.display === "none") {
-		x.style.display = "block";
-	} else {
-		x.style.display = "none";
-	}
-}
-
-function showDefault(){
-	location.reload();
 }
 
 /*************************************************************************************************** Contact dialog setup*/
@@ -591,6 +458,9 @@ function resImg(x) {
 	} else if (x == 4){
 		img = document.getElementById("img4");
 		resSelect(x);
+	} else if (x == 5){
+		img = document.getElementById("img5");
+		resSelect(x);
 	} 
 } 
 
@@ -665,3 +535,174 @@ function sqNonAct(x){
 		imgR3.style.transition = "transform 0.25s ease"; 
 	}       
 }
+
+
+/*************************************************************************************************** Download link */
+
+function downloadAppLink(app){
+	if(app == 1){
+		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Cilist.msi");
+	} else if (app == 2){
+		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Observer.msi");
+	}	
+}
+
+/*************************************************************************************************** Resize image */
+
+/*$("#b1,#b2,#b3,#b4,#b5,#b6,#b7").click(function() {  
+	loadmain_cond();
+}); */
+
+/* TAI Lab main page */
+$("#b1").click(function() {  
+	loadmain_cond();
+}); 
+
+function loadmain_cond(){
+	AttachLink("main");
+	showHide(1);
+	console.log("TAI Lab");
+}
+
+/* Soft and device  */
+$("#b2").click(function() {  
+	softdev_cond();
+}); 
+
+function softdev_cond(){
+	AttachLink("softdevice");
+	showHide(1);
+	console.log("Soft and device");
+}
+
+/* Conversation  */
+$("#b3").click(function() {  
+	conversation_cond();
+}); 
+
+function conversation_cond(){
+	AttachLink("conversation");
+	showHide(1);
+	console.log("Conversation");
+}
+
+/* Process  */
+$("#b4").click(function() {  
+	process_cond();
+}); 
+
+function process_cond(){
+	AttachLink("process");
+	showHide(1);
+	console.log("Process");
+}
+
+/* Research  */
+$("#b5").click(function() {  
+	research_cond();
+}); 
+
+function research_cond(){
+	AttachLink("research");
+	showHide(1);
+	console.log("Research");
+}
+
+/*Free tools*/
+$("#b6").click(function() {  
+	freetool_cond();
+}); 
+
+function freetool_cond(){	
+	AttachLink("freetools");
+	showHide(2);
+
+	downloadAppLink(1);
+
+	console.log("Free tools");
+}
+
+/*Contact*/
+$("#b7").click(function() {  
+	contact_cond();
+}); 
+
+function contact_cond(){	
+	AttachLink("contact");
+	showHide(1);
+	console.log("Contact");
+}
+
+/*Support*/
+$("#b8").click(function() {  
+	support_cond();
+}); 
+
+function support_cond(){	
+	AttachLink("support");
+	showHide(1);
+	console.log("Support project");
+}
+
+var stateObj = { foo: "index" };
+function AttachLink(tag)
+{
+	history.pushState(stateObj, "page", "?content=" + tag);
+}
+
+var urlParams = new URLSearchParams(window.location.search);
+addressLine();
+function addressLine(){
+	if (urlParams.get("content") == "main") { langValue = 0; loadmain_cond(); }
+	else if (urlParams.get("content") == "freetools") { langValue = 1; freetool_cond(); } 
+	else if (urlParams.get("content") == "softdevice") { langValue = 1; softdev_cond(); } 
+	else if (urlParams.get("content") == "conversation") { langValue = 1; conversation_cond(); } 
+	else if (urlParams.get("content") == "process") { langValue = 1; process_cond(); } 
+	else if (urlParams.get("content") == "research") { langValue = 1; research_cond(); } 
+	else if (urlParams.get("content") == "contact") { langValue = 1; contact_cond(); } 
+	else if (urlParams.get("content") == "support") { langValue = 1; support_cond(); } 
+}
+
+function selectBoxBlock(){
+	toolSelect.innerHTML = selectBox; 
+}
+
+function showHide(x){
+	if (x == 0){
+		document.getElementById("bannerHead").style.display = "none"; 
+		document.getElementById("contact").style.display = "none"; 
+		document.getElementById("toolsBox").style.display = "block"; 
+		//var observerTitSize = observerTit.fontsize(5);
+		toolsTxt.innerHTML =  observerTxt; //observerTitSize + observerTxt;
+	}else if (x == 1){
+		document.getElementById("bannerHead").style.display = "block";
+		document.getElementById("contact").style.display = "block"; 
+		document.getElementById("toolsBox").style.display = "none"; 
+		toolsTxt.innerHTML = "";
+	}if (x == 2){
+		document.getElementById("bannerHead").style.display = "none"; 
+		document.getElementById("contact").style.display = "none"; 
+		document.getElementById("toolsBox").style.display = "block"; 
+		//var observerTitSize = observerTit.fontsize(5);
+		toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
+	}
+} 
+
+
+document.getElementById('apps').addEventListener("change", function() {
+	if(this.value == "cilist"){
+    	//toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
+    	AttachLink("cilist");
+    	showHide(2);
+    	downloadAppLink(1);
+    	console.log(this.value);      
+    } 
+    else if (this.value == "observer")
+    {
+    	//toolsTxt.innerHTML =  observerTxt; //observerTitSize + observerTxt;
+    	AttachLink("observer");
+    	showHide(0);
+    	downloadAppLink(2);
+    	console.log(this.value);  
+    }
+});
