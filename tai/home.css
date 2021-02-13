@@ -1154,7 +1154,6 @@ a:focus.service-btn{
  white-space: nowrap;
 }
 
-
 .yellowCircle{
  width: 22px; 
  height: 22px;
@@ -1186,5 +1185,5 @@ a:focus.service-btn{
 }
 
 .longPath{
-  word-wrap: break-word;
+ word-wrap: break-word;
 }
