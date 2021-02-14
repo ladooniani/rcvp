@@ -540,7 +540,7 @@ function sqNonAct(x){
 
 function downloadAppLink(app){
 	if(app == 1){
-		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Cilist_1.0.7714.3286.msi");
+		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Cilist_1.0.7715.33757.msi");
 	} else if (app == 2){
 		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Observer_1.0.7714.4713.msi");
 	}	
