@@ -540,9 +540,9 @@ function sqNonAct(x){
 
 function downloadAppLink(app){
 	if(app == 1){
-		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Cilist_1.0.7715.33757.msi");
+		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Cilist_1.0.7715.33757.zip");
 	} else if (app == 2){
-		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Observer_1.0.7714.4713.msi");
+		downloadBtn.setAttribute('href', "http://node.tamunachabashvili.com/data/app/Observer_1.0.7714.4713.zip");
 	}	
 }
 
