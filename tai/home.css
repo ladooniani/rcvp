@@ -314,15 +314,6 @@ hr.formLine { display: block; }
   text-shadow: 0 1px 1px white;
 }
 
-.cps {
- /* text-shadow: 0 1px 1px white;
-  font-weight: bold !important;
-  color:#7f949f;
-  font-weight: 300%; 
-  font-size:16px !important;*/
-  color:grey;
-}
-
 hr.lowerLine {
 
 }
@@ -363,7 +354,7 @@ label {
 }
 
 input[type=text], input[type=password], input[type=email], input[type=tel], input[type=number]  {
-  background-color: #b0e3da; 
+  background-color: white; 
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -382,7 +373,7 @@ input[type=text], select, textarea{
   border-radius: 20px !important;
   box-sizing: border-box;
   resize: vertical;
-  background-color: #b0e3da !important;
+  background-color: white !important;
   -webkit-appearance: none; 
   outline: none;
   /*resize: none !important;
@@ -395,7 +386,7 @@ input[type=submit] {
   color: black;
   padding: 12px 20px;
   border: 1px !important;
-  border-radius: 20px !important;
+  border-radius: 30px !important;
   cursor: pointer;
   float: right;
   font-color: black !important;
@@ -793,7 +784,8 @@ body{
   div.contactForm {
    border-style: solid !important;  
    border-width: thin !important; 
-   border-radius: 15px !important; 
+   border-color: black !important; 
+   border-radius: 39px !important; 
    float: none !important;  
    width: 100% !important; 
  }
@@ -1021,6 +1013,16 @@ a:focus.service-btn{
   textarea {
     height: 14em;
   }
+
+  .social {
+   float:left;
+   padding: 22px;
+ }
+
+ .cps {
+   float:right;
+   padding: 22px;
+ }
 }
 
 @media screen and (max-width: 600px) {
@@ -1068,6 +1070,18 @@ a:focus.service-btn{
   textarea {
     height: 12em;
   }
+
+  .social {
+   float:center;
+ }
+
+ .cps {
+   float:center;
+ }
+}
+
+.cps {
+ color:grey;
 }
 
 .tlink{
