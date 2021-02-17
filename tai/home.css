@@ -219,22 +219,22 @@ hr.formLine { display: block; }
 
 @media screen and (max-width: 600px) {
   img.taiLogo {
-    max-width: 9.5vw;
-    max-height: 9.5vw;
+    max-width: 10vw;
+    max-height: 10vw;
   }
 
   .labTitleStyle{
-    font-size:8px;
+    font-size:12px;
   }
 
   .titleName{
     font-size:110%;
-    font-size:5.5vw;
+    font-size:6.5vw;
   }
 
   .titSubName{
     font-size:110%;
-    font-size:3.4vw;
+    font-size:4.4vw;
   }
 
   .headerTxt{
