@@ -332,34 +332,6 @@ label {
   display: inline-block;
 }
 
-input[type=text], select, textarea{
-  width: 100%;
-  padding: 12px !important;
-  border: 1px solid black !important;
-  border-radius: 1px !important;
-  box-sizing: border-box;
-  resize: vertical;
-  background-color: #b0e3da !important;
-  -webkit-appearance: none; 
-  outline: none;
-  /*resize: none !important;
-  max-width: 100% !important; 
-  max-height: 300px !important;*/
-}
-
-input[type=submit] {
-  background-color: transparent;
-  color: black;
-  padding: 12px 20px;
-  border: 1px !important;
-  border-radius: 1px !important;
-  cursor: pointer;
-  float: right;
-  font-color: black !important;
-  -webkit-appearance: none; 
-  outline: none;
-}
-
 #myForm-submitBtn, #logBtn, #messBtn {
   border: 1px solid black !important;
   border-radius: 30px;
@@ -396,9 +368,37 @@ input[type=text], input[type=password], input[type=email], input[type=tel], inpu
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border-radius: 1px !important;
+  border-radius: 20px !important;
   border: 1px solid black !important;
   box-sizing: border-box;
+  -webkit-appearance: none; 
+  outline: none;
+}
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px !important;
+  border: 1px solid black !important;
+  border-radius: 20px !important;
+  box-sizing: border-box;
+  resize: vertical;
+  background-color: #b0e3da !important;
+  -webkit-appearance: none; 
+  outline: none;
+  /*resize: none !important;
+  max-width: 100% !important; 
+  max-height: 300px !important;*/
+}
+
+input[type=submit] {
+  background-color: transparent;
+  color: black;
+  padding: 12px 20px;
+  border: 1px !important;
+  border-radius: 20px !important;
+  cursor: pointer;
+  float: right;
+  font-color: black !important;
   -webkit-appearance: none; 
   outline: none;
 }
@@ -1025,7 +1025,7 @@ a:focus.service-btn{
     height: 17px;
   }
   textarea {
-    height: 21em;
+    height: 14em;
   }
 }
 
