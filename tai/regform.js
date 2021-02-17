@@ -691,22 +691,3 @@ function showHide(x){
 		//toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
 	}
 } 
-
-
-document.getElementById('apps').addEventListener("change", function() {
-	if(this.value == "cilist"){
-    	//toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
-    	AttachLink("cilist");
-    	showHide(2);
-    	downloadAppLink(1);
-    	console.log(this.value);      
-    } 
-    else if (this.value == "observer")
-    {
-    	//toolsTxt.innerHTML =  observerTxt; //observerTitSize + observerTxt;
-    	AttachLink("observer");
-    	showHide(0);
-    	downloadAppLink(2);
-    	console.log(this.value);  
-    }
-});
