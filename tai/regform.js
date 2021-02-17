@@ -9,7 +9,7 @@ var hello = 'Hello, ';
 var confMess = '<br/><br/> Thank you for visit terbnari.tech <br/><br/> This automatic notification confirms that your message has been received and will be examined according to context, after that you will get answer within a few working days. <br/><br/> Best regards <br/><br/> Toy Artificial Intelligence <br/> Research, innovation and technology development <br/> Intelligent systems and robotics laboratory'; 
 var a0 = 'RESEARCH AND TECHNOLOGY DEVELOPMENT<br><br>';
 var research_title = '● Research';
-var b0 = '<br><br><u>Overview</u><br><br>';
+var b0 = '<br><br><b><u>Overview</u></b><br><br>';
 var b1 = '&nbsp; Operating program interface interacts with training and conversation slot, represents dialog processing models in text-to-text, text-to-voice, or voice-to-voice modes and robot control methods.<br><br>&nbsp;Mechanical response provides tracking orientation and eye contact with user/interlocutor, as well as mouth device synchronization with speech motility events.'; 
 //var b2 = '<u>Prototype application compatibility and usage</u><br><br>&nbsp;  Particular Terbinari software implementation developed on Microsoft Windows OS platform with using of system speech synthesis/recognition references and external CV library output.';
 var descriptproto = b0 + b1; // + b2;
@@ -37,7 +37,7 @@ var contact_link = 'Contact';
 //var contact_title = 'Contact lab';
 //var contactTxt = '<br>Contact';
 //var contactTxt = '<br>Hello, dear guest!<br><br>Thank you for visit<br><br>Laboratory is open and responsive for collaborative and productive conversation<br><br>Please, be free to contact or leave your feedback';
-var support_title = 'Support project'.fontsize(5);; 
+var support_title = '<b>Support project</b>'.fontsize(5);; 
 var donationBtn = '<form action="https://www.paypal.com/donate" method="post" target="_top"><input type="hidden" name="hosted_button_id" value="GRGH6SL9EL72U" /><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" /></form>';
 var supportTxt = support_title + '<br><br>Your donation will help expand independent research workflow, improve the laboratory environment, and speed up the conceptual strategy process, which leads to more involved research in frames of related technology, forming an educational platform for creative/intellectual collaboration and search for other references.<br><br>To support the project follow the donation link:<br><br>'+donationBtn+'<br>To get updates from research workflow, please follow us on social networks and subscribe to <a target="_blank" class="tlink2" href="https://www.youtube.com/channel/UC0Z161RgR5KpwPLvEDzkk9Q?view_as=subscriber">YouTube</a> channel';
 var logo_name = 'T A I';
@@ -46,7 +46,7 @@ var ScTechEngine = '&nbsp;"Toy Artificial Intelligence" laboratory is founded as
 //var functional = '&nbsp;Neutral language processing/generation semantic analysis/matching algorithms brain core and operation control methods I/O system with multi-function chat-bot terminal desktop software application interface and head/eyes/mouth control bot mechanism robot device with position/coordinate step receiver controller.<br><br>&nbsp; • Learn from communication and talk to interlocutor, answer and ask with memory adding/editing option, providing functions control built-in conversation interface in frames of system legal code filter, receive and react to action commands by attached request.<br><br>&nbsp; • Operate as topic teacher e.g. with "astronomy" appeal, question contexts and answer output.<br> <br><img src="assets/terbinari-cbm.jpg" class="images_sq"/><br><br>  <br>&nbsp; • Support conversation in text-to-text, text-to-voice, speech-to-voice with input pronunciation type chats and voice-to-voice speech recognition mode, operate in open training and close testing memory state with answer not found condition search method and speak with mouth lips viseme motility event.<br><br>&nbsp; • See – detect, recognize introduced person, track with eye contact and head orientation following interlocutor position, blink eyelids. <br><br>&nbsp; Desktop application software installation provides access to system terminal chat-bot interface and 6V CBM robot controller device with USB serial port connection, going through registration in Unit Network user profile access to local and server based memory storage with using of Microsoft OS speech references and available system display language.<br><br><img src="assets/cbm-robot-device.png" class="images" onclick="resImg(4)" id="img4"/><br><br> &nbsp;';  
 //var proces = '&nbsp;Training and conversation model are close to the natural way of receiving information, when we ask question and answering, looking or requesting for answer. This way training turn into the way of writing a book by creating contextual scenario of personality able to process, evaluate and use this data for internal construction of semantic association and dialogue generation.<br><br>&nbsp;Training and conversation starts from empty memory content, during dialog, void starts fill up and grow by individual user/teacher interlocutor input, giving and requesting for questions/answers, thereby building artificial entity personified memory content to reflect and manipulate with direct return, search or generating answer through the processing and understanding of existing content, create and dynamically follow context nodes, find meaning of the subject by relations from entire content without direct link between word and its meaning at the time of determination, output hypothetical conclusion and request for new key of value.<br><br>&nbsp;Return of direct answers to given questions prescribing by user/interlocutor through the processing core directly reflects or operates to understand content of conversation, defining answer, and building personality structure to output cognitive recall on computational semantics level.'; 
 var proces = '&nbsp;The training and conversation model is close to the natural way of receiving information, asking for the question and answering, looking or requesting for the answer, filling memory with user/teacher interlocutor input, generating dialogue, following context, and content-based meaning.<br><br>&nbsp;Synthetic entity able to learn, interact and deepening abstraction by inherent characteristics as functionally surrounded void, that does not knows anything by default, able receive and use information, become perceptive carrier to reflect and inference informational knowledge in the natural way of dynamic conversation, prescribable for such tasks as the assistance of topical training, autism educational/therapy exercise, as well psycho-linguistics and synthetic psychology human-robot interaction experiment, or any other specific usage with a requirement of creating memory content with dialog model contextual scenario performance.'; 
-var functional = '&nbsp;Text analysis and operation control algorithms with multi-function chat-bot interface and head/eyes/mouth Control Bot Mechanism robot device with position/coordinate step receiver controller.<br><br>&nbsp; • Learn from communication and talk to the interlocutor, answer and ask with memory adding/editing option, providing functions control built-in conversation interface in frames of system legal code filter, receive and react to action commands by attached request.<br><br>&nbsp; • Operate as topic teacher e.g. with "astronomy" appeal, question contexts, and answer output. <br>  <br>&nbsp; • Support conversation in text-to-text, text-to-voice, speech-to-voice with input pronunciation type chats and voice-to-voice speech recognition mode, operate in open training and close testing memory state, and speak with mouth lips viseme motility event.<br><br>&nbsp; • See – detect, recognize introduced person, a track with eye contact and head orientation following interlocutor position, blinking eyelids. <br><br>&nbsp; Desktop application software installation provides access to chat-bot terminal and 6V CBM robot controller device with USB serial port connection, going through registration in Unit Network user profile access to local and server-based memory storage with using of Microsoft OS speech references and available system display language.<br><br> &nbsp;<u><b>Prototype application compatibility and usage</b></u><br><br>Particular Terbinari software implementation developed on Microsoft Windows OS platform with using of system speech synthesis/recognition references and external CV library output.';  
+var functional = '&nbsp;Text analysis and operation control algorithms with multi-function chat-bot interface and head/eyes/mouth Control Bot Mechanism robot device with position/coordinate step receiver controller.<br><br>&nbsp; • Learn from communication and talk to the interlocutor, answer and ask with memory adding/editing option, providing functions control built-in conversation interface in frames of system legal code filter, receive and react to action commands by attached request.<br><br>&nbsp; • Operate as topic teacher e.g. with "astronomy" appeal, question contexts, and answer output. <br>  <br>&nbsp; • Support conversation in text-to-text, text-to-voice, speech-to-voice with input pronunciation type chats and voice-to-voice speech recognition mode, operate in open training and close testing memory state, and speak with mouth lips viseme motility event.<br><br>&nbsp; • See – detect, recognize introduced person, a track with eye contact and head orientation following interlocutor position, blinking eyelids. <br><br>&nbsp; Desktop application software installation provides access to chat-bot terminal and 6V CBM robot controller device with USB serial port connection, going through registration in Unit Network user profile access to local and server-based memory storage with using of Microsoft OS speech references and available system display language.<br><br> &nbsp;<u><b>Prototype application compatibility and usage</b></u><br><br>&nbsp;Particular Terbinari software implementation developed on Microsoft Windows OS platform with using of system speech synthesis/recognition references and external CV library output.';  
 
 var amina = '<div id="container" class="inline" ></div>';
 var segdes = amina + '&nbsp;<a href="#softdev" class="tlink"><u>Terbinari (Operating program)</u></a><p class="deses"><br>&nbsp;&nbsp;&nbsp;&nbsp; • Training and conversation model<br>&nbsp;&nbsp;&nbsp;&nbsp; • Semantic processing algorithms<br>&nbsp;&nbsp;&nbsp;&nbsp; • Controller operating methods</p>' + amina + '&nbsp;<a href="#vid" class="tlink"><u>Tet (Artificial conversational entity)</u></a><br>' + amina + '&nbsp;<a href="#funct" class="tlink"><u>CBM (Control bot mechanism)</u></a> <p class="deses"> <br>&nbsp;&nbsp;&nbsp;&nbsp; • Robot device</p>';
@@ -54,11 +54,11 @@ var segdes = amina + '&nbsp;<a href="#softdev" class="tlink"><u>Terbinari (Opera
 var labBanImg = '<img src="assets/tai-lab.png" class="images"/><br><br> &nbsp;';
 var fasfaceImg = '<img src="assets/terbinari-3.jpg" class="images"/><br><br> &nbsp;';
 //var pdfLink = '<i class="fa fa-file-pdf-o" aria-hidden="true" style="font-size:24px;color:blue"></i> &nbsp; <a target="_blank" class="tlink" href="https://github.com/ladooniani/tailab/blob/master/docs/tai.pdf">TAI Lab. Terbinari CBM Project description</a><br><br>';
-var functTit = '<br><br><u>Functionality</u><br><br>';
-var converTit = '<u>Conversations</u><br><br>';
-var softDevTit = '<u>Software and device</u><br><br>';
-var labresTit = '<u>Research</u><br><br>';
-var proTit = '<u>Processing</u><br><br>';
+var functTit = '<br><br><b>Functionality</b><br><br>';
+var converTit = '<b>Conversations</b><br><br>';
+var softDevTit = '<b>Software and device</b><br><br>';
+var labresTit = '<b>Research</b><br><br>';
+var proTit = '<b>Processing</b><br><br>';
 var freeToolsTxt = '<i class="blueTxt"> <b>Free tools is desktop application software subset of small, quick and handy tools with minimal and useful setup of control and functionality, created and used in TAI lab workflow environment.</b> </i><br><br>';
 var freeToolsSelector = '<form class="selectForm"> <label class="chooseApp" for="apps"> Choose app:</label> <select class="optSelect" name="apps" id="apps"><option class="selectOpt" value="cilist">⬤ Cilist </option> <option class="selectOpt" value="observer"> ⬤ Observer </option> </select> </form>';
 var selectBox =  freeToolsTxt + freeToolsSelector;
@@ -675,26 +675,17 @@ function addressLine(){
 }
 
 function selectBoxBlock(){
-	//toolSelect.innerHTML = selectBox; 
 }
 
 function showHide(x){
 	if (x == 0){
 		document.getElementById("bannerHead").style.display = "none"; 
 		document.getElementById("contact").style.display = "none"; 
-		//document.getElementById("toolsBox").style.display = "block"; 
-		//var observerTitSize = observerTit.fontsize(5);
-		//toolsTxt.innerHTML =  observerTxt; //observerTitSize + observerTxt;
 	}else if (x == 1){
 		document.getElementById("bannerHead").style.display = "block";
 		document.getElementById("contact").style.display = "block"; 
-		//document.getElementById("toolsBox").style.display = "none"; 
-		//toolsTxt.innerHTML = "";
 	}if (x == 2){
 		document.getElementById("bannerHead").style.display = "none"; 
 		document.getElementById("contact").style.display = "none"; 
-		//document.getElementById("toolsBox").style.display = "block"; 
-		//var observerTitSize = observerTit.fontsize(5);
-		//toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
 	}
 } 
