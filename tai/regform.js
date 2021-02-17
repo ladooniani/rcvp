@@ -668,7 +668,7 @@ function addressLine(){
 }
 
 function selectBoxBlock(){
-	toolSelect.innerHTML = selectBox; 
+	//toolSelect.innerHTML = selectBox; 
 }
 
 function showHide(x){
