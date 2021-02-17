@@ -556,6 +556,13 @@ function downloadAppLink(app){
 /*$("#b1,#b2,#b3,#b4,#b5,#b6,#b7").click(function() {  
 	loadmain_cond();
 }); */
+$("#b0").click(function() {  
+	github_cond();
+}); 
+
+function github_cond(){	
+	window.open("https://github.com/ladooniani/terbinari"); 
+}
 
 /* TAI Lab main page */
 $("#b1").click(function() {  
