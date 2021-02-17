@@ -675,20 +675,20 @@ function showHide(x){
 	if (x == 0){
 		document.getElementById("bannerHead").style.display = "none"; 
 		document.getElementById("contact").style.display = "none"; 
-		document.getElementById("toolsBox").style.display = "block"; 
+		//document.getElementById("toolsBox").style.display = "block"; 
 		//var observerTitSize = observerTit.fontsize(5);
-		toolsTxt.innerHTML =  observerTxt; //observerTitSize + observerTxt;
+		//toolsTxt.innerHTML =  observerTxt; //observerTitSize + observerTxt;
 	}else if (x == 1){
 		document.getElementById("bannerHead").style.display = "block";
 		document.getElementById("contact").style.display = "block"; 
-		document.getElementById("toolsBox").style.display = "none"; 
-		toolsTxt.innerHTML = "";
+		//document.getElementById("toolsBox").style.display = "none"; 
+		//toolsTxt.innerHTML = "";
 	}if (x == 2){
 		document.getElementById("bannerHead").style.display = "none"; 
 		document.getElementById("contact").style.display = "none"; 
-		document.getElementById("toolsBox").style.display = "block"; 
+		//document.getElementById("toolsBox").style.display = "block"; 
 		//var observerTitSize = observerTit.fontsize(5);
-		toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
+		//toolsTxt.innerHTML =  cilistTxt; //observerTitSize + observerTxt;
 	}
 } 
 
