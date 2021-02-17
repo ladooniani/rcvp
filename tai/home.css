@@ -219,8 +219,8 @@ hr.formLine { display: block; }
 
 @media screen and (max-width: 600px) {
   img.taiLogo {
-    max-width: 10.2vw;
-    max-height: 10.2vw;
+    max-width: 10.3vw;
+    max-height: 10.3vw;
   }
 
   .labTitleStyle{
