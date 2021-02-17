@@ -905,12 +905,6 @@ display:block;*/
  font-size: 25px;
 }
 
-
-.tlink{
-  color:blue;  
-  /*font-weight: bold;*/
-}
-
 /**************************************/
 
 .service{
@@ -1074,6 +1068,11 @@ a:focus.service-btn{
   textarea {
     height: 12em;
   }
+}
+
+.tlink{
+  color:blue;  
+  /*font-weight: bold;*/
 }
 
 .btn {
