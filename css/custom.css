@@ -57,7 +57,7 @@ h3.sectionTitle {
 }
 
 .navbar-inverse {
-	background: #98d6cb;
+	background: #ffffff;
 	border: 0 none;
 }
 
@@ -101,14 +101,14 @@ h3.sectionTitle {
 	font-weight: 400;
 	padding: 12px 9px;
 	text-shadow: none;
-	 font-weight: bold; 
+	font-weight: bold; 
 }
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
 	color: #deedf9;
 }
 .navbar-inverse .navbar-toggle {
-	background: #80ccbf; /*#8adfe3;*/
+	background: #ffffff; /*#8adfe3;*/
 	border: 0 none;
 	margin: 19px 15px 19px 0;
 }
@@ -453,3 +453,5 @@ h3.sectionTitle {
   .embed-responsive-4by3 {
   	padding-bottom: 75%;
   }
+
+
