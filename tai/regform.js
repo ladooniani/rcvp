@@ -6,6 +6,7 @@ Copyright (C) 2021 Lado Oniani, TAI Lab. All Rights Reserved
 
 /************************************************************* Text */
 
+var videoMain = '<br><br><div class="embed-responsive embed-responsive-16by9"> <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLz-uAJOvLjs0D5dGJIcGOwpURkVAGzvHU&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div><br>';
 var notereq, browser; 
 var hello = 'Hello, ';
 var confMess = '<br/><br/> Thank you for visit terbnari.tech <br/><br/> This automatic notification confirms that your message has been received and will be examined according to context, after that you will get answer within a few working days. <br/><br/> Best regards <br/><br/> Toy Artificial Intelligence <br/> Research, innovation and technology development <br/> Intelligent systems and robotics laboratory'; 
@@ -197,7 +198,7 @@ function loadTxt() {
 	softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
 	ste.innerHTML =  labresSize + ScTechEngine;
 	funct.innerHTML = proTitSize + proces + functTitSize + functional;
-	videotxt.innerHTML = converTitSize + overview_descript;
+	videotxt.innerHTML = converTitSize +  overview_descript + videoMain;
 	supportUs.innerHTML = supportTxt;
 	contactFromBreakSet(); 
 }
@@ -231,9 +232,9 @@ function linkOpenClose(){
 function CheckPhoneOrMobileBrowser(){
 	if($(window).width()<=1199) { 
     	browser = 0; // Mobile
-	} else {
+    } else {
     	browser = 1; // PC 
-	} 
+    } 
 }
 
 var isChrome; var isFirefox;
