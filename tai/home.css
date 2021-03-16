@@ -62,7 +62,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
      border-width: 3px;
      font-size: 16px;
      font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
-     box-shadow: 3px 3px 12px -3px #b4dbd7; 
+     box-shadow: 3px 3px 12px -3px #ffffff; 
    }
 
    ::-webkit-input-placeholder { 
@@ -85,7 +85,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   }
 
   body {
-    background: #98D6CB;
+    background: #ffffff;
   } 
 
   img{
@@ -107,7 +107,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
    .logoname {
     display: inline-block; 
-    color:#98d6cb; 
+    color:#ffffff; 
     font-family: 'Nunito', sans-serif;
     text-shadow: 0 1px 6px black;
     border-radius: 63px; 
@@ -435,7 +435,7 @@ footer .social {
   margin: 0;
 }
 footer .social a {
-  color: #98D6CB;
+  color: #ffffff;
   text-decoration: none;
 }
 footer .social a:hover {
@@ -466,7 +466,7 @@ h2 span {
 h1 span {
   display: table; 
   border-radius: 35px;
-  padding:19px;font-size:18px;background-color:#98D6CB;;color:#000000;
+  padding:19px;font-size:18px;background-color:#ffffff;;color:#000000;
 }
 
 h3 span {
@@ -532,7 +532,7 @@ body{
        border-radius: 80px;
        border: 2px solid #609;
        padding: 27px; 
-       border-color: #98d6cb;
+       border-color: #ffffff;
        box-sizing: border-box;
        resize: vertical;
        border-width: 9px;
@@ -678,14 +678,14 @@ body{
   position: fixed;
   bottom: 0;
   right: 15px;
-  border: 0px solid #98D6CB;
+  border: 0px solid #ffffff;
   z-index: 9;
 }
 
 .form-container {
   max-width: 300px;
   padding: 20px;
-  background-color: #98D6CB;
+  background-color: #ffffff;
   border-radius: 35px;
 }
 
@@ -819,7 +819,7 @@ body{
   border-style: solid; 
   border-width: thin;
   border-radius: 15px;
-  padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
+  padding:20px;font-size:25px;background-color:#ffffff;color:#000000;
   font-size: 15px;
   column-count: 1;
   column-gap: 40px;
@@ -863,9 +863,9 @@ display:block;*/
 
 .newspaper2 {
   border-style: solid; 
-  border-width: thin;
-  border-radius: 15px;
-  padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
+  border-width: 1px;
+  border-radius: 27px;
+  padding:20px;font-size:25px;background-color:#ffffff;color:#000000;
   /* font-size: 15px;*/
   /*column-count: 2;*/
   column-gap: 40px;
@@ -878,7 +878,7 @@ display:block;*/
   /*border-style: solid; 
   border-width: thin;
   border-radius: 15px;*/
-  padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
+  padding:20px;font-size:25px;background-color:#ffffff;color:#000000;
   column-count: 1;
   column-gap: 40px;
   column-rule-style: solid;
@@ -887,7 +887,7 @@ display:block;*/
 }
 
 .contGuest {
-  padding:20px;font-size:25px;background-color:#98d6cb;color:#000000;
+  padding:20px;font-size:25px;background-color:#ffffff;color:#000000;
   padding: 18px;
   text-align: left;
 }
@@ -1129,7 +1129,7 @@ a:focus.service-btn{
 }
 
 .optSelect{
-  background-color: #98d6cb !important;
+  background-color: #ffffff !important;
   color: blue;
   font-size: 32px;
   border: none!important;
@@ -1140,7 +1140,7 @@ a:focus.service-btn{
 
 .selectOpt{
   border-radius: 30px !important;
-  background-color: #98d6cb !important;
+  background-color: #ffffff !important;
 }
 
 .chooseApp {
@@ -1151,7 +1151,7 @@ a:focus.service-btn{
   border-style: solid; 
   border-width: thin;
   border-radius: 15px;
-  padding:20px;font-size:25px;background-color:#98d6cb;color:blue;
+  padding:20px;font-size:25px;background-color:#ffffff;color:blue;
   column-gap: 40px;
   column-rule-style: solid;
   padding: 27px;
