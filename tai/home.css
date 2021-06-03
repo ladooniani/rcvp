@@ -632,7 +632,7 @@ body{
   }
 
   iframe {border:20px solid #000;
-    border-radius: 29px !important;
+    border-radius: 0px !important;
   }
 
   .btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn:active:focus, .btn:focus, 
@@ -864,13 +864,13 @@ display:block;*/
 .newspaper2 {
   border-style: solid; 
   border-width: 1px;
-  border-radius: 27px;
+  border-radius: 12px;
   padding:20px;font-size:25px;background-color:#ffffff;color:#000000;
   /* font-size: 15px;*/
   /*column-count: 2;*/
   column-gap: 40px;
   column-rule-style: solid;
-  padding: 18px;
+  padding: 33px;
   column-rule-width: 1px; 
 }
 
