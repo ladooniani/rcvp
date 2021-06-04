@@ -6,7 +6,6 @@ Copyright (C) 2021 Lado Oniani, TAI Lab. All Rights Reserved
 
 /************************************************************* Text */
 
-
 var videoCov1 = '<br><br><div class="embed-responsive embed-responsive-16by9"> <iframe width="560" height="315" src="https://www.youtube.com/embed/vxVBtnA5of8?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 var videoCov2 = '<br><br><div class="embed-responsive embed-responsive-16by9"> <iframe width="560" height="315" src="https://www.youtube.com/embed/xZZ-RWoMQD4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 var videoCov3 = '<div class="embed-responsive embed-responsive-16by9"> <iframe width="560" height="315" src="https://www.youtube.com/embed/tSrj2ZdIo80?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><br>';
@@ -206,7 +205,7 @@ function loadTxt() {
 	softdev.innerHTML = softDevTitSize + c1 + c2 + c3;
 	ste.innerHTML =  labresSize + ScTechEngine;
 	funct.innerHTML = proTitSize + proces + functTitSize + functional;
-	videotxt.innerHTML = converTitSize +  overview_descript + videoMain;
+	videotxt.innerHTML = converTitSize +  overview_descript + videoCov1;
 	supportUs.innerHTML = supportTxt;
 	contactFromBreakSet(); 
 }
@@ -619,7 +618,12 @@ $("#b6").click(function() {
 }); 
 
 function freetool_cond(){	
+
 	window.open("https://github.com/ladooniani/freetools"); 
+	//AttachLink("freetools");
+	//showHide(2);
+	//downloadAppLink(1);
+	//console.log("Free tools");
 }
 
 /*Contact*/
