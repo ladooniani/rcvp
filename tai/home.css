@@ -397,8 +397,8 @@ input[type=submit] {
 .container { 
   border-radius: 0px;
   background-color: transparent; 
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 0px solid black;
+  border-right: 0px solid black;
   height: relative; 
   padding: 0px 12px;
 }
