@@ -5,3 +5,7 @@
 ## GitLab page:
 
 [https://ladooniani.gitlab.io/tailab/](https://ladooniani.gitlab.io/tailab/)
+
+## GitLab repo:
+
+[https://gitlab.com/ladooniani/tailab](https://gitlab.com/ladooniani/tailab)
