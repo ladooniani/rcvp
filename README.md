@@ -2,6 +2,6 @@
 
 "Toy Artificial Intelligence" research, innovation and technology development, intelligent systems and robotics laboratory Terbinari CBM project home page
 
-## GitLab clone:
+## GitLab page:
 
-[ladooniani.gitlab.io/tailab/](ladooniani.gitlab.io/tailab/)
+[https://ladooniani.gitlab.io/tailab/](https://ladooniani.gitlab.io/tailab/)
