@@ -3,6 +3,29 @@
   <head>
     <title>Lado Oniani - Software Engineer / Artist</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @keyframes rotateImages {
+        0% {
+          background: url("assets/1.svg");
+        }
+        32% {
+          background: url("assets/1.svg");
+        }
+        33% {
+          background: url("assets/2.svg");
+        }
+        65% {
+          background: url("assets/2.svg");
+        }
+        66% {
+          background: url("assets/3.svg");
+        }
+        100% {
+          background: url("assets/3.svg");
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -82,7 +105,9 @@
             and support me on <a href="https://paypal.me/dropsuit">PayPal</a>
           </li>
         </ul>
+        <div id="anim" class="inline"></div>
       </footer>
     </main>
+    <script type="text/javascript" src="js/regform.js"></script>
   </body>
 </html>
