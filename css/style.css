@@ -162,51 +162,22 @@ margin-top: 20px;
 text-align: center;
 }
 
-/* Social Media Styles */
+/* Animation */
 
-.social-media {
-display: flex;
-justify-content: center;
-margin-top: 20px;
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+#anim {
+  border: 0px;
+  border-style: none; 
+  border-style: hidden;
+  outline: none; 
+  animation:  rotateImages 0.3s infinite; 
 }
 
-.social-media a {
-margin: 0 10px;
-font-size: 1.5em;
-text-decoration: none;
-color: #555;
+@media screen and (min-width: 601px) {
+    div.inline {
+        width: 17px;
+        height: 17px;
+    } 
 }
-
-.social-media a:hover {
-color: #000;
-}
-
-/* Media Queries */
-
-@media (max-width: 600px) {
-.header-title {
-font-size: 1.5em;
-}
-.header-subtitle {
-font-size: 1.2em;
-}
-.section-title {
-font-size: 1.2em;
-}
-}
-
-/* Contact section */
-
-.section-title{
-margin-bottom: 10px;
-}
-
-.social-media a{
-text-decoration: none;
-color: #555;
-}
-
-.social-media a:hover{
-color: #000;
-}
-
