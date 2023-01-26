@@ -164,24 +164,6 @@ text-align: center;
 
 /* Animation */
 
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-#anim {
-  border: 0px;
-  border-style: none; 
-  border-style: hidden;
-  outline: none; 
-  animation:  rotateImages 0.3s infinite; 
-}
-
-@media screen and (min-width: 601px) {
-    div.inline {
-        width: 17px;
-        height: 17px;
-    } 
-}
-
 #anim {
   position: relative;
   top: 3px;
