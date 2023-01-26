@@ -1,0 +1,212 @@
+/* Global Styles */
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+/* Header Styles */
+
+.header-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 2em;
+}
+
+.header-subtitle {
+margin: 0;
+padding: 0 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Main Section Styles */
+
+main {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.section-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Objective Section Styles */
+
+.objective {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+/* Experience Section Styles */
+
+.experience {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Skills Section Styles */
+
+.skills {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Contact Styles */
+.contact {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+text-align: left !important;
+}
+
+/* Social Media Styles */
+
+.social-media {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+/* Global Styles */
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+/* Header Styles */
+
+.header-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 2em;
+}
+
+.header-subtitle {
+margin: 0;
+padding: 0 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Main Section Styles */
+
+main {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.section-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Objective Section Styles */
+
+.objective {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+/* Experience Section Styles */
+
+.experience {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Skills Section Styles */
+
+.skills {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Contact Styles */
+.contact {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+text-align: center;
+}
+
+/* Social Media Styles */
+
+.social-media {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.social-media a {
+margin: 0 10px;
+font-size: 1.5em;
+text-decoration: none;
+color: #555;
+}
+
+.social-media a:hover {
+color: #000;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+.header-title {
+font-size: 1.5em;
+}
+.header-subtitle {
+font-size: 1.2em;
+}
+.section-title {
+font-size: 1.2em;
+}
+}
+
+/* Contact section */
+
+.section-title{
+margin-bottom: 10px;
+}
+
+.social-media a{
+text-decoration: none;
+color: #555;
+}
+
+.social-media a:hover{
+color: #000;
+}
+
