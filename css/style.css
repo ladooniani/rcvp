@@ -11,14 +11,14 @@ padding: 0;
 .header-title {
 margin: 0;
 padding: 20px;
-text-align: center;
+text-align: left !important;
 font-size: 2em;
 }
 
 .header-subtitle {
 margin: 0;
 padding: 0 20px;
-text-align: center;
+text-align: left !important;
 font-size: 1.5em;
 }
 
@@ -33,7 +33,7 @@ justify-content: center;
 .section-title {
 margin: 0;
 padding: 20px;
-text-align: center;
+text-align: left !important;
 font-size: 1.5em;
 }
 
