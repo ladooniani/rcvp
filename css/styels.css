@@ -1,88 +1,211 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Lado Oniani - Software Engineer / Artist</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1 class="header-title">Lado Oniani</h1>
-      <h2 class="header-subtitle">Software Engineer / Artist</h2>
-    </header>
-    <main>
-      <section class="objective">
-        <h2 class="section-title">Objective</h2>
-        <p>
-          I am a software engineer with a background in mechanical engineering
-          and industrial design. <br />
-          <br />I specialize in intelligent robotics and design, and have a
-          passion for creating synthetic entities and interactive technologies
-          for educational, therapeutic, and humanitarian purposes. <br />
-          <br />
-          My skills include full-stack development, natural language processing,
-          and real-world problem-solving. <br />
-          <br />I am also constantly learning new techniques and best practices
-          in programming, data structures, and algorithms.
-          <a href="https://github.com/ladooniani">Visit my GitHub</a> to view my
-          <a
-            href="https://github.com/ladooniani/lado-oniani-cv.md/blob/main/Lado-Oniani-CV.md"
-            >CV</a
-          >
-          and learn more about my skills and experience.
-        </p>
-      </section>
+/* Global Styles */
 
-      <section class="experience">
-        <h2 class="section-title">Experience</h2>
-        <p>
-          As a freelance software engineer, I offer full-stack development
-          services for complex products and applications, with a focus on
-          intelligent robotics and industrial design. <br />
-          <br />
-          I am committed to finding creative solutions to real-world problems
-          and using best practices in software design to deliver high-quality
-          results. <br />
-          <br />
-          My expertise in computer programming, data structures, and algorithms,
-          along with my ability to quickly learn and approach projects with a
-          creative and analytical mindset, allows me to deliver exceptional
-          solutions.
-        </p>
-      </section>
-      <section class="skills">
-        <h2 class="section-title">Skills</h2>
-        <ul>
-          <li>Full-stack software development and computer programming</li>
-          <li>Intelligent robotics and control systems</li>
-          <li>Mechanical engineering and industrial design</li>
-          <li>Natural language processing</li>
-          <li>Strong analytical problem-solving and creative thinking</li>
-          <li>Proficient in various programming languages and CAD software</li>
-          <li>
-            Specialization in developing algorithms for various applications
-          </li>
-          <li>
-            Continuously learning new techniques and best practices in
-            programming, data structures, and algorithms.
-          </li>
-        </ul>
-      </section>
-      <footer class="contact">
-        <h4>Contact</h4>
-        <ul>
-          <li>
-            Email:
-            <a href="mailto:ladooniani@gmail.com">ladooniani@gmail.com</a>
-          </li>
-          <li>
-            For more information, check out my
-            <a href="https://github.com/ladooniani" class="footer-link"
-              >GitHub</a
-            >
-            and support me on <a href="https://paypal.me/dropsuit">PayPal</a>
-          </li>
-        </ul>
-      </footer>
-    </main>
-  </body>
-</html>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+/* Header Styles */
+
+.header-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 2em;
+}
+
+.header-subtitle {
+margin: 0;
+padding: 0 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Main Section Styles */
+
+main {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.section-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Objective Section Styles */
+
+.objective {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+/* Experience Section Styles */
+
+.experience {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Skills Section Styles */
+
+.skills {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Contact Styles */
+.contact {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+text-align: left !important;
+}
+
+/* Social Media Styles */
+
+.social-media {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+/* Global Styles */
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+/* Header Styles */
+
+.header-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 2em;
+}
+
+.header-subtitle {
+margin: 0;
+padding: 0 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Main Section Styles */
+
+main {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.section-title {
+margin: 0;
+padding: 20px;
+text-align: center;
+font-size: 1.5em;
+}
+
+/* Objective Section Styles */
+
+.objective {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+/* Experience Section Styles */
+
+.experience {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Skills Section Styles */
+
+.skills {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+}
+
+/* Contact Styles */
+.contact {
+width: 100%;
+background-color: #f2f2f2;
+padding: 20px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+margin-top: 20px;
+text-align: center;
+}
+
+/* Social Media Styles */
+
+.social-media {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.social-media a {
+margin: 0 10px;
+font-size: 1.5em;
+text-decoration: none;
+color: #555;
+}
+
+.social-media a:hover {
+color: #000;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+.header-title {
+font-size: 1.5em;
+}
+.header-subtitle {
+font-size: 1.2em;
+}
+.section-title {
+font-size: 1.2em;
+}
+}
+
+/* Contact section */
+
+.section-title{
+margin-bottom: 10px;
+}
+
+.social-media a{
+text-decoration: none;
+color: #555;
+}
+
+.social-media a:hover{
+color: #000;
+}
