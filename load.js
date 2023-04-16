@@ -30,3 +30,25 @@ function callLambda2() {
       console.error("Error:", error);
     });
 }
+
+function callLambda3() {
+  const response = document.getElementById("response");
+  console.log("Call lambda function 1");
+  fetch("https://d3s1nj7gz0.execute-api.eu-north-1.amazonaws.com/beta-test", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ number: 1 }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      response.innerHTML = data.message;
+      console.log(data);
+      alert(data.message);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
