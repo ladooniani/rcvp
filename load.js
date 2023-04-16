@@ -1,4 +1,4 @@
-function callLambda() {
+function callLambda1() {
   const response = document.getElementById("response");
   console.log("Call lambda function");
   fetch("https://d3s1nj7gz0.execute-api.eu-north-1.amazonaws.com/beta-test", {
@@ -16,7 +16,7 @@ function callLambda() {
     });
 }
 
-function callLambda0() {
+function callLambda2() {
   const response = document.getElementById("response");
   console.log("Call Lambda function");
   fetch("https://d3s1nj7gz0.execute-api.eu-north-1.amazonaws.com/beta-test")
