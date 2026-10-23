@@ -266,10 +266,8 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModalFn();
   });
 
-  // Close only on pure background click (desktop). On mobile close with × only.
   modal.addEventListener("click", (e) => {
-    if (window.innerWidth <= 640) return;
-    if (e.target === modal) {
+    if (e.target === modal || e.target.classList.contains("modal-content")) {
       closeModalFn();
     }
   });
@@ -287,22 +285,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ---------- Touch swipe + tap (mobile) ----------
+  // ---------- Touch swipe (mobile) ----------
   let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
-  const SWIPE_THRESHOLD = 50; // min px to count as swipe
+  const SWIPE_THRESHOLD = 50; // min px for a swipe
   const SWIPE_RATIO = 1.5; // horizontal must dominate vertical
-  const TAP_MAX_MOVE = 12; // max movement still counted as a tap
+
+  function handleSwipe() {
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return; // mostly vertical → ignore
+    if (dx > 0) {
+      showImage(currentIndex - 1); // swipe right → previous
+    } else {
+      showImage(currentIndex + 1); // swipe left → next
+    }
+  }
 
   modal.addEventListener(
     "touchstart",
     (e) => {
       if (modal.classList.contains("hidden")) return;
       const t = e.changedTouches[0];
-      touchStartX = t.clientX;
-      touchStartY = t.clientY;
+      touchStartX = t.screenX;
+      touchStartY = t.screenY;
     },
     { passive: true },
   );
@@ -311,51 +320,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "touchend",
     (e) => {
       if (modal.classList.contains("hidden")) return;
-      if (currentImages.length <= 1) return;
-
       const t = e.changedTouches[0];
-      touchEndX = t.clientX;
-      touchEndY = t.clientY;
-
-      // Don't navigate when user tapped a control
-      const target = e.target;
-      if (
-        target.closest("#close-modal") ||
-        target.closest("#copy-image-link") ||
-        target.closest("#copyright-link") ||
-        target.closest("#prev-image") ||
-        target.closest("#next-image") ||
-        target.closest("#image-counter") ||
-        target.closest("#image-copyright")
-      ) {
-        return;
-      }
-
-      const dx = touchEndX - touchStartX;
-      const dy = touchEndY - touchStartY;
-      const absX = Math.abs(dx);
-      const absY = Math.abs(dy);
-
-      // Swipe
-      if (absX >= SWIPE_THRESHOLD && absX >= absY * SWIPE_RATIO) {
-        if (dx > 0) {
-          showImage(currentIndex - 1); // swipe right → previous
-        } else {
-          showImage(currentIndex + 1); // swipe left → next
-        }
-        return;
-      }
-
-      // Tap (almost no movement)
-      if (absX <= TAP_MAX_MOVE && absY <= TAP_MAX_MOVE) {
-        const rect = modal.getBoundingClientRect();
-        const x = touchEndX - rect.left;
-        if (x < rect.width / 2) {
-          showImage(currentIndex - 1); // left half → previous
-        } else {
-          showImage(currentIndex + 1); // right half → next
-        }
-      }
+      touchEndX = t.screenX;
+      touchEndY = t.screenY;
+      handleSwipe();
     },
     { passive: true },
   );
