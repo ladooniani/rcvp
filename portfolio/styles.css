@@ -12,7 +12,13 @@ nav ul li a {
   font-size: 14px;
   text-transform: uppercase;
 }
-
+/* Mobile nav refinements */
+@media (max-width: 640px) {
+  nav ul li a {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+}
 section {
   scroll-margin-top: 100px;
 }
