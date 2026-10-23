@@ -284,49 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ---------- Touch swipe (mobile) ----------
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-  const SWIPE_THRESHOLD = 50; // min px for a swipe
-  const SWIPE_RATIO = 1.5; // horizontal must dominate vertical
-
-  function handleSwipe() {
-    const dx = touchEndX - touchStartX;
-    const dy = touchEndY - touchStartY;
-    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
-    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return; // mostly vertical → ignore
-    if (dx > 0) {
-      showImage(currentIndex - 1); // swipe right → previous
-    } else {
-      showImage(currentIndex + 1); // swipe left → next
-    }
-  }
-
-  modal.addEventListener(
-    "touchstart",
-    (e) => {
-      if (modal.classList.contains("hidden")) return;
-      const t = e.changedTouches[0];
-      touchStartX = t.screenX;
-      touchStartY = t.screenY;
-    },
-    { passive: true },
-  );
-
-  modal.addEventListener(
-    "touchend",
-    (e) => {
-      if (modal.classList.contains("hidden")) return;
-      const t = e.changedTouches[0];
-      touchEndX = t.screenX;
-      touchEndY = t.screenY;
-      handleSwipe();
-    },
-    { passive: true },
-  );
-
   // Copy share link (year / category)
   copyShareLinkBtn.addEventListener("click", () => {
     const url = buildShareUrl({
