@@ -174,12 +174,13 @@ section {
 }
 
 /* Blue links only inside the Selected exhibitions section – text stays black */
-/* All links on the page – blue, text stays black */
-a {
+/* Blue links only in About page content (after the heading)
+   – navigation and titles stay black */
+section.py-32 a {
   color: #2563eb;
 }
 
-a:hover {
+section.py-32 a:hover {
   color: #1d4ed8;
   opacity: 0.85;
 }
