@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive - Lado Oniani</title>
+    <meta
+      name="description"
+      content="Chronological archive of Lado Oniani's graphic works from 1986 to 2025."
+    />
+    <meta property="og:title" content="Lado Oniani - Archive" />
+    <meta
+      property="og:description"
+      content="Browse Lado Oniani's graphic works by year, from 1985 to 2026."
+    />
+    <meta property="og:image" content="assets/og-image.jpg" />
+    <meta property="og:url" content="https://ladooniani.art/archive.html" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-white text-black">
+    <nav class="fixed top-0 w-full bg-white border-b border-gray-200 p-6 z-10">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-xl font-serif">Lado Oniani</a>
+        <ul class="flex space-x-8">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="archive.html" class="hover:underline">Archive</a></li>
+          <li><a href="info.html" class="hover:underline">About</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="py-32">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-serif mb-12 text-center">
+          Archive (1985–2025)
+        </h2>
+        <div class="mb-12 text-center">
+          <label for="year-select" class="text-lg font-serif mr-4"
+            >Select Year</label
+          >
+          <select
+            id="year-select"
+            class="bg-white border border-gray-200 text-sm font-serif p-2 focus:outline-none"
+            aria-label="Select a year"
+          >
+            <!-- Populated by JavaScript -->
+          </select>
+        </div>
+
+        <!-- Share current year / category -->
+        <div id="share-bar" class="mb-8 text-center hidden">
+          <button
+            id="copy-share-link"
+            class="text-sm font-serif underline hover:opacity-70"
+          >
+            Copy share link
+          </button>
+          <span id="copy-feedback" class="ml-3 text-sm text-gray-500 hidden"
+            >Copied!</span
+          >
+        </div>
+
+        <div id="subfolder-list" class="mb-12 hidden">
+          <h3 class="text-lg font-serif mb-6 text-center">Select Category</h3>
+          <div
+            id="subfolder-items"
+            class="grid grid-cols-2 sm:grid-cols-6 lg:grid-cols-10 gap-4"
+          ></div>
+        </div>
+        <div
+          id="gallery"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Modal for Large Image View -->
+    <div
+      id="image-modal"
+      class="fixed inset-0 bg-white flex items-center justify-center z-50 hidden"
+    >
+      <button
+        id="close-modal"
+        class="absolute top-4 right-4 sm:top-6 sm:right-6 text-black text-3xl z-20 leading-none hover:opacity-70"
+        aria-label="Close"
+      >
+        ×
+      </button>
+      <button
+        id="prev-image"
+        class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-black text-4xl sm:text-5xl z-20 leading-none hover:opacity-70 select-none"
+        aria-label="Previous image"
+      >
+        ‹
+      </button>
+      <button
+        id="next-image"
+        class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-black text-4xl sm:text-5xl z-20 leading-none hover:opacity-70 select-none"
+        aria-label="Next image"
+      >
+        ›
+      </button>
+      <div
+        class="modal-content flex flex-col items-center justify-center w-full h-full px-10 sm:px-16 py-12"
+      >
+        <img
+          id="large-image"
+          src=""
+          alt="Large artwork"
+          class="max-w-full max-h-full object-contain"
+          draggable="false"
+        />
+        <div class="flex flex-col items-center gap-1 mt-3 shrink-0">
+          <div class="flex items-center gap-4">
+            <p
+              id="image-counter"
+              class="text-center text-sm font-serif text-gray-600"
+            ></p>
+            <button
+              id="copy-image-link"
+              class="text-sm font-serif underline hover:opacity-70"
+            >
+              Copy image link
+            </button>
+            <span id="copy-image-feedback" class="text-sm text-gray-500 hidden"
+              >Copied!</span
+            >
+          </div>
+          <!-- Copyright – single line -->
+          <p
+            id="image-copyright"
+            class="text-xs font-serif text-gray-500 mt-1 text-center"
+          >
+            © <span id="copyright-years"></span> Lado Oniani
+            <a
+              id="copyright-link"
+              href="https://github.com/ladooniani/ladooniani/blob/main/Copyright.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:opacity-70 ml-1"
+              >Copyright notice</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js?v=20261004d"></script>
+  </body>
+</html>

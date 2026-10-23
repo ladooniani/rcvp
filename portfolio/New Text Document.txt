@@ -1,0 +1,5 @@
+node generate-gallery.js
+
+serve .
+
+python -m http.server 5500
