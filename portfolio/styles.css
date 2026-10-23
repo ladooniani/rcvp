@@ -174,18 +174,12 @@ section {
 }
 
 /* Blue links only inside the Selected exhibitions section – text stays black */
-#artistic-archive a {
+/* All links on the page – blue, text stays black */
+a {
   color: #2563eb;
 }
 
-#artistic-archive a:hover {
+a:hover {
   color: #1d4ed8;
   opacity: 0.85;
-}
-a[href="#artistic-archive"] {
-  color: #2563eb;
-}
-
-a[href="#artistic-archive"]:hover {
-  color: #1d4ed8;
 }
