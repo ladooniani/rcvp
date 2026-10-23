@@ -24,15 +24,20 @@
   </head>
   <body class="bg-white text-black">
     <nav
-      class="fixed top-0 w-full bg-white border-b border-gray-200 px-3 py-3 sm:px-6 sm:py-6 z-10"
+      class="fixed top-0 w-full bg-white border-b border-gray-200 px-4 py-4 sm:p-6 z-10"
     >
-      <div class="container mx-auto flex justify-between items-center gap-3">
+      <div class="container mx-auto flex justify-between items-center">
         <a
           href="index.html"
-          class="text-base sm:text-xl font-serif whitespace-nowrap flex-shrink-0"
+          class="text-lg sm:text-xl font-serif whitespace-nowrap"
           >Lado Oniani</a
         >
-        <ul class="flex space-x-2 sm:space-x-8 flex-shrink-0">
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links flex space-x-3 sm:space-x-8">
           <li><a href="index.html" class="hover:underline">Home</a></li>
           <li><a href="archive.html" class="hover:underline">Archive</a></li>
           <li><a href="info.html" class="hover:underline">About</a></li>
@@ -40,6 +45,27 @@
         </ul>
       </div>
     </nav>
+    <script>
+      (function () {
+        const btn = document.querySelector(".nav-toggle");
+        const links = document.querySelector(".nav-links");
+        if (!btn || !links) return;
+        btn.addEventListener("click", function () {
+          const open = links.classList.toggle("is-open");
+          btn.classList.toggle("is-open", open);
+          btn.setAttribute("aria-expanded", open);
+          btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+        links.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            links.classList.remove("is-open");
+            btn.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+            btn.setAttribute("aria-label", "Open menu");
+          });
+        });
+      })();
+    </script>
 
     <section class="py-32">
       <div class="container mx-auto px-4 text-center">
