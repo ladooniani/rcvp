@@ -12,11 +12,38 @@ nav ul li a {
   font-size: 14px;
   text-transform: uppercase;
 }
-/* Mobile nav refinements */
+
+/* Mobile nav – keep logo + links on one line without overflow */
 @media (max-width: 640px) {
+  nav {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  nav .container {
+    gap: 0.75rem;
+  }
+
+  /* Logo */
+  nav a.font-serif {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  nav ul {
+    flex-shrink: 0;
+    gap: 0.55rem;
+  }
+
+  /* Override Tailwind space-x margins so gap controls spacing */
+  nav ul > li + li {
+    margin-left: 0;
+  }
+
   nav ul li a {
-    font-size: 12px;
-    letter-spacing: 0.04em;
+    font-size: 11px;
+    letter-spacing: 0.03em;
   }
 }
 section {
