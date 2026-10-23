@@ -172,17 +172,13 @@ section {
 #image-counter {
   user-select: none;
 }
-/* Selected exhibitions archive – blue text + blue links */
-#artistic-archive {
-  color: #2563eb; /* blue text */
-}
 
+/* Blue links only inside the Selected exhibitions section – text stays black */
 #artistic-archive a {
-  color: #2563eb; /* blue links */
-  text-decoration: underline;
+  color: #2563eb;
 }
 
 #artistic-archive a:hover {
-  opacity: 0.75;
-  text-decoration: none;
+  color: #1d4ed8;
+  opacity: 0.85;
 }
