@@ -173,7 +173,6 @@ section {
   user-select: none;
 }
 
-/* Blue links only inside the Selected exhibitions section – text stays black */
 /* Blue links only in About page content (after the heading)
    – navigation and titles stay black */
 section.py-32 a {
