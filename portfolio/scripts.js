@@ -327,7 +327,31 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: true },
   );
+  // ---------- Tap left / right half of modal (mobile) ----------
+  modal.addEventListener("click", (e) => {
+    // Only on touch devices / small screens; ignore desktop (arrows handle it)
+    if (window.innerWidth > 640) return;
+    // Don't trigger when tapping buttons or links inside the modal
+    if (
+      e.target.closest("#close-modal") ||
+      e.target.closest("#copy-image-link") ||
+      e.target.closest("#copyright-link") ||
+      e.target.closest("#prev-image") ||
+      e.target.closest("#next-image")
+    ) {
+      return;
+    }
 
+    const rect = modal.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const half = rect.width / 2;
+
+    if (x < half) {
+      showImage(currentIndex - 1); // tap left → previous
+    } else {
+      showImage(currentIndex + 1); // tap right → next
+    }
+  });
   // Copy share link (year / category)
   copyShareLinkBtn.addEventListener("click", () => {
     const url = buildShareUrl({
@@ -406,4 +430,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
-});
+};);
