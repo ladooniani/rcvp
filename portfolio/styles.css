@@ -182,3 +182,11 @@ section {
   color: #1d4ed8;
   opacity: 0.85;
 }
+
+a[href="#artistic-archive"] {
+  color: #2563eb;
+}
+
+a[href="#artistic-archive"]:hover {
+  color: #1d4ed8;
+}
