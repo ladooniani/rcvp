@@ -34,7 +34,7 @@ body {
 .nav-toggle.is-open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
-/* Hide arrow buttons on mobile – use swipe instead */
+/* Hide arrow buttons on mobile – use swipe + tap instead */
 @media (max-width: 640px) {
   #prev-image,
   #next-image {
