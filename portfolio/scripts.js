@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const subfolderList = document.getElementById("subfolder-list");
   const subfolderItems = document.getElementById("subfolder-items");
   const gallery = document.getElementById("gallery");
-  const modal = document.getElementById("image-modal");
+  const modal = document.getElementById("image");
   const largeImage = document.getElementById("large-image");
   const closeModal = document.getElementById("close-modal");
   const prevBtn = document.getElementById("prev-image");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (_, i) => 1985 + i,
   ).reverse();
 
-  // ---------- Zoom / pan state ----------
+  // ---------- Zoom state (temporary – snaps back on finger lift) ----------
   let scale = 1;
   let translateX = 0;
   let translateY = 0;
@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastTouchX = 0;
   let lastTouchY = 0;
   let isPinching = false;
-  let isPanning = false;
   const MIN_SCALE = 1;
   const MAX_SCALE = 4;
 
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     translateX = 0;
     translateY = 0;
     isPinching = false;
-    isPanning = false;
+    lastTouchDistance = 0;
     applyTransform();
   }
 
@@ -190,10 +189,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         protectAllImages();
 
+        // Share-link: open exact image
         if (autoImg) {
           const idx = images.findIndex((f) => f === autoImg);
           if (idx >= 0) openModal(idx);
-        } else if (
+        }
+        // Mobile: open first image immediately
+        else if (
           window.matchMedia("(max-width: 640px)").matches &&
           images.length > 0
         ) {
@@ -271,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Gallery grid thumbnails → open modal
   gallery.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
       const index = parseInt(e.target.dataset.index, 10);
@@ -320,7 +323,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ---------- Touch: pinch-zoom + pan + swipe ----------
   // ---------- Touch: temporary pinch-zoom (snaps back on release) ----------
   function getDistance(t1, t2) {
     const dx = t1.clientX - t2.clientX;
@@ -334,7 +336,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (modal.classList.contains("hidden")) return;
 
       if (e.touches.length === 2) {
-        // Start pinch
         isPinching = true;
         lastTouchDistance = getDistance(e.touches[0], e.touches[1]);
         e.preventDefault();
@@ -353,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (modal.classList.contains("hidden")) return;
 
       if (e.touches.length === 2 && isPinching) {
-        // Live pinch zoom
         e.preventDefault();
         const dist = getDistance(e.touches[0], e.touches[1]);
         if (lastTouchDistance > 0) {
@@ -374,12 +374,12 @@ document.addEventListener("DOMContentLoaded", () => {
     (e) => {
       if (modal.classList.contains("hidden")) return;
 
-      // Always snap back to original size when fingers are lifted
+      // Snap back to original size as soon as fingers are lifted
       if (e.touches.length === 0) {
         resetZoom();
       }
 
-      // One-finger swipe only when we were never zooming
+      // One-finger swipe only when we were never pinching
       if (scale === 1 && !isPinching && e.changedTouches.length === 1) {
         const t = e.changedTouches[0];
         const dx = t.clientX - lastTouchX;
@@ -479,4 +479,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
-};);
+});
