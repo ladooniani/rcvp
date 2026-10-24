@@ -255,11 +255,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Tap the large image in the modal → next image
-  largeImage.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (currentImages.length > 1) {
+  // Tap left half of screen → previous; right half → next
+  function handleSideTap(e) {
+    if (currentImages.length <= 1) return;
+    const midX = window.innerWidth / 2;
+    if (e.clientX < midX) {
+      showImage(currentIndex - 1);
+    } else {
       showImage(currentIndex + 1);
     }
+  }
+
+  largeImage.addEventListener("click", (e) => {
+    e.stopPropagation();
+    handleSideTap(e);
   });
 
   prevBtn.addEventListener("click", (e) => {
@@ -277,12 +286,20 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModalFn();
   });
 
+  // Tapping modal background / content also navigates by side of screen
+  // (close via × button, Escape, or swipe still available)
   modal.addEventListener("click", (e) => {
-    if (e.target === modal || e.target.classList.contains("modal-content")) {
-      closeModalFn();
+    if (
+      e.target === modal ||
+      e.target.classList.contains("modal-content") ||
+      e.target === imageCounter ||
+      e.target.closest("#image-copyright")
+    ) {
+      e.stopPropagation();
+      handleSideTap(e);
     }
   });
-
+  
   document.addEventListener("keydown", (e) => {
     if (modal.classList.contains("hidden")) return;
     if (e.key === "Escape") {
@@ -413,4 +430,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
-});
+};);
