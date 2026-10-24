@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyImageLinkBtn = document.getElementById("copy-image-link");
   const copyImageFeedback = document.getElementById("copy-image-feedback");
 
-  let currentImages = []; // full paths
+  let currentImages = [];
   let currentIndex = 0;
   let currentYearVal = null;
   let currentCat = null;
@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => feedbackEl.classList.add("hidden"), 1500);
       }
     } catch {
-      // fallback
       const ta = document.createElement("textarea");
       ta.value = text;
       document.body.appendChild(ta);
@@ -128,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         protectAllImages();
 
-        // Auto-open category from URL
         if (autoCat) {
           const link = subfolderItems.querySelector(
             `a[data-subfolder="${CSS.escape(autoCat)}"]`,
@@ -168,10 +166,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         protectAllImages();
 
-        // Auto-open specific image from URL
+        // Share-link: open exact image
         if (autoImg) {
           const idx = images.findIndex((f) => f === autoImg);
           if (idx >= 0) openModal(idx);
+        }
+        // Mobile: open first image immediately (no scroll needed)
+        else if (
+          window.matchMedia("(max-width: 640px)").matches &&
+          images.length > 0
+        ) {
+          openModal(0);
         }
       })
       .catch(() => {
@@ -192,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
     prevBtn.style.display = showNav ? "" : "none";
     nextBtn.style.display = showNav ? "" : "none";
 
-    // Update URL with image filename
     const filename = currentImages[currentIndex].split("/").pop();
     updateUrl({
       year: currentYearVal,
@@ -200,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
       img: filename,
     });
 
-    // Copyright: © (works-year)–(current-year) Lado Oniani
     const copyrightYearsEl = document.getElementById("copyright-years");
     if (copyrightYearsEl && currentYearVal) {
       const worksYear = currentYearVal;
@@ -221,7 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
     largeImage.src = "";
     imageCounter.textContent = "";
     document.body.style.overflow = "";
-    // Keep year + category in URL, drop image
     updateUrl({ year: currentYearVal, cat: currentCat });
   }
 
@@ -244,10 +246,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Gallery grid thumbnails → open modal
   gallery.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
       const index = parseInt(e.target.dataset.index, 10);
       openModal(isNaN(index) ? 0 : index);
+    }
+  });
+
+  // Tap the large image in the modal → next image
+  largeImage.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (currentImages.length > 1) {
+      showImage(currentIndex + 1);
     }
   });
 
@@ -290,18 +301,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
-  const SWIPE_THRESHOLD = 50; // min px for a swipe
-  const SWIPE_RATIO = 1.5; // horizontal must dominate vertical
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_RATIO = 1.5;
 
   function handleSwipe() {
     const dx = touchEndX - touchStartX;
     const dy = touchEndY - touchStartY;
     if (Math.abs(dx) < SWIPE_THRESHOLD) return;
-    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return; // mostly vertical → ignore
+    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
     if (dx > 0) {
-      showImage(currentIndex - 1); // swipe right → previous
+      showImage(currentIndex - 1);
     } else {
-      showImage(currentIndex + 1); // swipe left → next
+      showImage(currentIndex + 1);
     }
   }
 
@@ -328,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 
-  // Copy share link (year / category)
+  // Copy share link
   copyShareLinkBtn.addEventListener("click", () => {
     const url = buildShareUrl({
       year: currentYearVal,
@@ -337,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
     copyToClipboard(url, copyFeedback);
   });
 
-  // Copy image link (from modal)
+  // Copy image link
   copyImageLinkBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const filename = currentImages[currentIndex]
@@ -353,13 +364,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   protectImage(largeImage);
 
-  // ---------- Year list with empty / has-content colouring ----------
+  // ---------- Year list ----------
   yearSelect.innerHTML = "";
 
   fetch("archive/years.json")
     .then((r) => r.json())
     .then((yearsMeta) => {
-      // Sort descending (newest first)
       yearsMeta
         .slice()
         .sort((a, b) => b.year - a.year)
@@ -367,12 +377,10 @@ document.addEventListener("DOMContentLoaded", () => {
           const option = document.createElement("option");
           option.value = year;
           option.textContent = year;
-          // Blue for empty years, black for years that contain works
           option.style.color = hasContent ? "#000000" : "#2563eb";
           yearSelect.appendChild(option);
         });
 
-      // Initial load from URL
       const params = getParams();
       const urlYear = params.get("year");
       const urlCat = params.get("cat");
@@ -386,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
       loadSubfolders(startYear, urlCat, urlImg);
     })
     .catch(() => {
-      // Fallback if years.json is missing – original behaviour
       years.forEach((year) => {
         const option = document.createElement("option");
         option.value = year;
