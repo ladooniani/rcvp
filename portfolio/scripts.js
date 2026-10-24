@@ -255,7 +255,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Tap left half of screen → previous; right half → next
+  // Tap left half of screen → previous; right half → next
   function handleSideTap(e) {
+    if (currentImages.length <= 1) return;
+    // Ignore side-tap while zoomed or right after a pinch
+    if (zoomScale > 1.05 || didPinchThisGesture) return;
+    const midX = window.innerWidth / 2;
+    if (e.clientX < midX) {
+      showImage(currentIndex - 1);
+    } else {
+      showImage(currentIndex + 1);
+    }
+  } /* function handleSideTap(e) {
     if (currentImages.length <= 1) return;
     const midX = window.innerWidth / 2;
     if (e.clientX < midX) {
@@ -263,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       showImage(currentIndex + 1);
     }
-  }
+  }*/
 
   largeImage.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -313,7 +324,141 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------- Touch swipe (mobile) ----------
+  // ---------- Pinch-zoom + swipe (modal image only) ----------
+  // Zoom stays on the image via CSS transform. Page chrome never scales.
+  // On finger-up the image always snaps back to 1× so swipe can navigate again.
   let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_RATIO = 1.5;
+
+  let zoomScale = 1;
+  let pinchStartDist = 0;
+  let pinchStartScale = 1;
+  let isPinching = false;
+  let didPinchThisGesture = false;
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 4;
+
+  function getDistance(t1, t2) {
+    const dx = t1.clientX - t2.clientX;
+    const dy = t1.clientY - t2.clientY;
+    return Math.hypot(dx, dy);
+  }
+
+  function applyZoom(scale) {
+    zoomScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale));
+    largeImage.style.transform = `scale(${zoomScale})`;
+  }
+
+  function resetZoom() {
+    zoomScale = 1;
+    largeImage.style.transform = "";
+    isPinching = false;
+    pinchStartDist = 0;
+  }
+
+  function handleSwipe() {
+    // Only navigate when not zoomed / not in a pinch gesture
+    if (zoomScale > 1.05 || didPinchThisGesture) return;
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
+    if (dx > 0) {
+      showImage(currentIndex - 1);
+    } else {
+      showImage(currentIndex + 1);
+    }
+  }
+
+  modal.addEventListener(
+    "touchstart",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      if (e.touches.length === 2) {
+        // Start pinch – only when both fingers are on / near the image area
+        isPinching = true;
+        didPinchThisGesture = true;
+        pinchStartDist = getDistance(e.touches[0], e.touches[1]);
+        pinchStartScale = zoomScale;
+        e.preventDefault();
+        return;
+      }
+
+      if (e.touches.length === 1) {
+        const t = e.touches[0];
+        touchStartX = t.screenX;
+        touchStartY = t.screenY;
+        didPinchThisGesture = false;
+      }
+    },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchmove",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      if (e.touches.length === 2 && isPinching) {
+        e.preventDefault();
+        const dist = getDistance(e.touches[0], e.touches[1]);
+        if (pinchStartDist > 0) {
+          const next = pinchStartScale * (dist / pinchStartDist);
+          applyZoom(next);
+        }
+        return;
+      }
+    },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchend",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      // Any finger lifted → snap image back to 1×
+      if (e.touches.length < 2) {
+        resetZoom();
+      }
+
+      // Swipe only when a single-finger gesture just ended and we never pinched
+      if (e.touches.length === 0 && e.changedTouches.length === 1) {
+        const t = e.changedTouches[0];
+        touchEndX = t.screenX;
+        touchEndY = t.screenY;
+        handleSwipe();
+      }
+    },
+    { passive: true },
+  );
+
+  modal.addEventListener(
+    "touchcancel",
+    () => {
+      resetZoom();
+    },
+    { passive: true },
+  );
+
+  // Reset zoom whenever the modal image changes or closes
+  const _origShowImage = showImage;
+  showImage = function (index) {
+    resetZoom();
+    _origShowImage(index);
+  };
+
+  const _origCloseModalFn = closeModalFn;
+  closeModalFn = function () {
+    resetZoom();
+    _origCloseModalFn();
+  };
+  /*  let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
@@ -354,7 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: true },
   );
-
+*/
   // Copy share link
   copyShareLinkBtn.addEventListener("click", () => {
     const url = buildShareUrl({
