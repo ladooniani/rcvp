@@ -255,20 +255,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Tap the large image in the modal → next image
-  // Tap left half of screen → previous; right half → next
-  function handleSideTap(e) {
-    if (currentImages.length <= 1) return;
-    const midX = window.innerWidth / 2;
-    if (e.clientX < midX) {
-      showImage(currentIndex - 1);
-    } else {
-      showImage(currentIndex + 1);
-    }
-  }
-
   largeImage.addEventListener("click", (e) => {
     e.stopPropagation();
-    handleSideTap(e);
+    if (currentImages.length > 1) {
+      showImage(currentIndex + 1);
+    }
   });
 
   prevBtn.addEventListener("click", (e) => {
@@ -286,17 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModalFn();
   });
 
-  // Tapping modal background / content also navigates by side of screen
-  // (close via × button, Escape, or swipe still available)
   modal.addEventListener("click", (e) => {
-    if (
-      e.target === modal ||
-      e.target.classList.contains("modal-content") ||
-      e.target === imageCounter ||
-      e.target.closest("#image-copyright")
-    ) {
-      e.stopPropagation();
-      handleSideTap(e);
+    if (e.target === modal || e.target.classList.contains("modal-content")) {
+      closeModalFn();
     }
   });
 
