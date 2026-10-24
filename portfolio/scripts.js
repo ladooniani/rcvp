@@ -168,10 +168,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         protectAllImages();
 
-        // Auto-open specific image from URL
+        // Auto-open specific image from URL (share links)
         if (autoImg) {
           const idx = images.findIndex((f) => f === autoImg);
           if (idx >= 0) openModal(idx);
+        }
+        // Mobile: open first image immediately so user does not have to scroll
+        else if (
+          window.matchMedia("(max-width: 640px)").matches &&
+          images.length > 0
+        ) {
+          openModal(0);
         }
       })
       .catch(() => {
@@ -179,6 +186,17 @@ document.addEventListener("DOMContentLoaded", () => {
           '<p class="text-center">No artworks found for this category.</p>';
       });
   }
+
+  // ---------- Events ----------
+  // ... (yearSelect and subfolderItems stay exactly as they are)
+
+  // Gallery thumbnails – works on both desktop and mobile
+  gallery.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      const index = parseInt(e.target.dataset.index, 10);
+      openModal(isNaN(index) ? 0 : index);
+    }
+  });
 
   function showImage(index) {
     if (currentImages.length === 0) return;
