@@ -21,11 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentCat = null;
 
   const currentYear = new Date().getFullYear();
-
   const years = Array.from(
     { length: currentYear - 1985 + 1 },
     (_, i) => 1985 + i,
   ).reverse();
+
+  // ---------- Zoom / pan state ----------
+  let scale = 1;
+  let translateX = 0;
+  let translateY = 0;
+  let lastTouchDistance = 0;
+  let lastTouchX = 0;
+  let lastTouchY = 0;
+  let isPinching = false;
+  let isPanning = false;
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 4;
+
+  function applyTransform() {
+    largeImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+  }
+
+  function resetZoom() {
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    isPinching = false;
+    isPanning = false;
+    applyTransform();
+  }
 
   // ---------- URL helpers ----------
   function getParams() {
@@ -166,13 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         protectAllImages();
 
-        // Share-link: open exact image
         if (autoImg) {
           const idx = images.findIndex((f) => f === autoImg);
           if (idx >= 0) openModal(idx);
-        }
-        // Mobile: open first image immediately (no scroll needed)
-        else if (
+        } else if (
           window.matchMedia("(max-width: 640px)").matches &&
           images.length > 0
         ) {
@@ -196,6 +217,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const showNav = currentImages.length > 1;
     prevBtn.style.display = showNav ? "" : "none";
     nextBtn.style.display = showNav ? "" : "none";
+
+    // Always reset zoom when changing image
+    resetZoom();
 
     const filename = currentImages[currentIndex].split("/").pop();
     updateUrl({
@@ -224,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     largeImage.src = "";
     imageCounter.textContent = "";
     document.body.style.overflow = "";
+    resetZoom();
     updateUrl({ year: currentYearVal, cat: currentCat });
   }
 
@@ -246,7 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Gallery grid thumbnails → open modal
   gallery.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
       const index = parseInt(e.target.dataset.index, 10);
@@ -254,10 +278,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Tap the large image in the modal → next image
+  // Single tap on large image → next (only when not zoomed)
   largeImage.addEventListener("click", (e) => {
     e.stopPropagation();
-    if (currentImages.length > 1) {
+    if (scale === 1 && currentImages.length > 1) {
       showImage(currentIndex + 1);
     }
   });
@@ -296,45 +320,104 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ---------- Touch swipe (mobile) ----------
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_RATIO = 1.5;
+  // ---------- Touch: pinch-zoom + pan + swipe ----------
+  function getDistance(t1, t2) {
+    const dx = t1.clientX - t2.clientX;
+    const dy = t1.clientY - t2.clientY;
+    return Math.hypot(dx, dy);
+  }
 
-  function handleSwipe() {
-    const dx = touchEndX - touchStartX;
-    const dy = touchEndY - touchStartY;
-    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
-    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
-    if (dx > 0) {
-      showImage(currentIndex - 1);
-    } else {
-      showImage(currentIndex + 1);
-    }
+  function getMidpoint(t1, t2) {
+    return {
+      x: (t1.clientX + t2.clientX) / 2,
+      y: (t1.clientY + t2.clientY) / 2,
+    };
   }
 
   modal.addEventListener(
     "touchstart",
     (e) => {
       if (modal.classList.contains("hidden")) return;
-      const t = e.changedTouches[0];
-      touchStartX = t.screenX;
-      touchStartY = t.screenY;
+
+      if (e.touches.length === 2) {
+        // Start pinch
+        isPinching = true;
+        isPanning = false;
+        lastTouchDistance = getDistance(e.touches[0], e.touches[1]);
+        e.preventDefault();
+      } else if (e.touches.length === 1) {
+        lastTouchX = e.touches[0].clientX;
+        lastTouchY = e.touches[0].clientY;
+        isPanning = scale > 1;
+        isPinching = false;
+      }
     },
-    { passive: true },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchmove",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      if (e.touches.length === 2 && isPinching) {
+        // Pinch zoom
+        e.preventDefault();
+        const dist = getDistance(e.touches[0], e.touches[1]);
+        if (lastTouchDistance > 0) {
+          const delta = dist / lastTouchDistance;
+          let newScale = scale * delta;
+          newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, newScale));
+          scale = newScale;
+          applyTransform();
+        }
+        lastTouchDistance = dist;
+      } else if (e.touches.length === 1 && isPanning && scale > 1) {
+        // Pan when zoomed
+        e.preventDefault();
+        const dx = e.touches[0].clientX - lastTouchX;
+        const dy = e.touches[0].clientY - lastTouchY;
+        translateX += dx;
+        translateY += dy;
+        lastTouchX = e.touches[0].clientX;
+        lastTouchY = e.touches[0].clientY;
+        applyTransform();
+      }
+    },
+    { passive: false },
   );
 
   modal.addEventListener(
     "touchend",
     (e) => {
       if (modal.classList.contains("hidden")) return;
-      const t = e.changedTouches[0];
-      touchEndX = t.screenX;
-      touchEndY = t.screenY;
-      handleSwipe();
+
+      if (e.touches.length < 2) {
+        isPinching = false;
+        lastTouchDistance = 0;
+      }
+
+      // Simple one-finger swipe only when not zoomed
+      if (scale === 1 && e.changedTouches.length === 1 && !isPanning) {
+        const t = e.changedTouches[0];
+        const dx = t.clientX - lastTouchX;
+        const dy = t.clientY - lastTouchY;
+        const SWIPE_THRESHOLD = 50;
+        const SWIPE_RATIO = 1.5;
+
+        if (
+          Math.abs(dx) > SWIPE_THRESHOLD &&
+          Math.abs(dx) > Math.abs(dy) * SWIPE_RATIO
+        ) {
+          if (dx > 0) {
+            showImage(currentIndex - 1);
+          } else {
+            showImage(currentIndex + 1);
+          }
+        }
+      }
+
+      isPanning = false;
     },
     { passive: true },
   );

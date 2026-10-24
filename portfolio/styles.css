@@ -184,3 +184,16 @@ section.py-32 .md\:w-2\/3 a:hover {
   color: #1d4ed8;
   opacity: 0.85;
 }
+
+/* Zoomable image in modal */
+#large-image {
+  transform-origin: center center;
+  transition: none; /* we control transform via JS */
+  will-change: transform;
+  touch-action: none; /* critical – stops browser page zoom */
+}
+
+#image-modal {
+  touch-action: none;
+  overscroll-behavior: none;
+}
