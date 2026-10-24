@@ -330,7 +330,266 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- Pinch-zoom + pan + swipe (modal image only) ----------
   // Zoom/pan apply only to #large-image. Page chrome never scales.
   // Zoom stays until ALL fingers lift, then snaps back to 1× so swipe works again.
+  // ---------- Pinch-zoom (to finger point) + pan + swipe ----------
+  // Only #large-image scales/moves. Page chrome never zooms.
+  // Zoom stays until ALL fingers lift, then snaps to 1× so swipe works again.
   let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_RATIO = 1.5;
+
+  let zoomScale = 1;
+  let panX = 0;
+  let panY = 0;
+  let pinchStartDist = 0;
+  let pinchStartScale = 1;
+  let isPinching = false;
+  let isPanning = false;
+  let didPinchThisGesture = false;
+  let didPanThisGesture = false;
+  let panStartX = 0;
+  let panStartY = 0;
+  let panOriginX = 0;
+  let panOriginY = 0;
+  // Last pinch midpoint (screen) — used to zoom toward fingers
+  let lastPinchMidX = 0;
+  let lastPinchMidY = 0;
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 4;
+
+  function getDistance(t1, t2) {
+    const dx = t1.clientX - t2.clientX;
+    const dy = t1.clientY - t2.clientY;
+    return Math.hypot(dx, dy);
+  }
+
+  function getMidpoint(t1, t2) {
+    return {
+      x: (t1.clientX + t2.clientX) / 2,
+      y: (t1.clientY + t2.clientY) / 2,
+    };
+  }
+
+  function applyTransform() {
+    if (zoomScale <= 1.01) {
+      zoomScale = 1;
+      panX = 0;
+      panY = 0;
+      largeImage.style.transform = "";
+      return;
+    }
+    largeImage.style.transform =
+      "translate(" + panX + "px, " + panY + "px) scale(" + zoomScale + ")";
+  }
+
+  // Zoom toward a screen point (finger midpoint) instead of image center
+  function zoomToPoint(newScale, midX, midY) {
+    newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, newScale));
+    if (newScale <= 1.01) {
+      zoomScale = 1;
+      panX = 0;
+      panY = 0;
+      applyTransform();
+      return;
+    }
+
+    const rect = largeImage.getBoundingClientRect();
+    // Current visual center of the image on screen
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    // Offset from focus point to center (screen px)
+    const ox = midX - centerX;
+    const oy = midY - centerY;
+    const ratio = newScale / zoomScale;
+
+    // Keep the point under the fingers fixed while scale changes
+    panX = panX + ox - ox * ratio;
+    panY = panY + oy - oy * ratio;
+    // Also follow finger midpoint drift during the pinch
+    panX += midX - lastPinchMidX;
+    panY += midY - lastPinchMidY;
+
+    zoomScale = newScale;
+    lastPinchMidX = midX;
+    lastPinchMidY = midY;
+    applyTransform();
+  }
+
+  function resetZoom() {
+    zoomScale = 1;
+    panX = 0;
+    panY = 0;
+    largeImage.style.transform = "";
+    isPinching = false;
+    isPanning = false;
+    pinchStartDist = 0;
+  }
+
+  function handleSwipe() {
+    if (zoomScale > 1.05 || didPinchThisGesture || didPanThisGesture) return;
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
+    if (dx > 0) {
+      showImage(currentIndex - 1);
+    } else {
+      showImage(currentIndex + 1);
+    }
+  }
+
+  modal.addEventListener(
+    "touchstart",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      if (e.touches.length === 2) {
+        isPinching = true;
+        isPanning = false;
+        didPinchThisGesture = true;
+        pinchStartDist = getDistance(e.touches[0], e.touches[1]);
+        pinchStartScale = zoomScale;
+        const mid = getMidpoint(e.touches[0], e.touches[1]);
+        lastPinchMidX = mid.x;
+        lastPinchMidY = mid.y;
+        e.preventDefault();
+        return;
+      }
+
+      if (e.touches.length === 1) {
+        const t = e.touches[0];
+        touchStartX = t.screenX;
+        touchStartY = t.screenY;
+
+        if (zoomScale > 1.05) {
+          isPanning = true;
+          didPanThisGesture = true;
+          panStartX = t.clientX;
+          panStartY = t.clientY;
+          panOriginX = panX;
+          panOriginY = panY;
+          e.preventDefault();
+        } else {
+          isPanning = false;
+          didPanThisGesture = false;
+          didPinchThisGesture = false;
+        }
+      }
+    },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchmove",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      // Pinch — zoom toward finger midpoint
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        isPinching = true;
+        didPinchThisGesture = true;
+        isPanning = false;
+        if (pinchStartDist <= 0) {
+          pinchStartDist = getDistance(e.touches[0], e.touches[1]);
+          pinchStartScale = zoomScale;
+          const mid0 = getMidpoint(e.touches[0], e.touches[1]);
+          lastPinchMidX = mid0.x;
+          lastPinchMidY = mid0.y;
+        }
+        const dist = getDistance(e.touches[0], e.touches[1]);
+        const mid = getMidpoint(e.touches[0], e.touches[1]);
+        if (pinchStartDist > 0) {
+          zoomToPoint(pinchStartScale * (dist / pinchStartDist), mid.x, mid.y);
+        }
+        return;
+      }
+
+      // One-finger pan while zoomed
+      if (e.touches.length === 1 && zoomScale > 1.05) {
+        e.preventDefault();
+        const t = e.touches[0];
+        if (!isPanning) {
+          isPanning = true;
+          didPanThisGesture = true;
+          panStartX = t.clientX;
+          panStartY = t.clientY;
+          panOriginX = panX;
+          panOriginY = panY;
+        }
+        panX = panOriginX + (t.clientX - panStartX);
+        panY = panOriginY + (t.clientY - panStartY);
+        applyTransform();
+      }
+    },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchend",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      // 2 → 1 finger: keep zoom, hand off to pan
+      if (e.touches.length === 1 && zoomScale > 1.05) {
+        isPinching = false;
+        pinchStartDist = 0;
+        isPanning = true;
+        didPanThisGesture = true;
+        const t = e.touches[0];
+        panStartX = t.clientX;
+        panStartY = t.clientY;
+        panOriginX = panX;
+        panOriginY = panY;
+        return;
+      }
+
+      // ALL fingers up → snap to 1×
+      if (e.touches.length === 0) {
+        const t = e.changedTouches[0];
+        if (t) {
+          touchEndX = t.screenX;
+          touchEndY = t.screenY;
+        }
+        const canSwipe =
+          !didPinchThisGesture && !didPanThisGesture && zoomScale <= 1.05;
+        resetZoom();
+        didPinchThisGesture = false;
+        didPanThisGesture = false;
+        if (canSwipe) handleSwipe();
+      }
+    },
+    { passive: true },
+  );
+
+  modal.addEventListener(
+    "touchcancel",
+    () => {
+      resetZoom();
+      didPinchThisGesture = false;
+      didPanThisGesture = false;
+    },
+    { passive: true },
+  );
+
+  const _origShowImage = showImage;
+  showImage = function (index) {
+    resetZoom();
+    didPinchThisGesture = false;
+    didPanThisGesture = false;
+    _origShowImage(index);
+  };
+
+  const _origCloseModalFn = closeModalFn;
+  closeModalFn = function () {
+    resetZoom();
+    didPinchThisGesture = false;
+    didPanThisGesture = false;
+    _origCloseModalFn();
+  };
+  /*let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
@@ -539,48 +798,7 @@ document.addEventListener("DOMContentLoaded", () => {
     didPanThisGesture = false;
     _origCloseModalFn();
   };
-  /*  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-  const SWIPE_THRESHOLD = 50;
-  const SWIPE_RATIO = 1.5;
-
-  function handleSwipe() {
-    const dx = touchEndX - touchStartX;
-    const dy = touchEndY - touchStartY;
-    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
-    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
-    if (dx > 0) {
-      showImage(currentIndex - 1);
-    } else {
-      showImage(currentIndex + 1);
-    }
-  }
-
-  modal.addEventListener(
-    "touchstart",
-    (e) => {
-      if (modal.classList.contains("hidden")) return;
-      const t = e.changedTouches[0];
-      touchStartX = t.screenX;
-      touchStartY = t.screenY;
-    },
-    { passive: true },
-  );
-
-  modal.addEventListener(
-    "touchend",
-    (e) => {
-      if (modal.classList.contains("hidden")) return;
-      const t = e.changedTouches[0];
-      touchEndX = t.screenX;
-      touchEndY = t.screenY;
-      handleSwipe();
-    },
-    { passive: true },
-  );
-*/
+  */
   // Copy share link
   copyShareLinkBtn.addEventListener("click", () => {
     const url = buildShareUrl({
