@@ -145,6 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
+  // ... existing code ...
+
   function loadGallery(year, subfolder, autoImg) {
     currentYearVal = year;
     currentCat = subfolder;
@@ -172,6 +174,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (autoImg) {
           const idx = images.findIndex((f) => f === autoImg);
           if (idx >= 0) openModal(idx);
+        } else if (
+          window.matchMedia("(max-width: 640px)").matches &&
+          images.length > 0
+        ) {
+          // Mobile: skip the scroll-to-gallery step and open the first image immediately
+          openModal(0);
         }
       })
       .catch(() => {
@@ -179,6 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
           '<p class="text-center">No artworks found for this category.</p>';
       });
   }
+
+  // ... rest of the file unchanged ...
 
   function showImage(index) {
     if (currentImages.length === 0) return;
