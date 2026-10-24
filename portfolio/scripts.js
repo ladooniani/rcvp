@@ -321,17 +321,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------- Touch: pinch-zoom + pan + swipe ----------
+  // ---------- Touch: temporary pinch-zoom (snaps back on release) ----------
   function getDistance(t1, t2) {
     const dx = t1.clientX - t2.clientX;
     const dy = t1.clientY - t2.clientY;
     return Math.hypot(dx, dy);
-  }
-
-  function getMidpoint(t1, t2) {
-    return {
-      x: (t1.clientX + t2.clientX) / 2,
-      y: (t1.clientY + t2.clientY) / 2,
-    };
   }
 
   modal.addEventListener(
@@ -342,13 +336,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.touches.length === 2) {
         // Start pinch
         isPinching = true;
-        isPanning = false;
         lastTouchDistance = getDistance(e.touches[0], e.touches[1]);
         e.preventDefault();
       } else if (e.touches.length === 1) {
         lastTouchX = e.touches[0].clientX;
         lastTouchY = e.touches[0].clientY;
-        isPanning = scale > 1;
         isPinching = false;
       }
     },
@@ -361,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (modal.classList.contains("hidden")) return;
 
       if (e.touches.length === 2 && isPinching) {
-        // Pinch zoom
+        // Live pinch zoom
         e.preventDefault();
         const dist = getDistance(e.touches[0], e.touches[1]);
         if (lastTouchDistance > 0) {
@@ -372,16 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
           applyTransform();
         }
         lastTouchDistance = dist;
-      } else if (e.touches.length === 1 && isPanning && scale > 1) {
-        // Pan when zoomed
-        e.preventDefault();
-        const dx = e.touches[0].clientX - lastTouchX;
-        const dy = e.touches[0].clientY - lastTouchY;
-        translateX += dx;
-        translateY += dy;
-        lastTouchX = e.touches[0].clientX;
-        lastTouchY = e.touches[0].clientY;
-        applyTransform();
       }
     },
     { passive: false },
@@ -392,13 +374,13 @@ document.addEventListener("DOMContentLoaded", () => {
     (e) => {
       if (modal.classList.contains("hidden")) return;
 
-      if (e.touches.length < 2) {
-        isPinching = false;
-        lastTouchDistance = 0;
+      // Always snap back to original size when fingers are lifted
+      if (e.touches.length === 0) {
+        resetZoom();
       }
 
-      // Simple one-finger swipe only when not zoomed
-      if (scale === 1 && e.changedTouches.length === 1 && !isPanning) {
+      // One-finger swipe only when we were never zooming
+      if (scale === 1 && !isPinching && e.changedTouches.length === 1) {
         const t = e.changedTouches[0];
         const dx = t.clientX - lastTouchX;
         const dy = t.clientY - lastTouchY;
@@ -417,7 +399,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      isPanning = false;
+      isPinching = false;
+      lastTouchDistance = 0;
     },
     { passive: true },
   );
@@ -496,4 +479,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
-});
+};);
