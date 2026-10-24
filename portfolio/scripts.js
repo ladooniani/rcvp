@@ -327,7 +327,192 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- Pinch-zoom + swipe (modal image only) ----------
   // Zoom stays on the image via CSS transform. Page chrome never scales.
   // On finger-up the image always snaps back to 1× so swipe can navigate again.
+
+  // ---------- Pinch-zoom + pan + swipe (modal image only) ----------
+  // Zoom/pan stay on the image via CSS transform. Page chrome never scales.
+  // On finger-up the image always snaps back to 1× / centered so swipe can navigate again.
   let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  const SWIPE_THRESHOLD = 50;
+  const SWIPE_RATIO = 1.5;
+
+  let zoomScale = 1;
+  let panX = 0;
+  let panY = 0;
+  let pinchStartDist = 0;
+  let pinchStartScale = 1;
+  let isPinching = false;
+  let isPanning = false;
+  let didPinchThisGesture = false;
+  let panStartX = 0;
+  let panStartY = 0;
+  let panOriginX = 0;
+  let panOriginY = 0;
+  const MIN_SCALE = 1;
+  const MAX_SCALE = 4;
+
+  function getDistance(t1, t2) {
+    const dx = t1.clientX - t2.clientX;
+    const dy = t1.clientY - t2.clientY;
+    return Math.hypot(dx, dy);
+  }
+
+  function applyTransform() {
+    zoomScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, zoomScale));
+    if (zoomScale <= 1.01) {
+      panX = 0;
+      panY = 0;
+      largeImage.style.transform = "";
+      return;
+    }
+    // Soft clamp: keep some of the image on screen
+    const rect = largeImage.getBoundingClientRect();
+    const baseW = largeImage.offsetWidth || rect.width / zoomScale;
+    const baseH = largeImage.offsetHeight || rect.height / zoomScale;
+    const maxPanX = Math.max(
+      0,
+      (baseW * zoomScale - window.innerWidth) / 2 + 40,
+    );
+    const maxPanY = Math.max(
+      0,
+      (baseH * zoomScale - window.innerHeight) / 2 + 40,
+    );
+    panX = Math.min(maxPanX, Math.max(-maxPanX, panX));
+    panY = Math.min(maxPanY, Math.max(-maxPanY, panY));
+    largeImage.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomScale})`;
+  }
+
+  function applyZoom(scale) {
+    zoomScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale));
+    applyTransform();
+  }
+
+  function resetZoom() {
+    zoomScale = 1;
+    panX = 0;
+    panY = 0;
+    largeImage.style.transform = "";
+    isPinching = false;
+    isPanning = false;
+    pinchStartDist = 0;
+  }
+
+  function handleSwipe() {
+    // Only navigate when not zoomed / not in a pinch or pan gesture
+    if (zoomScale > 1.05 || didPinchThisGesture || isPanning) return;
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+    if (Math.abs(dx) < Math.abs(dy) * SWIPE_RATIO) return;
+    if (dx > 0) {
+      showImage(currentIndex - 1);
+    } else {
+      showImage(currentIndex + 1);
+    }
+  }
+
+  modal.addEventListener(
+    "touchstart",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      if (e.touches.length === 2) {
+        // Start pinch
+        isPinching = true;
+        isPanning = false;
+        didPinchThisGesture = true;
+        pinchStartDist = getDistance(e.touches[0], e.touches[1]);
+        pinchStartScale = zoomScale;
+        e.preventDefault();
+        return;
+      }
+
+      if (e.touches.length === 1) {
+        const t = e.touches[0];
+        touchStartX = t.screenX;
+        touchStartY = t.screenY;
+        didPinchThisGesture = false;
+
+        // Start pan when already zoomed
+        if (zoomScale > 1.05) {
+          isPanning = true;
+          panStartX = t.clientX;
+          panStartY = t.clientY;
+          panOriginX = panX;
+          panOriginY = panY;
+          e.preventDefault();
+        } else {
+          isPanning = false;
+        }
+      }
+    },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchmove",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      if (e.touches.length === 2 && isPinching) {
+        e.preventDefault();
+        const dist = getDistance(e.touches[0], e.touches[1]);
+        if (pinchStartDist > 0) {
+          const next = pinchStartScale * (dist / pinchStartDist);
+          applyZoom(next);
+        }
+        return;
+      }
+
+      // Single-finger pan while zoomed
+      if (e.touches.length === 1 && isPanning && zoomScale > 1.05) {
+        e.preventDefault();
+        const t = e.touches[0];
+        panX = panOriginX + (t.clientX - panStartX);
+        panY = panOriginY + (t.clientY - panStartY);
+        applyTransform();
+      }
+    },
+    { passive: false },
+  );
+
+  modal.addEventListener(
+    "touchend",
+    (e) => {
+      if (modal.classList.contains("hidden")) return;
+
+      // Any finger lifted → snap image back to 1× / centered
+      // so swipe navigation works again on the next gesture
+      if (e.touches.length < 2) {
+        const wasPanning = isPanning;
+        resetZoom();
+        // Swipe only when a single-finger gesture just ended and we never pinched/panned
+        if (
+          e.touches.length === 0 &&
+          e.changedTouches.length === 1 &&
+          !wasPanning &&
+          !didPinchThisGesture
+        ) {
+          const t = e.changedTouches[0];
+          touchEndX = t.screenX;
+          touchEndY = t.screenY;
+          handleSwipe();
+        }
+      }
+    },
+    { passive: true },
+  );
+
+  modal.addEventListener(
+    "touchcancel",
+    () => {
+      resetZoom();
+    },
+    { passive: true },
+  );
+  /* let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
   let touchEndY = 0;
@@ -437,7 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: true },
   );
-
+*/
   modal.addEventListener(
     "touchcancel",
     () => {
@@ -574,4 +759,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
-});
+};);
