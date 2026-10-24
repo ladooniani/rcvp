@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
       handleSideTap(e);
     }
   });
-  
+
   document.addEventListener("keydown", (e) => {
     if (modal.classList.contains("hidden")) return;
     if (e.key === "Escape") {
@@ -430,4 +430,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
-};);
+});
