@@ -173,13 +173,14 @@ section {
   user-select: none;
 }
 
-/* Blue links only in About page content (after the heading)
-   – navigation and titles stay black */
-section.py-32 a {
+/* Blue links ONLY in the About content column
+   (Selected exhibitions + Music + Technology links)
+   Navigation and page title stay black */
+section.py-32 .md\:w-2\/3 a {
   color: #2563eb;
 }
 
-section.py-32 a:hover {
+section.py-32 .md\:w-2\/3 a:hover {
   color: #1d4ed8;
   opacity: 0.85;
 }
