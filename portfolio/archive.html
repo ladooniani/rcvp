@@ -148,7 +148,12 @@
           class="max-w-full max-h-full object-contain"
           draggable="false"
         />
-        <div class="flex flex-col items-center gap-1 mt-3 shrink-0">
+
+        <!-- Controls bar (fixed to bottom on mobile) -->
+        <div
+          id="modal-controls"
+          class="flex flex-col items-center gap-1 mt-3 shrink-0"
+        >
           <div class="flex items-center gap-4">
             <p
               id="image-counter"
@@ -181,6 +186,50 @@
           </p>
         </div>
       </div>
+      <!-- 
+      <div
+        class="modal-content flex flex-col items-center justify-center w-full h-full px-10 sm:px-16 py-12"
+      >
+        <img
+          id="large-image"
+          src=""
+          alt="Large artwork"
+          class="max-w-full max-h-full object-contain"
+          draggable="false"
+        />
+        <div class="flex flex-col items-center gap-1 mt-3 shrink-0">
+          <div class="flex items-center gap-4">
+            <p
+              id="image-counter"
+              class="text-center text-sm font-serif text-gray-600"
+            ></p>
+            <button
+              id="copy-image-link"
+              class="text-sm font-serif underline hover:opacity-70"
+            >
+              Copy image link
+            </button>
+            <span id="copy-image-feedback" class="text-sm text-gray-500 hidden"
+              >Copied!</span
+            >
+          </div>
+         
+          <p
+            id="image-copyright"
+            class="text-xs font-serif text-gray-500 mt-1 text-center"
+          >
+            © <span id="copyright-years"></span> Lado Oniani
+            <a
+              id="copyright-link"
+              href="https://github.com/ladooniani/ladooniani/blob/main/Copyright.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:opacity-70 ml-1"
+              >Copyright notice</a
+            >
+          </p>
+        </div>
+      </div>-->
     </div>
 
     <script src="scripts.js?v=20261024a"></script>

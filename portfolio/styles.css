@@ -197,3 +197,29 @@ section.py-32 .md\:w-2\/3 a:hover {
   touch-action: none;
   overscroll-behavior: none;
 }
+/* ---------- Mobile: fix controls to bottom of screen ---------- */
+@media (max-width: 640px) {
+  #image-modal .modal-content {
+    justify-content: center;
+    padding-bottom: 5.5rem; /* space for the fixed controls */
+  }
+
+  #modal-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.75rem 1rem 1.1rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid #e5e5e5;
+    z-index: 30;
+  }
+
+  /* Make sure the image never goes under the controls */
+  #large-image {
+    max-height: calc(100vh - 7.5rem) !important;
+  }
+}
