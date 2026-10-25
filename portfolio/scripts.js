@@ -833,13 +833,28 @@ document.addEventListener("DOMContentLoaded", () => {
       yearsMeta
         .slice()
         .sort((a, b) => b.year - a.year)
+        .forEach(({ year, hasContent, categories = 0, images = 0 }) => {
+          const option = document.createElement("option");
+          option.value = year;
+
+          // Format: 2026 - 3 categories, 34 images
+          option.textContent = `${year} - ${categories} ${
+            categories === 1 ? "category" : "categories"
+          }, ${images} ${images === 1 ? "image" : "images"}`;
+
+          option.style.color = hasContent ? "#000000" : "#2563eb";
+          yearSelect.appendChild(option);
+        });
+      /* yearsMeta
+        .slice()
+        .sort((a, b) => b.year - a.year)
         .forEach(({ year, hasContent }) => {
           const option = document.createElement("option");
           option.value = year;
           option.textContent = year;
           option.style.color = hasContent ? "#000000" : "#2563eb";
           yearSelect.appendChild(option);
-        });
+        });*/
 
       const params = getParams();
       const urlYear = params.get("year");

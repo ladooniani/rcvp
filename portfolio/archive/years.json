@@ -1,170 +1,254 @@
 [
   {
     "year": 1985,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 8
   },
   {
     "year": 1986,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 7
   },
   {
     "year": 1987,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 17
   },
   {
     "year": 1988,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 31
   },
   {
     "year": 1989,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 1990,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 1991,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 3
   },
   {
     "year": 1992,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 1993,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 3
   },
   {
     "year": 1994,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 1995,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 1996,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 4
   },
   {
     "year": 1997,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 9
   },
   {
     "year": 1998,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 14
   },
   {
     "year": 1999,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 18
   },
   {
     "year": 2000,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 39
   },
   {
     "year": 2001,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 13
   },
   {
     "year": 2002,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 12
   },
   {
     "year": 2003,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 2
   },
   {
     "year": 2004,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 3,
+    "images": 34
   },
   {
     "year": 2005,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 15,
+    "images": 195
   },
   {
     "year": 2006,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 9,
+    "images": 65
   },
   {
     "year": 2007,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 5,
+    "images": 9
   },
   {
     "year": 2008,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 13
   },
   {
     "year": 2009,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 2010,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 8
   },
   {
     "year": 2011,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 3,
+    "images": 3
   },
   {
     "year": 2012,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2013,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 2014,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2015,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 8
   },
   {
     "year": 2016,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 5
   },
   {
     "year": 2017,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2018,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2019,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2020,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 3,
+    "images": 9
   },
   {
     "year": 2021,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 2022,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2023,
-    "hasContent": false
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2024,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 2,
+    "images": 16
   },
   {
     "year": 2025,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 5,
+    "images": 17
   },
   {
     "year": 2026,
-    "hasContent": true
+    "hasContent": true,
+    "categories": 1,
+    "images": 3
   }
 ]
