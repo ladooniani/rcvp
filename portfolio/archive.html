@@ -70,7 +70,7 @@
     <section class="py-32">
       <div class="container mx-auto px-4">
         <h2 class="text-2xl font-serif mb-12 text-center">
-          Archive (1985–2025)
+          Archive (1985–<span id="archive-end-year"></span>)
         </h2>
         <div class="mb-12 text-center">
           <label for="year-select" class="text-lg font-serif mr-4"
@@ -186,3 +186,7 @@
     <script src="scripts.js?v=20261024a"></script>
   </body>
 </html>
+<script>
+  document.getElementById("archive-end-year").textContent =
+    new Date().getFullYear();
+</script>
