@@ -825,6 +825,7 @@ document.addEventListener("DOMContentLoaded", () => {
   protectImage(largeImage);
 
   // ---------- Year list ----------
+  // ---------- Year list ----------
   yearSelect.innerHTML = "";
 
   fetch("archive/years.json")
@@ -837,7 +838,6 @@ document.addEventListener("DOMContentLoaded", () => {
           const option = document.createElement("option");
           option.value = year;
 
-          // Format: 2026 - 3 categories, 34 images
           option.textContent = `${year} - ${categories} ${
             categories === 1 ? "category" : "categories"
           }, ${images} ${images === 1 ? "image" : "images"}`;
@@ -845,16 +845,6 @@ document.addEventListener("DOMContentLoaded", () => {
           option.style.color = hasContent ? "#000000" : "#2563eb";
           yearSelect.appendChild(option);
         });
-      /* yearsMeta
-        .slice()
-        .sort((a, b) => b.year - a.year)
-        .forEach(({ year, hasContent }) => {
-          const option = document.createElement("option");
-          option.value = year;
-          option.textContent = year;
-          option.style.color = hasContent ? "#000000" : "#2563eb";
-          yearSelect.appendChild(option);
-        });*/
 
       const params = getParams();
       const urlYear = params.get("year");
@@ -869,6 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadSubfolders(startYear, urlCat, urlImg);
     })
     .catch(() => {
+      // Fallback if years.json fails to load
       years.forEach((year) => {
         const option = document.createElement("option");
         option.value = year;
@@ -888,4 +879,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });
+  /*  yearSelect.innerHTML = "";
+
+  fetch("archive/years.json")
+    .then((r) => r.json())
+    .then((yearsMeta) => {
+      yearsMeta
+        .slice()
+        .sort((a, b) => b.year - a.year)
+        .forEach(({ year, hasContent, categories = 0, images = 0 }) => {
+          const option = document.createElement("option");
+          option.value = year;
+
+          // Format: 2026 - 3 categories, 34 images
+          option.textContent = `${year} - ${categories} ${
+            categories === 1 ? "category" : "categories"
+          }, ${images} ${images === 1 ? "image" : "images"}`;
+
+          option.style.color = hasContent ? "#000000" : "#2563eb";
+          yearSelect.appendChild(option);
+        });*/
+  /* yearsMeta
+        .slice()
+        .sort((a, b) => b.year - a.year)
+        .forEach(({ year, hasContent }) => {
+          const option = document.createElement("option");
+          option.value = year;
+          option.textContent = year;
+          option.style.color = hasContent ? "#000000" : "#2563eb";
+          yearSelect.appendChild(option);
+        });*/
+
+  /*  const params = getParams();
+      const urlYear = params.get("year");
+      const urlCat = params.get("cat");
+      const urlImg = params.get("img");
+
+      const startYear =
+        urlYear && yearsMeta.some((y) => y.year === Number(urlYear))
+          ? Number(urlYear)
+          : currentYear;
+
+      loadSubfolders(startYear, urlCat, urlImg);
+    })
+    .catch(() => {
+      years.forEach((year) => {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent = `${year} - ${categories ?? 0} ${
+          (categories ?? 0) === 1 ? "category" : "categories"
+        }, ${images ?? 0} ${(images ?? 0) === 1 ? "image" : "images"}`;
+        yearSelect.appendChild(option);
+      });
+
+      const params = getParams();
+      const urlYear = params.get("year");
+      const urlCat = params.get("cat");
+      const urlImg = params.get("img");
+
+      const startYear =
+        urlYear && years.includes(Number(urlYear))
+          ? Number(urlYear)
+          : currentYear;
+
+      loadSubfolders(startYear, urlCat, urlImg);
+    });*/
 });
