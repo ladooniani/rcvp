@@ -156,9 +156,54 @@
           draggable="false"
         />
       </div>
-
-      <!-- Bottom controls (always visible) -->
+      <!-- Controls bar -->
       <div
+        id="modal-controls"
+        class="flex flex-col items-center gap-1 mt-3 shrink-0"
+      >
+        <div class="flex items-center gap-4 flex-wrap justify-center">
+          <p
+            id="image-counter"
+            class="text-center text-sm font-serif text-gray-600"
+          ></p>
+
+          <button
+            id="copy-image-link"
+            class="text-sm font-serif underline hover:opacity-70"
+          >
+            Copy image link
+          </button>
+
+          <!-- NEW: Frame / Wide toggle -->
+          <button
+            id="toggle-frame-view"
+            class="text-sm font-serif underline hover:opacity-70"
+          >
+            Frame view
+          </button>
+
+          <span id="copy-image-feedback" class="text-sm text-gray-500 hidden"
+            >Copied!</span
+          >
+        </div>
+
+        <p
+          id="image-copyright"
+          class="text-xs font-serif text-gray-500 mt-1 text-center"
+        >
+          © <span id="copyright-years"></span> Lado Oniani
+          <a
+            id="copyright-link"
+            href="https://github.com/ladooniani/ladooniani/blob/main/Copyright.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:opacity-70 ml-1"
+            >Copyright notice</a
+          >
+        </p>
+      </div>
+      <!-- Bottom controls (always visible) -->
+      <!-- <div
         id="modal-controls"
         class="flex flex-col items-center gap-1 shrink-0 py-3 px-4"
       >
@@ -191,7 +236,7 @@
             >Copyright notice</a
           >
         </p>
-      </div>
+      </div>-->
     </div>
 
     <script src="scripts.js?v=20261025e"></script>

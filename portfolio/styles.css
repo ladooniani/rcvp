@@ -340,3 +340,23 @@ section.py-32 .md\:w-2\/3 a:hover {
     z-index: 40;
   }
 }
+
+/* ============================================================
+   FRAME VIEW (optional classic look)
+   ============================================================ */
+#large-image.frame-view {
+  border: 1px solid #E5E5E5 !important;
+  border-radius: 2px;
+  /* small breathing room so the frame is visible */
+  max-width: calc(100% - 1.5rem) !important;
+  max-height: calc(100% - 1rem) !important;
+}
+
+/* On mobile keep a bit more space when framed */
+@media (max-width: 640px) {
+  #large-image.frame-view {
+    max-width: calc(100% - 2rem) !important;
+    max-height: calc(100vh - 9rem) !important;
+    border: 1px solid #E5E5E5 !important;
+  }
+}

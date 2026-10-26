@@ -858,7 +858,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   protectImage(largeImage);
 
-  // ---------- Year list ----------
+  // ---------- Frame / Wide view toggle ----------
+  const toggleFrameBtn = document.getElementById("toggle-frame-view");
+  const FRAME_KEY = "lado-archive-frame-view";
+
+  function isFrameView() {
+    return localStorage.getItem(FRAME_KEY) === "1";
+  }
+
+  function applyFrameView(on) {
+    if (on) {
+      largeImage.classList.add("frame-view");
+      if (toggleFrameBtn) toggleFrameBtn.textContent = "Wide view";
+    } else {
+      largeImage.classList.remove("frame-view");
+      if (toggleFrameBtn) toggleFrameBtn.textContent = "Frame view";
+    }
+  }
+
+  // Apply saved preference on load
+  applyFrameView(isFrameView());
+
+  if (toggleFrameBtn) {
+    toggleFrameBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const next = !isFrameView();
+      localStorage.setItem(FRAME_KEY, next ? "1" : "0");
+      applyFrameView(next);
+    });
+  }
+
+  // Also re-apply when a new image is shown (in case the class was lost)
+  const _origShowImage2 = showImage;
+  showImage = function (index) {
+    _origShowImage2(index);
+    applyFrameView(isFrameView());
+  };
   // ---------- Year list ----------
   yearSelect.innerHTML = "";
 
