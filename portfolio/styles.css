@@ -206,7 +206,7 @@ section.py-32 .md\:w-2\/3 a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.72);   /* more transparent */
   border-radius: 50%;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
