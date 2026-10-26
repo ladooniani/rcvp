@@ -146,7 +146,7 @@ section {
 #large-image {
   border: 1px solid #E5E5E5;
   max-width: 100%;
-  max-height: calc(100vh - 6rem);
+  max-height: calc(100vh - 7.5rem);
   width: auto;
   height: auto;
   object-fit: contain;
