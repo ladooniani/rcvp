@@ -344,10 +344,13 @@ section.py-32 .md\:w-2\/3 a:hover {
 /* ============================================================
    FRAME VIEW (optional classic look)
    ============================================================ */
+/* ============================================================
+   FRAME VIEW (optional – only adds breathing room, no border)
+   ============================================================ */
 #large-image.frame-view {
-  border: 1px solid #E5E5E5 !important;
-  border-radius: 2px;
-  /* small breathing room so the frame is visible */
+  border: none !important;
+  border-radius: 0;
+  /* small breathing room so the image is separated from the edges */
   max-width: calc(100% - 1.5rem) !important;
   max-height: calc(100% - 1rem) !important;
 }
@@ -357,6 +360,6 @@ section.py-32 .md\:w-2\/3 a:hover {
   #large-image.frame-view {
     max-width: calc(100% - 2rem) !important;
     max-height: calc(100vh - 9rem) !important;
-    border: 1px solid #E5E5E5 !important;
+    border: none !important;
   }
 }
