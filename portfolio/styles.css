@@ -197,17 +197,47 @@ section.py-32 .md\:w-2\/3 a:hover {
   touch-action: none;
   overscroll-behavior: none;
 }
-/* ---------- Mobile: full-bleed image + fixed bottom controls ---------- */
-/* ---------- Mobile: full-bleed + safe top area for × ---------- */
+/* ---------- Safe zone for × button (works for both orientations) ---------- */
+#close-modal {
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 1.9rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Desktop / tablet – also give the button a safe background */
+@media (min-width: 641px) {
+  #close-modal {
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 2rem;
+  }
+}
+
+/* ---------- Mobile: full-bleed + guaranteed top safe area ---------- */
 @media (max-width: 640px) {
   #image-modal .modal-content {
     justify-content: center;
-    padding: 3.2rem 0 5.8rem 0;   /* top safe area for the × button */
+    /* Top padding = height of close button zone + breathing room */
+    padding: 3.8rem 0 5.8rem 0;
   }
 
   #large-image {
     max-width: 100% !important;
-    max-height: calc(100vh - 9.2rem) !important;
+    /* Subtract top safe zone (3.8rem) + bottom controls (~5.8rem) */
+    max-height: calc(100vh - 9.6rem) !important;
     width: 100% !important;
     height: auto;
     object-fit: contain;
@@ -227,21 +257,5 @@ section.py-32 .md\:w-2\/3 a:hover {
     -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid #e5e5e5;
     z-index: 30;
-  }
-
-  /* Close button styling on mobile */
-  #close-modal {
-    top: 0.75rem;
-    right: 0.75rem;
-    font-size: 1.9rem;
-    z-index: 40;
-    width: 2.4rem;
-    height: 2.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 50%;
-    backdrop-filter: blur(4px);
   }
 }
