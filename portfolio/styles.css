@@ -256,7 +256,7 @@ section.py-32 .md\:w-2\/3 a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3.4rem 0.75rem 0;     /* top safe zone for × */
+    /* padding: 3.4rem 0.75rem 0;     top safe zone for × */
   }
 
   /* Image can never exceed its parent → no bottom cut */
@@ -283,14 +283,15 @@ section.py-32 .md\:w-2\/3 a:hover {
 /* ============================================================
    FRAME VIEW (only breathing room, no border)
    ============================================================ */
+ 
 #large-image.frame-view {
-  max-width: calc(100% - 1.5rem) !important;
-  max-height: calc(100% - 1rem) !important;
+  max-width: calc(100% - 1.8rem) !important;
+  max-height: calc(100% - 1.2rem) !important;
 }
 
 @media (max-width: 640px) {
   #large-image.frame-view {
-    max-width: calc(100% - 2rem) !important;
-    max-height: calc(100% - 1.5rem) !important;
+    max-width: calc(100% - 2.4rem) !important;
+    max-height: calc(100% - 1.8rem) !important;
   }
 }
