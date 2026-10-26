@@ -196,30 +196,44 @@ section.py-32 .md\:w-2\/3 a:hover {
 #image-modal {
   touch-action: none;
   overscroll-behavior: none;
-} /* ============================================================
-   CLOSE BUTTON
+} 
+
+/* ============================================================
+   CLOSE BUTTON – completely transparent, only the × is visible
    ============================================================ */
 #close-modal {
-  width: 2.4rem;
-  height: 2.4rem;
-  font-size: 1.7rem;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 1.9rem;
+  line-height: 1;
+  z-index: 80;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.72);   /* more transparent */
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  z-index: 80;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: #000;
+  opacity: 0.85;
+}
+
+#close-modal:hover {
+  opacity: 1;
 }
 
 @media (min-width: 641px) {
   #close-modal {
-    width: 2.7rem;
-    height: 2.7rem;
-    font-size: 1.9rem;
+    top: 1rem;
+    right: 1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 2.1rem;
   }
 }
 
