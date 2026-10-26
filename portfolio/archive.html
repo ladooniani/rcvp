@@ -139,8 +139,11 @@
         ›
       </button>
       <div
-        class="modal-content flex flex-col items-center justify-center w-full h-full px-3 sm:px-16 py-6"
+        class="modal-content flex flex-col items-center justify-center w-full h-full px-3 sm:px-16"
       >
+        <!-- Reserved top safe zone – image can never enter here -->
+        <div id="modal-top-safe" class="w-full shrink-0"></div>
+
         <img
           id="large-image"
           src=""
