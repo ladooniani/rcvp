@@ -214,6 +214,12 @@ section.py-32 .md\:w-2\/3 a:hover {
   .modal-content {
     padding: 4rem 2rem 1rem;
   }
+
+  /* Extra breathing room at the bottom on desktop only */
+  #modal-controls {
+    padding-bottom: 1.75rem;
+    padding-top: 0.75rem;
+  }
 }
 
 /* Mobile */
