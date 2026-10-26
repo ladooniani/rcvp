@@ -198,13 +198,13 @@ section.py-32 .md\:w-2\/3 a:hover {
   overscroll-behavior: none;
 }
 /* ============================================================
-   CLOSE BUTTON – smaller + always on top
+   CLOSE BUTTON
    ============================================================ */
 #close-modal {
   position: absolute;
   top: 0.55rem;
   right: 0.55rem;
-  width: 2.35rem;          /* smaller circle */
+  width: 2.35rem;
   height: 2.35rem;
   font-size: 1.65rem;
   line-height: 1;
@@ -229,23 +229,24 @@ section.py-32 .md\:w-2\/3 a:hover {
     font-size: 1.85rem;
   }
 }
+
 /* ============================================================
-   TOP SAFE ZONE – image can NEVER enter here
+   TOP SAFE ZONE (only for spacing – image stays centered)
    ============================================================ */
 #modal-top-safe {
-  height: 3.6rem;          /* matches the smaller button */
+  height: 3.4rem;          /* space reserved for the × button */
   flex-shrink: 0;
   width: 100%;
 }
 
 @media (min-width: 641px) {
   #modal-top-safe {
-    height: 4.2rem;
+    height: 4rem;
   }
 }
 
 /* ============================================================
-   IMAGE – forced to stay below the safe zone
+   IMAGE – always fully visible + perfectly centered
    ============================================================ */
 #large-image {
   border: 1px solid #E5E5E5;
@@ -255,22 +256,35 @@ section.py-32 .md\:w-2\/3 a:hover {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  /* Force the image below the safe zone */
-  max-height: calc(100vh - 3.6rem - 5.6rem) !important;
 }
 
-/* Mobile */
+/* Desktop / tablet */
+@media (min-width: 641px) {
+  #large-image {
+    max-height: calc(100vh - 4rem - 5.5rem);
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
 @media (max-width: 640px) {
   #image-modal .modal-content {
     padding: 0 !important;
-    justify-content: flex-start !important;
+    /* This is the key: flex column that centers the image
+       in the space BETWEEN the top safe zone and the bottom bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* ← centers the image vertically */
     align-items: center;
+    height: 100%;
   }
 
   #large-image {
     max-width: 100% !important;
     width: 100% !important;
-    max-height: calc(100vh - 3.6rem - 5.8rem) !important;
+    /* Available height = viewport - top safe zone - bottom controls */
+    max-height: calc(100vh - 3.4rem - 5.8rem) !important;
     border: none !important;
     border-radius: 0 !important;
   }
