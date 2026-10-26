@@ -565,14 +565,27 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 
-  // ---------- Swipe down to close (mobile) ----------
-  let touchStartYForClose = 0;
+  modal.addEventListener(
+    "touchcancel",
+    () => {
+      resetZoom();
+      didPinchThisGesture = false;
+      didPanThisGesture = false;
+    },
+    { passive: true },
+  );
+  // ---------- Swipe down to close ----------
+  let swipeDownStartY = 0;
+  let isSwipeDown = false;
 
   modal.addEventListener(
     "touchstart",
     (e) => {
-      if (e.touches.length === 1) {
-        touchStartYForClose = e.touches[0].clientY;
+      if (e.touches.length === 1 && zoomScale <= 1.05) {
+        swipeDownStartY = e.touches[0].clientY;
+        isSwipeDown = true;
+      } else {
+        isSwipeDown = false;
       }
     },
     { passive: true },
@@ -581,23 +594,16 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener(
     "touchend",
     (e) => {
-      if (e.changedTouches.length === 1 && zoomScale <= 1.05) {
-        const deltaY = e.changedTouches[0].clientY - touchStartYForClose;
-        // Swipe down more than 80px → close
-        if (deltaY > 80) {
-          closeModalFn();
-        }
-      }
-    },
-    { passive: true },
-  );
+      if (!isSwipeDown || e.changedTouches.length !== 1) return;
 
-  modal.addEventListener(
-    "touchcancel",
-    () => {
-      resetZoom();
-      didPinchThisGesture = false;
-      didPanThisGesture = false;
+      const deltaY = e.changedTouches[0].clientY - swipeDownStartY;
+
+      // Swipe down more than 100px → close
+      if (deltaY > 100 && zoomScale <= 1.05) {
+        closeModalFn();
+      }
+
+      isSwipeDown = false;
     },
     { passive: true },
   );
