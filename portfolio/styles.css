@@ -197,22 +197,24 @@ section.py-32 .md\:w-2\/3 a:hover {
   touch-action: none;
   overscroll-behavior: none;
 }
-/* ---------- Mobile: wider image + fixed bottom controls ---------- */
+/* ---------- Mobile: almost edge-to-edge image ---------- */
 @media (max-width: 640px) {
   #image-modal .modal-content {
     justify-content: center;
-    padding-left: 0.4rem;    /* thinner frame */
-    padding-right: 0.4rem;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 5.8rem;
-    padding-top: 1.2rem;
+    padding-top: 0.8rem;
   }
 
   #large-image {
     max-width: 100% !important;
-    max-height: calc(100vh - 7.8rem) !important;
+    max-height: calc(100vh - 7.5rem) !important;
     width: 100%;
     height: auto;
     object-fit: contain;
+    border-left: none;
+    border-right: none;
   }
 
   #modal-controls {
