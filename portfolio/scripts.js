@@ -565,32 +565,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 
-  modal.addEventListener(
-    "touchcancel",
-    () => {
-      resetZoom();
-      didPinchThisGesture = false;
-      didPanThisGesture = false;
-    },
-    { passive: true },
-  );
-
-  const _origShowImage = showImage;
-  showImage = function (index) {
-    resetZoom();
-    didPinchThisGesture = false;
-    didPanThisGesture = false;
-    _origShowImage(index);
-  };
-
-  const _origCloseModalFn = closeModalFn;
-  closeModalFn = function () {
-    resetZoom();
-    didPinchThisGesture = false;
-    didPanThisGesture = false;
-    _origCloseModalFn();
-  };
-
   // ---------- Swipe down to close (mobile) ----------
   let touchStartYForClose = 0;
 
@@ -617,6 +591,32 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: true },
   );
+
+  modal.addEventListener(
+    "touchcancel",
+    () => {
+      resetZoom();
+      didPinchThisGesture = false;
+      didPanThisGesture = false;
+    },
+    { passive: true },
+  );
+
+  const _origShowImage = showImage;
+  showImage = function (index) {
+    resetZoom();
+    didPinchThisGesture = false;
+    didPanThisGesture = false;
+    _origShowImage(index);
+  };
+
+  const _origCloseModalFn = closeModalFn;
+  closeModalFn = function () {
+    resetZoom();
+    didPinchThisGesture = false;
+    didPanThisGesture = false;
+    _origCloseModalFn();
+  };
   /*let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
@@ -972,4 +972,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });*/
-};);
+});
