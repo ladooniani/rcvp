@@ -590,6 +590,33 @@ document.addEventListener("DOMContentLoaded", () => {
     didPanThisGesture = false;
     _origCloseModalFn();
   };
+
+  // ---------- Swipe down to close (mobile) ----------
+  let touchStartYForClose = 0;
+
+  modal.addEventListener(
+    "touchstart",
+    (e) => {
+      if (e.touches.length === 1) {
+        touchStartYForClose = e.touches[0].clientY;
+      }
+    },
+    { passive: true },
+  );
+
+  modal.addEventListener(
+    "touchend",
+    (e) => {
+      if (e.changedTouches.length === 1 && zoomScale <= 1.05) {
+        const deltaY = e.changedTouches[0].clientY - touchStartYForClose;
+        // Swipe down more than 80px → close
+        if (deltaY > 80) {
+          closeModalFn();
+        }
+      }
+    },
+    { passive: true },
+  );
   /*let touchStartX = 0;
   let touchStartY = 0;
   let touchEndX = 0;
@@ -945,4 +972,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
       loadSubfolders(startYear, urlCat, urlImg);
     });*/
-});
+};);
