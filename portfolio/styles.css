@@ -197,24 +197,21 @@ section.py-32 .md\:w-2\/3 a:hover {
   touch-action: none;
   overscroll-behavior: none;
 }
-/* ---------- Mobile: almost edge-to-edge image ---------- */
+/* ---------- Mobile: full-bleed image (Instagram style) ---------- */
 @media (max-width: 640px) {
   #image-modal .modal-content {
     justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 5.8rem;
-    padding-top: 0.8rem;
+    padding: 0.5rem 0 5.8rem 0;   /* no left/right padding */
   }
 
   #large-image {
     max-width: 100% !important;
-    max-height: calc(100vh - 7.5rem) !important;
-    width: 100%;
+    max-height: calc(100vh - 7.2rem) !important;
+    width: 100% !important;
     height: auto;
     object-fit: contain;
-    border-left: none;
-    border-right: none;
+    border: none !important;          /* remove the white frame */
+    border-radius: 0 !important;
   }
 
   #modal-controls {
