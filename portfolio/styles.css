@@ -224,16 +224,16 @@ section.py-32 .md\:w-2\/3 a:hover {
 }
 
 /* ============================================================
-   IMAGE – base rules
+   IMAGE
    ============================================================ */
 #large-image {
+  border: 1px solid #E5E5E5;
   max-width: 100%;
   max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
-  border: none;
   transform-origin: center center;
   transition: none;
   will-change: transform;
@@ -241,7 +241,7 @@ section.py-32 .md\:w-2\/3 a:hover {
 }
 
 /* ============================================================
-   MOBILE – the important part
+   MOBILE
    ============================================================ */
 @media (max-width: 640px) {
   #prev-image,
@@ -249,49 +249,117 @@ section.py-32 .md\:w-2\/3 a:hover {
     display: none !important;
   }
 
-  /* Content area takes all free space and centers the image */
-  #image-modal .modal-content {
-    flex: 1 1 auto;
-    min-height: 0;                 /* critical */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding: 3.4rem 0.75rem 0;     top safe zone for × */
-  }
-
-  /* Image can never exceed its parent → no bottom cut */
   #large-image {
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
     border: none !important;
+    border-radius: 0 !important;
   }
 
-  /* Bottom controls stay in normal flow */
   #modal-controls {
-    flex-shrink: 0;
     background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-top: 1px solid #e5e5e5;
-    padding: 0.6rem 1rem calc(0.8rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Give a little breathing room at the top so the × never touches the image */
+  .modal-content {
+    padding-top: 3.2rem;   /* safe area for the close button */
+  }
+}
+/* ============================================================
+   TOP SAFE ZONE (only for spacing – image stays centered)
+   ============================================================ */
+#modal-top-safe {
+  height: 3.4rem;          /* space reserved for the × button */
+  flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 641px) {
+  #modal-top-safe {
+    height: 4rem;
+  }
+}
+
+/* ============================================================
+   IMAGE – always fully visible + perfectly centered
+   ============================================================ */
+#large-image {
+  border: 1px solid #E5E5E5;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Desktop / tablet */
+@media (min-width: 641px) {
+  #large-image {
+    max-height: calc(100vh - 4rem - 5.5rem);
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 640px) {
+  #image-modal .modal-content {
+    padding: 0 !important;
+    /* This is the key: flex column that centers the image
+       in the space BETWEEN the top safe zone and the bottom bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* ← centers the image vertically */
+    align-items: center;
+    height: 100%;
+  }
+
+  #large-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    /* Available height = viewport - top safe zone - bottom controls */
+    max-height: calc(100vh - 3.4rem - 5.8rem) !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  #modal-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.6rem 1rem 1rem;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid #e5e5e5;
     z-index: 40;
   }
 }
 
 /* ============================================================
-   FRAME VIEW (only breathing room, no border)
+   FRAME VIEW (optional classic look)
    ============================================================ */
- 
+/* ============================================================
+   FRAME VIEW (optional – only adds breathing room, no border)
+   ============================================================ */
 #large-image.frame-view {
-  max-width: calc(100% - 1.8rem) !important;
-  max-height: calc(100% - 1.2rem) !important;
+  border: none !important;
+  border-radius: 0;
+  /* small breathing room so the image is separated from the edges */
+  max-width: calc(100% - 1.5rem) !important;
+  max-height: calc(100% - 1rem) !important;
 }
 
+/* On mobile keep a bit more space when framed */
 @media (max-width: 640px) {
   #large-image.frame-view {
-    max-width: calc(100% - 2.4rem) !important;
-    max-height: calc(100% - 1.8rem) !important;
+    max-width: calc(100% - 2rem) !important;
+    max-height: calc(100vh - 9rem) !important;
+    border: none !important;
   }
 }
