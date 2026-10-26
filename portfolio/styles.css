@@ -95,13 +95,13 @@ section {
 #large-image,
 .author-photo {
   transition: opacity 0.3s ease, transform 0.3s ease;
-  border: 1px solid #E5E5E5;
+  border: none;                        /* removed the gray line */
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  -webkit-touch-callout: none; /* blocks long-press menu on iOS */
+  -webkit-touch-callout: none;
   pointer-events: auto;
 }
 
@@ -197,11 +197,21 @@ section.py-32 .md\:w-2\/3 a:hover {
   touch-action: none;
   overscroll-behavior: none;
 }
-/* ---------- Mobile: fix controls to bottom of screen ---------- */
+/* ---------- Mobile: full-bleed image + fixed bottom controls ---------- */
 @media (max-width: 640px) {
   #image-modal .modal-content {
     justify-content: center;
-    padding-bottom: 5.5rem; /* space for the fixed controls */
+    padding: 0.5rem 0 5.8rem 0;
+  }
+
+  #large-image {
+    max-width: 100% !important;
+    max-height: calc(100vh - 7.2rem) !important;
+    width: 100% !important;
+    height: auto;
+    object-fit: contain;
+    border: none !important;          /* ← this removes the gray line */
+    border-radius: 0 !important;
   }
 
   #modal-controls {
@@ -210,16 +220,11 @@ section.py-32 .md\:w-2\/3 a:hover {
     left: 0;
     right: 0;
     margin: 0;
-    padding: 0.75rem 1rem 1.1rem;
-    background: rgba(255, 255, 255, 0.92);
+    padding: 0.7rem 1rem 1.1rem;
+    background: rgba(255, 255, 255, 0.93);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid #e5e5e5;
     z-index: 30;
-  }
-
-  /* Make sure the image never goes under the controls */
-  #large-image {
-    max-height: calc(100vh - 7.5rem) !important;
   }
 }
