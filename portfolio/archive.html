@@ -113,17 +113,22 @@
     </section>
 
     <!-- Modal for Large Image View -->
+
+    <!-- Modal for Large Image View -->
     <div
       id="image-modal"
-      class="fixed inset-0 bg-white flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-white flex flex-col z-50 hidden"
     >
+      <!-- Close button -->
       <button
         id="close-modal"
-        class="absolute top-3 right-3 sm:top-6 sm:right-6 text-black text-3xl z-30 leading-none hover:opacity-70"
+        class="absolute top-3 right-3 sm:top-5 sm:right-5 text-black z-50 leading-none hover:opacity-70"
         aria-label="Close"
       >
         ×
       </button>
+
+      <!-- Prev / Next (desktop) -->
       <button
         id="prev-image"
         class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-black text-4xl sm:text-5xl z-20 leading-none hover:opacity-70 select-none"
@@ -138,66 +143,10 @@
       >
         ›
       </button>
-      <div
-        class="modal-content flex flex-col items-center justify-center w-full h-full px-3 sm:px-16"
-      >
-        <!-- Reserved top safe zone – image can never enter here -->
-        <div id="modal-top-safe" class="w-full shrink-0"></div>
 
-        <img
-          id="large-image"
-          src=""
-          alt="Large artwork"
-          class="max-w-full object-contain"
-          draggable="false"
-        />
-
-        <!-- Controls bar (fixed to bottom on mobile) -->
-        <div
-          id="modal-controls"
-          class="flex flex-col items-center gap-1 mt-3 shrink-0"
-        >
-          <div class="flex items-center gap-4">
-            <p
-              id="image-counter"
-              class="text-center text-sm font-serif text-gray-600"
-            ></p>
-            <button
-              id="copy-image-link"
-              class="text-sm font-serif underline hover:opacity-70"
-            >
-              Copy image link
-            </button>
-            <!-- <button
-              id="close-modal-bottom"
-              class="text-sm font-serif underline hover:opacity-70"
-            >
-              Close
-            </button> -->
-            <span id="copy-image-feedback" class="text-sm text-gray-500 hidden"
-              >Copied!</span
-            >
-          </div>
-          <!-- Copyright – single line -->
-          <p
-            id="image-copyright"
-            class="text-xs font-serif text-gray-500 mt-1 text-center"
-          >
-            © <span id="copyright-years"></span> Lado Oniani
-            <a
-              id="copyright-link"
-              href="https://github.com/ladooniani/ladooniani/blob/main/Copyright.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="underline hover:opacity-70 ml-1"
-              >Copyright notice</a
-            >
-          </p>
-        </div>
-      </div>
-      <!-- 
+      <!-- Main content area that grows and centers the image -->
       <div
-        class="modal-content flex flex-col items-center justify-center w-full h-full px-10 sm:px-16 py-12"
+        class="modal-content flex-1 flex items-center justify-center w-full px-3 sm:px-16 min-h-0"
       >
         <img
           id="large-image"
@@ -206,39 +155,43 @@
           class="max-w-full max-h-full object-contain"
           draggable="false"
         />
-        <div class="flex flex-col items-center gap-1 mt-3 shrink-0">
-          <div class="flex items-center gap-4">
-            <p
-              id="image-counter"
-              class="text-center text-sm font-serif text-gray-600"
-            ></p>
-            <button
-              id="copy-image-link"
-              class="text-sm font-serif underline hover:opacity-70"
-            >
-              Copy image link
-            </button>
-            <span id="copy-image-feedback" class="text-sm text-gray-500 hidden"
-              >Copied!</span
-            >
-          </div>
-         
+      </div>
+
+      <!-- Bottom controls (always visible) -->
+      <div
+        id="modal-controls"
+        class="flex flex-col items-center gap-1 shrink-0 py-3 px-4"
+      >
+        <div class="flex items-center gap-4">
           <p
-            id="image-copyright"
-            class="text-xs font-serif text-gray-500 mt-1 text-center"
+            id="image-counter"
+            class="text-center text-sm font-serif text-gray-600"
+          ></p>
+          <button
+            id="copy-image-link"
+            class="text-sm font-serif underline hover:opacity-70"
           >
-            © <span id="copyright-years"></span> Lado Oniani
-            <a
-              id="copyright-link"
-              href="https://github.com/ladooniani/ladooniani/blob/main/Copyright.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="underline hover:opacity-70 ml-1"
-              >Copyright notice</a
-            >
-          </p>
+            Copy image link
+          </button>
+          <span id="copy-image-feedback" class="text-sm text-gray-500 hidden"
+            >Copied!</span
+          >
         </div>
-      </div>-->
+        <p
+          id="image-copyright"
+          class="text-xs font-serif text-gray-500 text-center"
+        >
+          © <span id="copyright-years"></span> Lado Oniani
+          <a
+            id="copyright-link"
+            href="https://github.com/ladooniani/ladooniani/blob/main/Copyright.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline hover:opacity-70 ml-1"
+            >Copyright notice</a
+          >
+        </p>
+      </div>
     </div>
 
     <script src="scripts.js?v=20261025e"></script>

@@ -196,40 +196,77 @@ section.py-32 .md\:w-2\/3 a:hover {
 #image-modal {
   touch-action: none;
   overscroll-behavior: none;
-}
-/* ============================================================
+} /* ============================================================
    CLOSE BUTTON
    ============================================================ */
 #close-modal {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  width: 2.35rem;
-  height: 2.35rem;
-  font-size: 1.65rem;
-  line-height: 1;
-  z-index: 80;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255, 255, 255, 0.96);
   border-radius: 50%;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 80;
 }
 
 @media (min-width: 641px) {
   #close-modal {
-    top: 1rem;
-    right: 1rem;
-    width: 2.6rem;
-    height: 2.6rem;
-    font-size: 1.85rem;
+    width: 2.7rem;
+    height: 2.7rem;
+    font-size: 1.9rem;
   }
 }
 
+/* ============================================================
+   IMAGE
+   ============================================================ */
+#large-image {
+  border: 1px solid #E5E5E5;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform-origin: center center;
+  transition: none;
+  will-change: transform;
+  touch-action: none;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 640px) {
+  #prev-image,
+  #next-image {
+    display: none !important;
+  }
+
+  #large-image {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  #modal-controls {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid #e5e5e5;
+    padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Give a little breathing room at the top so the × never touches the image */
+  .modal-content {
+    padding-top: 3.2rem;   /* safe area for the close button */
+  }
+}
 /* ============================================================
    TOP SAFE ZONE (only for spacing – image stays centered)
    ============================================================ */
