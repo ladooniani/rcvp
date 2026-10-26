@@ -198,19 +198,20 @@ section.py-32 .md\:w-2\/3 a:hover {
   overscroll-behavior: none;
 }
 /* ---------- Mobile: full-bleed image + fixed bottom controls ---------- */
+/* ---------- Mobile: full-bleed + safe top area for × ---------- */
 @media (max-width: 640px) {
   #image-modal .modal-content {
     justify-content: center;
-    padding: 0.5rem 0 5.8rem 0;
+    padding: 3.2rem 0 5.8rem 0;   /* top safe area for the × button */
   }
 
   #large-image {
     max-width: 100% !important;
-    max-height: calc(100vh - 7.2rem) !important;
+    max-height: calc(100vh - 9.2rem) !important;
     width: 100% !important;
     height: auto;
     object-fit: contain;
-    border: none !important;          /* ← this removes the gray line */
+    border: none !important;
     border-radius: 0 !important;
   }
 
@@ -226,5 +227,21 @@ section.py-32 .md\:w-2\/3 a:hover {
     -webkit-backdrop-filter: blur(8px);
     border-top: 1px solid #e5e5e5;
     z-index: 30;
+  }
+
+  /* Close button styling on mobile */
+  #close-modal {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.9rem;
+    z-index: 40;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
   }
 }
