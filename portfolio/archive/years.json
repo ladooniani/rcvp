@@ -177,7 +177,7 @@
     "year": 2014,
     "hasContent": true,
     "categories": 1,
-    "images": 5
+    "images": 4
   },
   {
     "year": 2015,
@@ -193,9 +193,9 @@
   },
   {
     "year": 2017,
-    "hasContent": false,
-    "categories": 0,
-    "images": 0
+    "hasContent": true,
+    "categories": 1,
+    "images": 1
   },
   {
     "year": 2018,
@@ -242,8 +242,8 @@
   {
     "year": 2025,
     "hasContent": true,
-    "categories": 9,
-    "images": 65
+    "categories": 10,
+    "images": 78
   },
   {
     "year": 2026,
