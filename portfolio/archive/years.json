@@ -163,9 +163,9 @@
   },
   {
     "year": 2012,
-    "hasContent": false,
-    "categories": 0,
-    "images": 0
+    "hasContent": true,
+    "categories": 1,
+    "images": 5
   },
   {
     "year": 2013,
