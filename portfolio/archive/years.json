@@ -175,9 +175,9 @@
   },
   {
     "year": 2014,
-    "hasContent": true,
-    "categories": 1,
-    "images": 4
+    "hasContent": false,
+    "categories": 0,
+    "images": 0
   },
   {
     "year": 2015,
@@ -248,7 +248,7 @@
   {
     "year": 2026,
     "hasContent": true,
-    "categories": 5,
-    "images": 52
+    "categories": 6,
+    "images": 56
   }
 ]
