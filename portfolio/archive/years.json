@@ -205,9 +205,9 @@
   },
   {
     "year": 2019,
-    "hasContent": false,
-    "categories": 0,
-    "images": 0
+    "hasContent": true,
+    "categories": 1,
+    "images": 4
   },
   {
     "year": 2020,
@@ -248,7 +248,7 @@
   {
     "year": 2026,
     "hasContent": true,
-    "categories": 6,
-    "images": 56
+    "categories": 5,
+    "images": 52
   }
 ]
