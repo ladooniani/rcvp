@@ -129,19 +129,19 @@
     "year": 2006,
     "hasContent": true,
     "categories": 9,
-    "images": 65
+    "images": 67
   },
   {
     "year": 2007,
     "hasContent": true,
-    "categories": 5,
-    "images": 9
+    "categories": 21,
+    "images": 124
   },
   {
     "year": 2008,
     "hasContent": true,
-    "categories": 1,
-    "images": 13
+    "categories": 2,
+    "images": 18
   },
   {
     "year": 2009,
@@ -243,7 +243,7 @@
     "year": 2025,
     "hasContent": true,
     "categories": 11,
-    "images": 87
+    "images": 89
   },
   {
     "year": 2026,
