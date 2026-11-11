@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadGallery(year, subfolder, autoImg) {
     currentYearVal = year;
     currentCat = subfolder;
-    gallery.innerHTML = "";
+    gallery.innerHTML = ""; // keep empty – no thumbnail grid
     currentImages = [];
     currentIndex = 0;
     updateUrl({ year, cat: subfolder });
@@ -155,28 +155,21 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`archive/${year}/${subfolder}/images.json`)
       .then((response) => response.json())
       .then((images) => {
+        if (!images || images.length === 0) {
+          gallery.innerHTML =
+            '<p class="text-center">No artworks found for this category.</p>';
+          return;
+        }
+
         currentImages = images.map(
           (img) => `archive/${year}/${subfolder}/${img}`,
         );
-        images.forEach((img, index) => {
-          const div = document.createElement("div");
-          div.className = "relative";
-          const src = `archive/${year}/${subfolder}/${img}`;
-          div.innerHTML = `<img src="${src}" alt="Artwork from ${year} - ${subfolder}" class="w-full h-auto rounded-lg shadow-lg cursor-pointer" data-src="${src}" data-index="${index}" data-filename="${img}" draggable="false">`;
-          gallery.appendChild(div);
-        });
-        protectAllImages();
 
-        // Share-link: open exact image
+        // Always open the modal (desktop + mobile)
         if (autoImg) {
           const idx = images.findIndex((f) => f === autoImg);
-          if (idx >= 0) openModal(idx);
-        }
-        // Mobile: open first image immediately (no scroll needed)
-        else if (
-          window.matchMedia("(max-width: 640px)").matches &&
-          images.length > 0
-        ) {
+          openModal(idx >= 0 ? idx : 0);
+        } else {
           openModal(0);
         }
       })
@@ -185,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
           '<p class="text-center">No artworks found for this category.</p>';
       });
   }
-
+  
   function showImage(index) {
     if (currentImages.length === 0) return;
     currentIndex =
