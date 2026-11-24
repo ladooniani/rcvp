@@ -119,10 +119,14 @@ document.addEventListener("DOMContentLoaded", () => {
           const thumbnail = subfolder.thumbnail
             ? `archive/${year}/${subfolder.name}/${subfolder.thumbnail}`
             : "assets/placeholder.jpg";
+          const countLabel =
+            typeof subfolder.count === "number"
+              ? ` (${subfolder.count} ${subfolder.count === 1 ? "work" : "works"})`
+              : "";
           div.innerHTML = `
             <a href="#" data-year="${year}" data-subfolder="${subfolder.name}" class="block">
               <img src="${thumbnail}" alt="${subfolder.name}" class="w-full max-w-[60px] h-auto mx-auto border border-gray-200 cursor-pointer" draggable="false">
-              <p class="text-[9px] font-serif mt-0 text-center">${subfolder.name}</p>
+              <p class="text-[9px] font-serif mt-0 text-center">${subfolder.name}${countLabel}</p>
             </a>`;
           subfolderItems.appendChild(div);
         });
@@ -178,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
           '<p class="text-center">No artworks found for this category.</p>';
       });
   }
-  
+
   function showImage(index) {
     if (currentImages.length === 0) return;
     currentIndex =

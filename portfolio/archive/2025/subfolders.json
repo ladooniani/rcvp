@@ -1,46 +1,57 @@
 [
   {
     "name": "2025-1",
-    "thumbnail": "lado-oniani-2025-1-(1).webp"
+    "thumbnail": "lado-oniani-2025-1-(1).webp",
+    "count": 4
   },
   {
     "name": "2025-10",
-    "thumbnail": "lado-oniani-2025-10-(1).webp"
+    "thumbnail": "lado-oniani-2025-10-(1).webp",
+    "count": 13
   },
   {
     "name": "2025-11",
-    "thumbnail": "lado-oniani-2025-11-(1).webp"
+    "thumbnail": "lado-oniani-2025-11-(1).webp",
+    "count": 9
   },
   {
     "name": "2025-2",
-    "thumbnail": "lado-oniani-2025-2-(1).webp"
+    "thumbnail": "lado-oniani-2025-2-(1).webp",
+    "count": 1
   },
   {
     "name": "2025-3",
-    "thumbnail": "lado-oniani-2025-3-(1).webp"
+    "thumbnail": "lado-oniani-2025-3-(1).webp",
+    "count": 2
   },
   {
     "name": "2025-4",
-    "thumbnail": "lado-oniani-2025-4-(1).webp"
+    "thumbnail": "lado-oniani-2025-4-(1).webp",
+    "count": 5
   },
   {
     "name": "2025-5",
-    "thumbnail": "lado-oniani-2025-5-(1).webp"
+    "thumbnail": "lado-oniani-2025-5-(1).webp",
+    "count": 5
   },
   {
     "name": "2025-6",
-    "thumbnail": "lado-oniani-2025-6-(1).webp"
+    "thumbnail": "lado-oniani-2025-6-(1).webp",
+    "count": 22
   },
   {
     "name": "2025-7",
-    "thumbnail": "lado-oniani-2025-7-(1).webp"
+    "thumbnail": "lado-oniani-2025-7-(1).webp",
+    "count": 8
   },
   {
     "name": "2025-8",
-    "thumbnail": "lado-oniani-2025-8-(1).webp"
+    "thumbnail": "lado-oniani-2025-8-(1).webp",
+    "count": 3
   },
   {
     "name": "2025-9",
-    "thumbnail": "lado-oniani-2025-9-(1).webp"
+    "thumbnail": "lado-oniani-2025-9-(1).webp",
+    "count": 19
   }
 ]

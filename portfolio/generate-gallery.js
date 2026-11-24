@@ -62,6 +62,7 @@ years.forEach((year) => {
   const subfoldersForJson = subfolders.map((s) => ({
     name: s.name,
     thumbnail: s.thumbnail,
+    count: s.imageCount,
   }));
 
   fs.writeFileSync(
@@ -92,7 +93,7 @@ fs.writeFileSync(
 
 console.log(
   "Gallery, subfolders and years.json generated successfully with correct sequence order.",
-); 
+);
 
 /*const fs = require("fs");
 const path = require("path");

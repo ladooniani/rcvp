@@ -1,10 +1,12 @@
 [
   {
     "name": "2000-1",
-    "thumbnail": "lado-oniani-2000-1-(1).webp"
+    "thumbnail": "lado-oniani-2000-1-(1).webp",
+    "count": 38
   },
   {
     "name": "2000-2",
-    "thumbnail": "lado-oniani-2000-2-(1).webp"
+    "thumbnail": "lado-oniani-2000-2-(1).webp",
+    "count": 1
   }
 ]

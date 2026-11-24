@@ -1,62 +1,77 @@
 [
   {
     "name": "2005-1",
-    "thumbnail": "lado-oniani-2005-1-(1).webp"
+    "thumbnail": "lado-oniani-2005-1-(1).webp",
+    "count": 5
   },
   {
     "name": "2005-10",
-    "thumbnail": "lado-oniani-2005-10-(1).webp"
+    "thumbnail": "lado-oniani-2005-10-(1).webp",
+    "count": 7
   },
   {
     "name": "2005-11",
-    "thumbnail": "lado-oniani-2005-11-(1).webp"
+    "thumbnail": "lado-oniani-2005-11-(1).webp",
+    "count": 8
   },
   {
     "name": "2005-12",
-    "thumbnail": "lado-oniani-2005-12-(1).webp"
+    "thumbnail": "lado-oniani-2005-12-(1).webp",
+    "count": 10
   },
   {
     "name": "2005-13",
-    "thumbnail": "lado-oniani-2005-13-(1).webp"
+    "thumbnail": "lado-oniani-2005-13-(1).webp",
+    "count": 15
   },
   {
     "name": "2005-14",
-    "thumbnail": "lado-oniani-2005-14-(1).webp"
+    "thumbnail": "lado-oniani-2005-14-(1).webp",
+    "count": 6
   },
   {
     "name": "2005-15",
-    "thumbnail": "lado-oniani-2005-15-(1).webp"
+    "thumbnail": "lado-oniani-2005-15-(1).webp",
+    "count": 7
   },
   {
     "name": "2005-2",
-    "thumbnail": "lado-oniani-2005-2-(1).webp"
+    "thumbnail": "lado-oniani-2005-2-(1).webp",
+    "count": 5
   },
   {
     "name": "2005-3",
-    "thumbnail": "lado-oniani-2005-3-(1).webp"
+    "thumbnail": "lado-oniani-2005-3-(1).webp",
+    "count": 2
   },
   {
     "name": "2005-4",
-    "thumbnail": "lado-oniani-2005-4-(1).webp"
+    "thumbnail": "lado-oniani-2005-4-(1).webp",
+    "count": 3
   },
   {
     "name": "2005-5",
-    "thumbnail": "lado-oniani-2005-11-(0).webp"
+    "thumbnail": "lado-oniani-2005-11-(0).webp",
+    "count": 42
   },
   {
     "name": "2005-6",
-    "thumbnail": "lado-oniani-2005-6-(1).webp"
+    "thumbnail": "lado-oniani-2005-6-(1).webp",
+    "count": 17
   },
   {
     "name": "2005-7",
-    "thumbnail": "lado-oniani-2005-7-(1).webp"
+    "thumbnail": "lado-oniani-2005-7-(1).webp",
+    "count": 10
   },
   {
     "name": "2005-8",
-    "thumbnail": "lado-oniani-2005-8-(1).webp"
+    "thumbnail": "lado-oniani-2005-8-(1).webp",
+    "count": 28
   },
   {
     "name": "2005-9",
-    "thumbnail": "lado-oniani-2005-9-(1).webp"
+    "thumbnail": "lado-oniani-2005-9-(1).webp",
+    "count": 30
   }
 ]
